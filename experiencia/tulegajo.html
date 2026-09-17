@@ -1,35 +1,97 @@
 ﻿<!doctype html>
 <html lang="es">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="theme-color" content="#f2e1dc">
-  <title>Minder S.A. | Experiencia de Paula Carluccio</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet"><link rel="stylesheet" href="detalle.css">
-  <script>try{if(localStorage.getItem("pc-theme")==="dark")document.documentElement.dataset.theme="dark"}catch{}</script>
-</head>
-<body class="detail-page" data-experience="tulegajo">
-  <header class="topbar"><nav class="wrap nav detail-nav"><a class="brand" href="../index.html">Paula Carluccio</a><a class="back-link" href="../index.html#experiencia">← Volver a experiencia</a></nav></header>
-  <main class="wrap experience-detail">
-    <span class="company">04 · Puesto actual</span>
-    <h1>Minder S.A.</h1>
-    <p class="role-title">QA Automation Engineer</p>
-    <p class="period">Jul 2025 – actualidad</p>
-    <div class="experience-copy">
-      <p>Después de Allianz llegué a Minder S.A. con más experiencia diseñando automatizaciones y trabajando con APIs y bases de datos. Acá pude ampliar ese recorrido: trabajo en pruebas web, de API y mobile, mantengo casos existentes, creo nuevos escenarios y analizo las fallas de las ejecuciones.</p>
-      <p>Con el tiempo empecé a involucrarme también en lo que pasa alrededor de las pruebas. Me interesa que el equipo pueda entender los resultados sin perder tiempo buscando información en distintos lugares. Por eso, además de automatizar, propongo mejoras en los reportes y en la forma en que registramos y revisamos las fallas. Siento que es una evolución bastante natural de mi carrera: sigo teniendo una base fuerte en QA, pero cada vez trabajo más con datos, procesos e ideas para aplicar IA.</p>
-    </div>
-    <section class="role-tools"><h2>Herramientas técnicas</h2><div class="skills"><span class="chip">Java</span><span class="chip">Selenium</span><span class="chip">Rest Assured</span><span class="chip">Appium</span><span class="chip">Python</span><span class="chip">Pandas</span><span class="chip">Jenkins</span><span class="chip">Microsoft Lists</span><span class="chip">Power Automate</span><span class="chip">Bitbucket pipelines</span></div></section>
-    <section class="challenges" aria-labelledby="challenges-title">
-      <h2 id="challenges-title">Desafíos</h2>
-      <article class="experience-copy">
-      <h3>Optimizar el seguimiento de las ejecuciones del pipeline</h3>
-      <p>En un momento nos dimos cuenta de que, para saber cómo había salido una ejecución, cada persona tenía que entrar al pipeline, descargar el reporte y revisarlo. Necesitábamos una vista rápida que pudiera consultar todo el equipo. Se había pensado en usar un modelo integrado, pero no teníamos acceso a una API key, así que busqué resolverlo con las herramientas disponibles.</p>
-      <p>Armé un resumen de la ejecución que llega a Teams mediante un webhook. Después quise aprovechar esos mismos datos para algo más: registrarlos de forma estructurada en Microsoft Lists, usando las herramientas de Microsoft 365 que ya teníamos. Hasta entonces llevábamos parte de la revisión de errores en Excel; ahora podemos reunir los resultados y agregar el seguimiento de cada caso en un mismo lugar.</p>
-      <p>Es un trabajo del que estoy orgullosa porque empezó con una necesidad bastante simple —poder ver cómo salió el pipeline— y terminó ayudándonos también a organizar la revisión. Creo que representa bien cómo me gusta trabajar: escuchar qué le está costando al equipo, buscar una solución posible y mejorarla a medida que vemos para qué más nos sirve.</p>
-      </article>
-    </section>
-    <nav class="next-role" aria-label="Recorrido profesional"><a href="allianz.html">← Anterior: Allianz</a><a href="../index.html#experiencia">Ver toda la trayectoria →</a></nav>
-  </main>
-<script src="detalle.js"></script></body>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="theme-color" content="#f2e1dc" />
+    <title>Minder S.A. | Experiencia de Paula Carluccio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../assets/css/experience.css" />
+    <script>
+      try {
+        if (localStorage.getItem("pc-theme") === "dark")
+          document.documentElement.dataset.theme = "dark";
+      } catch {}
+    </script>
+  </head>
+  <body class="detail-page" data-experience="tulegajo">
+    <header class="topbar">
+      <nav class="wrap nav detail-nav">
+        <a class="brand" href="../index.html">Paula Carluccio</a
+        ><a class="back-link" href="../index.html#experiencia">← Volver a experiencia</a>
+      </nav>
+    </header>
+    <main class="wrap experience-detail">
+      <span class="company">04 · Puesto actual</span>
+      <h1>QA Automation Engineer</h1>
+      <p class="employer-name">Minder S.A.</p>
+      <p class="period">Jul 2025 – actualidad</p>
+      <div class="experience-copy">
+        <p>
+          Después de Allianz llegué a Minder S.A. con más experiencia diseñando
+          automatizaciones y trabajando con APIs y bases de datos. Acá pude ampliar ese
+          recorrido: trabajo en pruebas web, de API y mobile, mantengo casos existentes,
+          creo nuevos escenarios y analizo las fallas de las ejecuciones.
+        </p>
+        <p>
+          Con el tiempo empecé a involucrarme también en lo que pasa alrededor de las
+          pruebas. Me interesa que el equipo pueda entender los resultados sin perder
+          tiempo buscando información en distintos lugares. Por eso, además de
+          automatizar, propongo mejoras en los reportes y en la forma en que registramos y
+          revisamos las fallas. Siento que es una evolución bastante natural de mi
+          carrera: sigo teniendo una base fuerte en QA, pero cada vez trabajo más con
+          datos, procesos e ideas para aplicar IA.
+        </p>
+      </div>
+      <section class="role-tools">
+        <h2>Herramientas técnicas</h2>
+        <div class="skills">
+          <span class="chip">Java</span><span class="chip">Selenium</span
+          ><span class="chip">Rest Assured</span><span class="chip">Appium</span
+          ><span class="chip">Python</span><span class="chip">Pandas</span
+          ><span class="chip">Jenkins</span><span class="chip">Microsoft Lists</span
+          ><span class="chip">Power Automate</span
+          ><span class="chip">Bitbucket pipelines</span>
+        </div>
+      </section>
+      <section class="challenges" aria-labelledby="challenges-title">
+        <h2 id="challenges-title">Desafíos</h2>
+        <article class="experience-copy">
+          <h3>Optimizar el seguimiento de las ejecuciones del pipeline</h3>
+          <p>
+            En un momento nos dimos cuenta de que, para saber cómo había salido una
+            ejecución, cada persona tenía que entrar al pipeline, descargar el reporte y
+            revisarlo. Necesitábamos una vista rápida que pudiera consultar todo el
+            equipo. Se había pensado en usar un modelo integrado, pero no teníamos acceso
+            a una API key, así que busqué resolverlo con las herramientas disponibles.
+          </p>
+          <p>
+            Armé un resumen de la ejecución que llega a Teams mediante un webhook. Después
+            quise aprovechar esos mismos datos para algo más: registrarlos de forma
+            estructurada en Microsoft Lists, usando las herramientas de Microsoft 365 que
+            ya teníamos. Hasta entonces llevábamos parte de la revisión de errores en
+            Excel; ahora podemos reunir los resultados y agregar el seguimiento de cada
+            caso en un mismo lugar.
+          </p>
+          <p>
+            Es un trabajo del que estoy orgullosa porque empezó con una necesidad bastante
+            simple —poder ver cómo salió el pipeline— y terminó ayudándonos también a
+            organizar la revisión. Creo que representa bien cómo me gusta trabajar:
+            escuchar qué le está costando al equipo, buscar una solución posible y
+            mejorarla a medida que vemos para qué más nos sirve.
+          </p>
+        </article>
+      </section>
+      <nav class="next-role" aria-label="Recorrido profesional">
+        <a href="allianz.html">← Anterior: Allianz</a
+        ><a href="../index.html#experiencia">Ver toda la trayectoria →</a>
+      </nav>
+    </main>
+    <script src="../assets/js/experience.js"></script>
+  </body>
 </html>

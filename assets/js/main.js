@@ -1,0 +1,556 @@
+﻿const translations = {
+  en: {
+    skip: "Skip to content",
+    navWork: "Projects",
+    navExperience: "Experience",
+    navContact: "Contact",
+    eyebrow: "Buenos Aires, Argentina · QA & AI",
+    hero: "QA Automation Engineer and Data Science and Artificial Intelligence student. I enjoy programming, improving processes and exploring how AI can support our everyday work.",
+    seeWork: "Explore projects ↓",
+    profileTitle: "QA Automation Engineer",
+    profileDesc: "Web · APIs · Mobile · Pipelines · Data · Applied AI",
+    profileLang: "Native Spanish · English C1",
+    aboutLabel: "01 / Profile",
+    aboutTitle: "Quality, automation and data",
+    aboutText:
+      "I have worked in QA Automation since 2021 across web, API and mobile testing. Beyond the test framework, I care about what happens after every run: understanding failures and helping teams decide what needs attention.",
+    workLabel: "02 / Selected work",
+    workTitle: "Projects and systems",
+    workIntro: "Open each card to see its technical approach and scope.",
+    more: "View details",
+    p1Title: "QA execution analytics",
+    p1Summary:
+      "Consolidating pipeline results to analyze failures, retries, modules and user roles.",
+    p1a: "Python scripts to collect and structure automated execution data.",
+    p1b: "Records in QA_Ejecuciones and Pipeline_Ejecuciones, including build, scenario, result and QA review.",
+    p1c: "Results separated by module and role, with retry handling to avoid duplicate counts.",
+    p2Title: "Automated flows and reporting",
+    p2Summary: "Clearer test results for the team, from execution through communication.",
+    p2a: "Designed Microsoft Lists structures and Power Automate flows.",
+    p2b: "Teams summaries with results by module and user role, plus failed scenarios.",
+    p2c: "Structured data for exploring trends and creating Power BI visuals.",
+    p3Title: "Multiagent QA system ",
+    status: "In design",
+    p3Summary:
+      "Designing repository connected agents to help create and repair automated tests.",
+    p3a: "Proposed flow: interpret test cases, generate scenarios, inspect locators and investigate failures.",
+    p3b: "Planned browser inspection for missing locators.",
+    p3c: "Changes require execution evidence and human review.",
+    p4Title: "End to end automation",
+    p4Summary: "Frameworks and coverage for web processes, APIs and mobile applications.",
+    p4a: "Java, Selenium, Cucumber, TestNG and Rest Assured for employee and manager flows.",
+    p4b: "Android and iOS mobile testing with Appium, locally and in CI.",
+    p4c: "Reports, defect investigation and maintenance of existing tests.",
+    careerLabel: "03 / Career",
+    careerTitle: "Experience",
+    careerIntro: "From the first role to the most recent.",
+    readExperience: "Learn about my experience →",
+    date1: "Jul 2025 – present",
+    job1: "QA Automation Engineer. Web and API automation, CI analytics, Python, Microsoft Lists and Power Automate.",
+    job2: "QA Automation Engineer. Java, Selenium, Jenkins, Docker, Grid and Appium.",
+    job3: "QA Automation Engineer. Playwright, Java, Jenkins and Datadog.",
+    job4: "Functional QA, process validation and defect tracking.",
+    skillsLabel: "04 / Tools and education",
+    skillsTitle: "What I use and study",
+    stack: "Toolkit",
+    education: "Education",
+    education1:
+      "Higher Technical Degree in Data Science and Artificial Intelligence · IFTS N° 24 (in progress).",
+    education2:
+      "Data Science studies · University of Buenos Aires (2021–2025). Additional learning in AWS and AI agents.",
+    contactLabel: "05 / Contact",
+    contactTitle: "Let’s connect!",
+    contactText:
+      "Based in Buenos Aires, Argentina. Explore my work and reach me on these platforms.",
+    footer: "QA Automation · Data · AI",
+  },
+};
+Object.assign(translations.en, {
+  navAbout: "About me",
+  navEducation: "Education",
+  heroRole: "Automation Engineer · Data & AI",
+  hero: "I work in automation and study Data Science and Artificial Intelligence. My experience began in QA, and over time I have added data analysis, process automation and AI solutions.",
+  profileTitle: "Automation Engineer · Data & AI",
+  profileDesc:
+    "QA Automation · Web · Mobile · APIs · Pipelines · Data · Process automation · Applied AI",
+  aboutTitle: "About me",
+  aboutText:
+    "I started working in QA in 2021, and from day one I knew I wanted to code. I have always enjoyed understanding problems, finding a way to solve them, and learning everything I need to make that happen.",
+  aboutText2:
+    "Over the years, I have discovered new interests, especially data and artificial intelligence. I see myself as curious, persistent, and proactive. In a team, I bring autonomy, a thoughtful eye for what could be improved, and a strong drive to turn ideas into solutions that are genuinely useful.",
+  contactText:
+    "I’m based in Buenos Aires, Argentina. Reach me on LinkedIn or copy my email.",
+  careerAccenture:
+    "This is where my QA career began. I learned the foundations of testing, functional analysis and working within a development team.",
+  careerMarkmonitor:
+    "It was a major change for me: I learned new tools, had to understand a business from scratch and overcome the challenge of working in English.",
+  careerAllianz:
+    "I owned the automation of a business line and built the team’s first flow connecting the UI, APIs and database validations.",
+  careerTulegajo:
+    "Today I continue working in automation while looking for new ways to use execution data and improve the team’s processes.",
+  date4: "Feb 2021 – Jan 2023",
+  date3: "Mar 2023 – Oct 2024",
+  date2: "Oct 2024 – Jul 2025",
+  ubaTitle: "Bachelor's Degree in Data Science",
+  studyDate: "2026–present",
+  iftsTitle: "Higher Technical Degree in Data Science and Artificial Intelligence",
+  iftsStatus: "IFTS No. 24 · In progress",
+  certifications: "Certifications",
+  certSeleniumDate: "Jul 2024 · Completed",
+  completed: "Completed",
+  certAiDate: "May 2026 · Completed",
+  copyHint: "Copy",
+  stackWeb: "Web automation",
+  stackApi: "APIs and backend",
+  stackCi: "CI/CD and infrastructure",
+  stackReports: "Reporting and monitoring",
+  stackData: "Data and visualization",
+  stackProcesses: "Process automation",
+  stackAi: "Artificial intelligence",
+  stackMethods: "Methods and management",
+  exploratoryData: "exploratory data analysis",
+  dataCleaning: "data cleaning and analysis",
+  dataViz: "data visualization",
+  multiagentSystems: "Multiagent systems",
+  generativeAi: "Generative AI",
+  functionalAnalysis: "Functional analysis",
+  testCaseDesign: "Test case design",
+  regressionTesting: "Regression testing",
+  defectTracking: "Defect tracking",
+});
+Object.assign(translations.en, {
+  p1Summary:
+    "I organized execution data so I could review failures, retries, and results by module and user type.",
+  p1a: "I used Python scripts to collect results and recorded them in a structured way in Microsoft Lists.",
+  p1b: "I also handled retries so the same execution would not be counted twice.",
+  p2Summary:
+    "The team needed to see how a pipeline run went without downloading and reviewing the report every time. I built a summary for Teams and brought case follow-up into one place.",
+  p2Challenge: "Improving pipeline execution tracking",
+  p2a: "I sent the summary through a Teams webhook using the tools we already had.",
+  p2b: "The records in Microsoft Lists also brought together review information we had previously tracked partly in Excel.",
+  p3Title: "Multiagent system for QA",
+  p3Summary:
+    "I developed a flow of agents connected to the repository to help create tests from test cases, investigate failures, and maintain existing cases.",
+  p3a: "The flow analyzes the test case and reviews the repository structure before creating or updating tests.",
+  p3b: "It also inspects locators when they are missing and investigates failures.",
+  p3c: "Changes are validated through execution and human review before being accepted.",
+  p4Summary:
+    "I have worked on web, mobile, and API automation, including data preparation, validations, and result analysis.",
+  p4a: "I have used Java, Selenium, Cucumber, and TestNG for web tests, Rest Assured for APIs, and Appium for mobile.",
+  p4b: "I have also prepared data, performed validations, and reviewed execution results.",
+  closeDetails: "Close details",
+  filterAll: "All",
+  stackTabsLabel: "Stack categories",
+});
+// Translation dictionaries and locale state
+const es = Object.fromEntries(
+  [...document.querySelectorAll("[data-i18n]")].map((node) => [
+    node.dataset.i18n,
+    node.firstChild.textContent,
+  ]),
+);
+es.closeDetails = "Cerrar detalles";
+function updateProjectToggles(lang) {
+  document.querySelectorAll("#proyectos .project-card").forEach((card) => {
+    card.querySelector(".project-toggle").textContent = card.open
+      ? lang === "en"
+        ? translations.en.closeDetails
+        : es.closeDetails
+      : lang === "en"
+        ? translations.en.more
+        : es.more;
+  });
+}
+// Language and theme controls
+const languageButton = document.getElementById("language"),
+  themeButton = document.getElementById("theme"),
+  menuToggle = document.getElementById("menu-toggle"),
+  navLinks = document.getElementById("navlinks");
+function updateMenuLabel() {
+  const isOpen = menuToggle.getAttribute("aria-expanded") === "true",
+    isEs = document.documentElement.lang === "es";
+  menuToggle.setAttribute(
+    "aria-label",
+    isEs ? (isOpen ? "Cerrar menú" : "Abrir menú") : isOpen ? "Close menu" : "Open menu",
+  );
+}
+function language(lang) {
+  document.documentElement.lang = lang;
+  document.querySelectorAll("[data-i18n]").forEach((node) => {
+    const value = (lang === "en" ? translations.en : es)[node.dataset.i18n];
+    if (value !== undefined) node.firstChild.textContent = value;
+  });
+  const selectedStackOption = document.querySelector(
+    '.stack-menu [role="option"][aria-selected="true"]',
+  );
+  if (selectedStackOption) {
+    document.querySelector(".stack-menu-trigger span").textContent =
+      selectedStackOption.textContent;
+  }
+  updateProjectToggles(lang);
+  languageButton.textContent = lang === "es" ? "EN" : "ES";
+  languageButton.lang = lang === "es" ? "en" : "es";
+  languageButton.setAttribute(
+    "aria-label",
+    lang === "es" ? "Switch to English" : "Cambiar a español",
+  );
+  document.querySelector(".hero-portrait").alt =
+    lang === "es" ? "Retrato de Paula Carluccio" : "Portrait of Paula Carluccio";
+  document
+    .querySelector(".modal-close")
+    .setAttribute("aria-label", lang === "es" ? "Cerrar imagen" : "Close image");
+  document
+    .getElementById("certificate-previous")
+    .setAttribute(
+      "aria-label",
+      lang === "es" ? "Certificado anterior" : "Previous certificate",
+    );
+  document
+    .getElementById("certificate-next")
+    .setAttribute(
+      "aria-label",
+      lang === "es" ? "Certificado siguiente" : "Next certificate",
+    );
+  document
+    .querySelector(".project-filters")
+    .setAttribute("aria-label", lang === "es" ? "Filtrar proyectos" : "Filter projects");
+  document
+    .querySelector(".stack-tablist")
+    .setAttribute(
+      "aria-label",
+      lang === "es" ? "Categorías del stack" : translations.en.stackTabsLabel,
+    );
+  document
+    .querySelectorAll("[data-certificate-image]")
+    .forEach((button) =>
+      button.setAttribute(
+        "aria-label",
+        `${lang === "es" ? "Ver" : "View"} ${button.dataset.certificateTitle}`,
+      ),
+    );
+  const backToTop = document.getElementById("back-to-top");
+  backToTop.setAttribute("aria-label", lang === "es" ? "Volver arriba" : "Back to top");
+  backToTop.title = backToTop.getAttribute("aria-label");
+  updateMenuLabel();
+  document.querySelectorAll(".experience-link").forEach((link) => {
+    const url = new URL(link.href);
+    if (lang === "en") url.searchParams.set("lang", "en");
+    else url.searchParams.delete("lang");
+    link.href = url;
+  });
+  document.title =
+    lang === "es"
+      ? "Paula Carluccio | QA Automation e IA"
+      : "Paula Carluccio | QA Automation & AI";
+  theme(document.documentElement.dataset.theme || "light");
+  try {
+    localStorage.setItem("pc-language", lang);
+  } catch {}
+}
+function theme(value) {
+  document.documentElement.dataset.theme = value;
+  const dark = value === "dark",
+    span = themeButton.querySelector("span"),
+    isEs = document.documentElement.lang === "es";
+  themeButton.firstChild.textContent = dark ? "☀ " : "☾ ";
+  span.textContent = isEs ? (dark ? "Claro" : "Oscuro") : dark ? "Light" : "Dark";
+  themeButton.setAttribute("aria-pressed", String(dark));
+  themeButton.setAttribute(
+    "aria-label",
+    isEs
+      ? dark
+        ? "Activar modo claro"
+        : "Activar modo oscuro"
+      : dark
+        ? "Switch to light mode"
+        : "Switch to dark mode",
+  );
+  document.querySelector('meta[name="theme-color"]').content = dark
+    ? "#281f26"
+    : "#f2e1dc";
+  try {
+    localStorage.setItem("pc-theme", value);
+  } catch {}
+}
+let preferredLanguage = "es",
+  preferredTheme = "light";
+try {
+  preferredLanguage = localStorage.getItem("pc-language") || "es";
+  preferredTheme = localStorage.getItem("pc-theme") || "light";
+} catch {}
+theme(preferredTheme === "dark" ? "dark" : "light");
+language(preferredLanguage === "en" ? "en" : "es");
+languageButton.addEventListener("click", () =>
+  language(document.documentElement.lang === "es" ? "en" : "es"),
+);
+themeButton.addEventListener("click", () =>
+  theme(document.documentElement.dataset.theme === "dark" ? "light" : "dark"),
+);
+// Responsive navigation
+function setMenu(open) {
+  menuToggle.setAttribute("aria-expanded", String(open));
+  if (open) navLinks.dataset.open = "true";
+  else delete navLinks.dataset.open;
+  updateMenuLabel();
+}
+menuToggle.addEventListener("click", () =>
+  setMenu(menuToggle.getAttribute("aria-expanded") !== "true"),
+);
+navLinks.addEventListener("click", (event) => {
+  if (event.target.closest("a")) setMenu(false);
+});
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape" && menuToggle.getAttribute("aria-expanded") === "true") {
+    setMenu(false);
+    menuToggle.focus();
+  }
+});
+// Project cards and filters
+document.querySelectorAll("#proyectos .project-card").forEach((card) => {
+  card.addEventListener("toggle", () =>
+    updateProjectToggles(document.documentElement.lang),
+  );
+  card.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && card.open) {
+      card.open = false;
+      card.querySelector("summary").focus();
+    }
+  });
+});
+const projectGrid = document.querySelector("#proyectos .grid"),
+  projectCards = [...projectGrid.querySelectorAll(".project-card")],
+  projectFilters = [...document.querySelectorAll(".project-filters button")];
+projectFilters.forEach((button) =>
+  button.addEventListener("click", () => {
+    const filter = button.dataset.filter;
+    projectFilters.forEach((option) =>
+      option.setAttribute("aria-pressed", String(option === button)),
+    );
+    projectCards.forEach((card) => {
+      const matches = filter === "all" || card.dataset.tags.split(" ").includes(filter);
+      if (!matches) card.open = false;
+      card.hidden = !matches;
+    });
+    projectGrid.classList.toggle("is-filtered", filter !== "all");
+    scheduleScrollUi();
+  }),
+);
+
+// Stack category tabs
+const stackTabs = [...document.querySelectorAll('[role="tab"]')];
+const stackMenuTrigger = document.getElementById("stack-menu-trigger");
+const stackMenu = document.getElementById("stack-menu");
+const stackMenuOptions = [...stackMenu.querySelectorAll('[role="option"]')];
+function setStackMenu(open) {
+  stackMenu.hidden = !open;
+  stackMenuTrigger.setAttribute("aria-expanded", String(open));
+}
+function selectStackTab(selectedTab, moveFocus = false) {
+  stackTabs.forEach((tab) => {
+    const isSelected = tab === selectedTab;
+    tab.setAttribute("aria-selected", String(isSelected));
+    tab.tabIndex = isSelected ? 0 : -1;
+    document.getElementById(tab.getAttribute("aria-controls")).hidden = !isSelected;
+  });
+  stackMenuOptions.forEach((option) => {
+    const isSelected = option.dataset.panel === selectedTab.getAttribute("aria-controls");
+    option.setAttribute("aria-selected", String(isSelected));
+    if (isSelected) stackMenuTrigger.firstElementChild.textContent = option.textContent;
+  });
+  if (moveFocus) selectedTab.focus();
+}
+stackTabs.forEach((tab, index) => {
+  tab.addEventListener("click", () => selectStackTab(tab));
+  tab.addEventListener("keydown", (event) => {
+    const keyTargets = {
+      ArrowRight: (index + 1) % stackTabs.length,
+      ArrowDown: (index + 1) % stackTabs.length,
+      ArrowLeft: (index - 1 + stackTabs.length) % stackTabs.length,
+      ArrowUp: (index - 1 + stackTabs.length) % stackTabs.length,
+      Home: 0,
+      End: stackTabs.length - 1,
+    };
+    if (keyTargets[event.key] === undefined) return;
+    event.preventDefault();
+    selectStackTab(stackTabs[keyTargets[event.key]], true);
+  });
+});
+stackMenuTrigger.addEventListener("click", () => {
+  const open = stackMenuTrigger.getAttribute("aria-expanded") !== "true";
+  setStackMenu(open);
+  if (open)
+    stackMenuOptions
+      .find((option) => option.getAttribute("aria-selected") === "true")
+      ?.focus();
+});
+stackMenuOptions.forEach((option, index) => {
+  option.addEventListener("click", () => {
+    const selectedTab = stackTabs.find(
+      (tab) => tab.getAttribute("aria-controls") === option.dataset.panel,
+    );
+    if (selectedTab) selectStackTab(selectedTab);
+    setStackMenu(false);
+    stackMenuTrigger.focus();
+  });
+  option.addEventListener("keydown", (event) => {
+    if (!["ArrowDown", "ArrowUp", "Home", "End"].includes(event.key)) return;
+    event.preventDefault();
+    const nextIndex =
+      event.key === "Home"
+        ? 0
+        : event.key === "End"
+          ? stackMenuOptions.length - 1
+          : event.key === "ArrowDown"
+            ? (index + 1) % stackMenuOptions.length
+            : (index - 1 + stackMenuOptions.length) % stackMenuOptions.length;
+    stackMenuOptions[nextIndex].focus();
+  });
+});
+document.addEventListener("click", (event) => {
+  if (!event.target.closest(".stack-mobile-control")) setStackMenu(false);
+});
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape" && !stackMenu.hidden) {
+    setStackMenu(false);
+    stackMenuTrigger.focus();
+  }
+});
+
+// Reveal sections as they enter the viewport
+if ("IntersectionObserver" in window) {
+  const revealTargets = [
+    ...document.querySelectorAll(
+      "main section .sectionhead,#proyectos .project-filters,#proyectos .grid,.timeline,.learning-block,.contact .actions",
+    ),
+  ];
+  const revealObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("is-visible");
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.08, rootMargin: "0px 0px -5% 0px" },
+  );
+  document.documentElement.classList.add("has-reveal");
+  revealTargets.forEach((target) => {
+    target.classList.add("reveal-on-scroll");
+    revealObserver.observe(target);
+  });
+}
+// Certificate gallery
+const certificateModal = document.getElementById("certificate-modal"),
+  certificateModalImage = document.getElementById("certificate-modal-image"),
+  certificateModalTitle = document.getElementById("certificate-modal-title"),
+  certificateButtons = [...document.querySelectorAll("[data-certificate-image]")];
+let activeCertificate = 0,
+  certificateTrigger = null;
+function showCertificate(index) {
+  activeCertificate = (index + certificateButtons.length) % certificateButtons.length;
+  const button = certificateButtons[activeCertificate];
+  certificateModalImage.src = button.dataset.certificateImage;
+  certificateModalImage.alt = button.dataset.certificateTitle;
+  certificateModalTitle.textContent = button.dataset.certificateTitle;
+  document.getElementById("certificate-position").textContent =
+    `${activeCertificate + 1} / ${certificateButtons.length}`;
+}
+certificateButtons.forEach((button, index) => {
+  const preview = document.createElement("img");
+  preview.src = button.dataset.certificateImage;
+  preview.alt = "";
+  preview.loading = "lazy";
+  button.replaceChildren(preview);
+  button.addEventListener("click", () => {
+    certificateTrigger = button;
+    showCertificate(index);
+    certificateModal.showModal();
+  });
+});
+document
+  .getElementById("certificate-previous")
+  .addEventListener("click", () => showCertificate(activeCertificate - 1));
+document
+  .getElementById("certificate-next")
+  .addEventListener("click", () => showCertificate(activeCertificate + 1));
+certificateModal.addEventListener("keydown", (event) => {
+  if (event.key === "ArrowLeft" || event.key === "ArrowRight") {
+    event.preventDefault();
+    showCertificate(activeCertificate + (event.key === "ArrowRight" ? 1 : -1));
+  }
+});
+certificateModal
+  .querySelector(".modal-close")
+  .addEventListener("click", () => certificateModal.close());
+certificateModal.addEventListener("click", (event) => {
+  if (event.target === certificateModal) certificateModal.close();
+});
+certificateModal.addEventListener("close", () => {
+  certificateModalImage.removeAttribute("src");
+  certificateTrigger?.focus();
+});
+// Reading progress and back-to-top control
+const scrollProgress = document.getElementById("scroll-progress"),
+  backToTopButton = document.getElementById("back-to-top");
+let scrollScheduled = false;
+function updateScrollUi() {
+  const scrollable = document.documentElement.scrollHeight - window.innerHeight;
+  scrollProgress.style.transform = `scaleX(${scrollable > 0 ? Math.min(1, window.scrollY / scrollable) : 0})`;
+  backToTopButton.classList.toggle("is-visible", window.scrollY > 600);
+  scrollScheduled = false;
+}
+function scheduleScrollUi() {
+  if (!scrollScheduled) {
+    scrollScheduled = true;
+    requestAnimationFrame(updateScrollUi);
+  }
+}
+window.addEventListener("scroll", scheduleScrollUi, { passive: true });
+window.addEventListener("resize", scheduleScrollUi);
+backToTopButton.addEventListener("click", () =>
+  window.scrollTo({
+    top: 0,
+    behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth",
+  }),
+);
+updateScrollUi();
+document.getElementById("copyright-year").textContent = new Date().getFullYear();
+// Contact actions
+const copyEmailButton = document.getElementById("copy-email"),
+  copyEmailStatus = document.getElementById("copy-email-status");
+copyEmailButton.addEventListener("click", async () => {
+  try {
+    await navigator.clipboard.writeText("paucarluccio@gmail.com");
+    copyEmailStatus.textContent =
+      document.documentElement.lang === "es" ? "Mail copiado" : "Email copied";
+  } catch {
+    copyEmailStatus.textContent =
+      document.documentElement.lang === "es"
+        ? "No se pudo copiar. El mail es paucarluccio@gmail.com"
+        : "Could not copy it. The email is paucarluccio@gmail.com";
+  }
+  setTimeout(() => (copyEmailStatus.textContent = ""), 3000);
+});
+// Keep the current section highlighted in the navigation
+const sectionLinks = [...document.querySelectorAll('.navlinks a[href^="#"]')],
+  observedSections = sectionLinks
+    .map((link) => document.querySelector(link.getAttribute("href")))
+    .filter(Boolean);
+if ("IntersectionObserver" in window) {
+  const sectionObserver = new IntersectionObserver(
+    (entries) => {
+      const visible = entries
+        .filter((entry) => entry.isIntersecting)
+        .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+      if (!visible) return;
+      sectionLinks.forEach((link) => {
+        if (link.getAttribute("href") === `#${visible.target.id}`)
+          link.setAttribute("aria-current", "location");
+        else link.removeAttribute("aria-current");
+      });
+    },
+    { rootMargin: "-25% 0px -60%", threshold: [0, 0.2, 0.5] },
+  );
+  observedSections.forEach((section) => sectionObserver.observe(section));
+}
