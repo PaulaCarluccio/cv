@@ -3,13 +3,13 @@
     company: "01 · First role",
     role: "QA Analyst",
     period: "Feb 2021 – Jan 2023",
-    tools: "Tools and practices",
+    tools: "Technical tools",
     back: "← Back to experience",
     all: "← View full career",
     next: "Next: Markmonitor →",
     paragraphs: [
-      `Accenture was my first QA job. I started with manual testing on an internal application, taking part in functional analysis, writing test cases and running regression tests. That is where I learned the foundations of the development cycle, how an agile team works and how to communicate an issue so someone else can understand and solve it.`,
-      `Starting on the functional side helped me learn to think about what the user needs and what we are actually validating. At the same time, I knew from the beginning that I wanted to code and build a more technical profile, so I kept looking for opportunities to move into automation.`,
+      `Accenture was my first job in QA. I began with manual testing on an internal application, contributing to functional analysis, writing test cases, and running regression tests. There I learned the basics of the development cycle, how an agile team works, and how to explain an issue clearly enough for someone else to understand and resolve it.`,
+      `Starting with functional testing taught me to think about what users need and what we are actually checking. At the same time, I knew I wanted to code and develop a more technical profile, so I looked for opportunities to move into automation.`,
     ],
   },
   markmonitor: {
@@ -21,8 +21,8 @@
     previous: "← Previous: Accenture",
     next: "Next: Allianz →",
     paragraphs: [
-      `At Markmonitor I made an important technical leap. I went deeper into automation, learned tools such as Postman and JMeter, and worked with tests that ran through Jenkins. I also had to learn a completely new business from scratch, while working in English was a big challenge at first.`,
-      `That combination helped me grow the most. Learning a tool was only part of the job: I also had to understand the product, ask questions, investigate and communicate with the team in another language. Over time, I gained much more confidence and autonomy.`,
+      `At Markmonitor, I took a significant step forward technically. I deepened my automation experience, learned to use tools such as Postman and JMeter, and worked on tests run through Jenkins. I also had to learn an unfamiliar business from scratch, and working in English was a major challenge at first.`,
+      `That combination helped me grow. Learning the tools was only part of the job: I also needed to understand the product, ask questions, investigate, and communicate with the team in another language. Over time, I became much more confident and independent.`,
     ],
   },
   allianz: {
@@ -34,8 +34,8 @@
     previous: "← Previous: Markmonitor",
     next: "Next: Minder S.A. →",
     paragraphs: [
-      `At Allianz I worked on the team's automation framework and built its first flow combining UI tests with APIs and database checks. I used APIs to prepare the environment before signing in as the user, then validated the information directly in the database. This gave us more complete coverage across frontend and backend.`,
-      `I also owned the automation for one business line. I organized the work, understood priorities, created and maintained test cases, and analyzed execution results. The experience gave me a lot of autonomy and taught me to take responsibility for a complete scope, both technically and in planning.`,
+      `At Allianz, I worked on the team's automation framework and built its first flow combining UI tests, APIs, and database checks. I used APIs to prepare test data before signing in as the user, then checked the results directly in the database. This gave us more complete coverage of both the frontend and backend.`,
+      `I was also responsible for automating one business line on my own. I organized the work, set priorities, created and maintained test cases, and analyzed execution results. That experience gave me a lot of autonomy and taught me to take ownership of a complete scope, from the technical work to the planning.`,
     ],
   },
   tulegajo: {
@@ -49,13 +49,13 @@
     challenges: "Challenges",
     challengeTitle: "Improving pipeline execution tracking",
     paragraphs: [
-      `I joined Minder S.A. with more experience designing automation and working with APIs and databases. Here I expanded that journey: I work on web, API and mobile testing, maintain existing cases, create new scenarios and investigate execution failures.`,
-      `Over time I also became interested in everything around the tests. I want the team to understand results without spending time searching in different places. Alongside automation, I suggest improvements to reporting and to how we record and review failures. It feels like a natural step in my career: QA is still my strong foundation, and I increasingly work with data, processes and ideas for applying AI.`,
+      `I joined Minder S.A. with more experience designing automation and working with APIs and databases. Here I have expanded on that work: I test web and mobile applications and APIs, maintain existing cases, create new scenarios, and investigate test failures.`,
+      `Over time, I also became more involved in what happens around the tests. I want the team to understand the results without having to search in several places. Alongside automation, I propose improvements to reporting and to how we record and review failures. It feels like a natural progression for me: QA remains my foundation, while I increasingly work with data, processes, and ways to apply AI.`,
     ],
     challengeParagraphs: [
-      `We realized that checking an execution meant opening the pipeline, downloading its report and reviewing it manually. The team needed a quick shared view. An integrated model had been considered, but we did not have access to an API key, so I looked for a solution with the tools already available.`,
-      `I built an execution summary delivered to Teams through a webhook. Then I reused that data by recording it in a structured way in Microsoft Lists with the Microsoft 365 tools we already had. We had previously tracked part of the error review in Excel; now the results and follow-up for each case can live in one place.`,
-      `I am proud of this project because it began with a simple need—to see how the pipeline went—and grew into a better way to organize our reviews. It reflects how I like to work: listen to what is slowing the team down, find a practical solution and improve it as we discover what else it can do.`,
+      `We realized that checking a run meant opening the pipeline, downloading the report, and reviewing it manually. The team needed a quick view everyone could use. We had considered an integrated model, but did not have access to an API key, so I looked for a solution using the tools we already had.`,
+      `I built a summary of each run that reaches Teams through a webhook. Then I put the same data to further use by recording it in a structured way in Microsoft Lists, using our existing Microsoft 365 tools. We had previously tracked part of the error review in Excel; now we can keep the results and follow-up for each case together.`,
+      `I am proud of this project because it began with a simple need—seeing how the pipeline run went—and ended up helping us organize our reviews. It reflects how I like to work: listen to what is slowing the team down, find a practical solution, and keep improving it as we see what else it can do.`,
     ],
   },
 };
@@ -68,6 +68,7 @@ if (lang === "en") {
   const page = pages[document.body.dataset.experience];
   const employer = document.querySelector(".employer-name").textContent;
   document.documentElement.lang = "en";
+  document.querySelector(".next-role").setAttribute("aria-label", "Career navigation");
   document.title = `${page.role} at ${employer} | Paula Carluccio`;
   document.querySelector(".company").textContent = page.company;
   document.querySelector("h1").textContent = page.role;

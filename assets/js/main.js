@@ -1,146 +1,103 @@
-﻿const translations = {
+const translations = {
   en: {
     skip: "Skip to content",
+    navAbout: "About me",
     navWork: "Projects",
     navExperience: "Experience",
+    navEducation: "Education",
     navContact: "Contact",
-    eyebrow: "Buenos Aires, Argentina · QA & AI",
-    hero: "QA Automation Engineer and Data Science and Artificial Intelligence student. I enjoy programming, improving processes and exploring how AI can support our everyday work.",
-    seeWork: "Explore projects ↓",
-    profileTitle: "QA Automation Engineer",
-    profileDesc: "Web · APIs · Mobile · Pipelines · Data · Applied AI",
+    profileTitle: "Automation Engineer · Data & AI",
+    hero: "I work in automation and study Data Science and Artificial Intelligence. My experience began in QA, and over time I have added data analysis, process automation and AI solutions.",
+    profileDesc:
+      "QA Automation · Web · Mobile · APIs · Pipelines · Data · Process automation · Applied AI",
     profileLang: "Native Spanish · English C1",
     aboutLabel: "01 / Profile",
-    aboutTitle: "Quality, automation and data",
+    aboutTitle: "About me",
     aboutText:
-      "I have worked in QA Automation since 2021 across web, API and mobile testing. Beyond the test framework, I care about what happens after every run: understanding failures and helping teams decide what needs attention.",
+      "I started working in QA in 2021, and from day one I knew I wanted to code. I have always enjoyed understanding problems, finding a way to solve them, and learning everything I need to make that happen.",
+    aboutText2:
+      "Over the years, I have discovered new interests, especially data and artificial intelligence. I see myself as curious, persistent, and proactive. In a team, I bring autonomy, a thoughtful eye for what could be improved, and a strong drive to turn ideas into solutions that are genuinely useful.",
     workLabel: "02 / Selected work",
     workTitle: "Projects and systems",
-    workIntro: "Open each card to see its technical approach and scope.",
+    filterAll: "All",
+    p4Title: "End-to-end test automation",
+    p4Summary:
+      "This is the area where I have the most experience: I build frameworks from scratch, starting by understanding the business and defining what needs to be automated.",
     more: "View details",
+    p4a: "Test automation is the area where I have the most experience. I can build a framework from scratch, starting by understanding how the product works, its business rules, and what the team needs to validate.",
+    p4b: "From there, I decide what is worth automating, how to organize the tests, and what needs to be implemented. I apply good programming practices so the framework is clear, easy to maintain, and able to grow with the product.",
+    p4c: "I have worked on web, mobile, and API automation, from preparing test data to analyzing the results. This experience helps me understand what each project needs and turn that into a solution the team can use.",
+    p2Title: "Automated execution tracking",
+    p2Summary:
+      "I turned each execution result into a summary that reaches the team as soon as the pipeline finishes.",
+    p2a: "Previously, to find out how a run went, we had to open the pipeline, download the report, and review it manually. This took time and made it harder to follow up on failed cases.",
+    p2b: "I proposed automating that follow-up. Now, whenever the pipeline finishes, the team receives a summary of the run in Teams. The results are also saved automatically in a database, where we can review failures and record the follow-up on each case.",
+    p2c: "This lets us quickly see what happened in each run and focus directly on the cases that need attention.",
     p1Title: "QA execution analytics",
     p1Summary:
-      "Consolidating pipeline results to analyze failures, retries, modules and user roles.",
-    p1a: "Python scripts to collect and structure automated execution data.",
-    p1b: "Records in QA_Ejecuciones and Pipeline_Ejecuciones, including build, scenario, result and QA review.",
-    p1c: "Results separated by module and role, with retry handling to avoid duplicate counts.",
-    p2Title: "Automated flows and reporting",
-    p2Summary: "Clearer test results for the team, from execution through communication.",
-    p2a: "Designed Microsoft Lists structures and Power Automate flows.",
-    p2b: "Teams summaries with results by module and user role, plus failed scenarios.",
-    p2c: "Structured data for exploring trends and creating Power BI visuals.",
-    p3Title: "Multiagent QA system ",
-    status: "In design",
+      "I organized execution data to see what was failing, where, and how often.",
+    p1a: "The results were spread across different reports, making it difficult to compare them and understand what was happening over time.",
+    p1b: "To address this, I developed a process that automatically takes the results of each run, selects the relevant information, organizes it, and stores it in a structured database. I also added retry handling so the same case is not recorded more than once and does not distort the results.",
+    p1c: "We can now view each run by module and user type, review failures, and identify recurring issues. This helps us use the data our automated tests already generate to track results more clearly and make better decisions.",
+    p3Meta: "Claude Code · Agents · QA",
+    p3Title: "QA agent system",
     p3Summary:
-      "Designing repository connected agents to help create and repair automated tests.",
-    p3a: "Proposed flow: interpret test cases, generate scenarios, inspect locators and investigate failures.",
-    p3b: "Planned browser inspection for missing locators.",
-    p3c: "Changes require execution evidence and human review.",
-    p4Title: "End to end automation",
-    p4Summary: "Frameworks and coverage for web processes, APIs and mobile applications.",
+      "I built a system that identifies tests failing because of a broken locator and updates it automatically. We then check that the new locator works correctly.",
+    p3a: "A common part of maintaining automated tests is fixing cases that fail because an element in the application has changed. Identifying the issue, finding a new locator, and updating it takes time, even though the task is often repetitive.",
+    p3b: "I built an agent system that analyzes failed tests, identifies those caused by a broken locator, and updates the locator automatically.",
+    p3c: "Once the change is made, we check that the new locator works correctly. This reduces the time spent on maintenance and lets the team focus on failures that need closer investigation and judgment.",
     careerLabel: "03 / Career",
     careerTitle: "Experience",
-    careerIntro: "From the first role to the most recent.",
+    date4: "Feb 2021 – Jan 2023",
+    careerAccenture:
+      "This is where my QA career began. I learned the foundations of testing, functional analysis and working within a development team.",
     readExperience: "Learn about my experience →",
+    date3: "Mar 2023 – Oct 2024",
+    careerMarkmonitor:
+      "It was a big step for me: I learned new tools, got to know an unfamiliar business, and learned to work confidently in English.",
+    date2: "Oct 2024 – Jul 2025",
+    careerAllianz:
+      "I owned the automation of a business line and built the team’s first flow connecting the UI, APIs and database validations.",
     date1: "Jul 2025 – present",
-    job1: "QA Automation Engineer. Web and API automation, CI analytics, Python, Microsoft Lists and Power Automate.",
-    job2: "QA Automation Engineer. Java, Selenium, Jenkins, Docker, Grid and Appium.",
-    job3: "QA Automation Engineer. Playwright, Java, Jenkins and Datadog.",
-    job4: "Functional QA, process validation and defect tracking.",
+    careerTulegajo:
+      "I still work in automation, while looking for new ways to use test results and improve how the team works.",
     skillsLabel: "04 / Tools and education",
     skillsTitle: "What I use and study",
-    stack: "Toolkit",
     education: "Education",
-    education1:
-      "Higher Technical Degree in Data Science and Artificial Intelligence · IFTS N° 24 (in progress).",
-    education2:
-      "Data Science studies · University of Buenos Aires (2021–2025). Additional learning in AWS and AI agents.",
+    ubaTitle: "Bachelor's Degree in Data Science",
+    studyDate: "2026–present",
+    iftsTitle: "Higher Technical Degree in Data Science and Artificial Intelligence",
+    iftsStatus: "IFTS No. 24 · In progress",
+    certifications: "Certifications",
+    certSeleniumDate: "Jul 2024 · Completed",
+    completed: "Completed",
+    certAiDate: "May 2026 · Completed",
+    stack: "Toolkit",
+    stackWeb: "Web automation",
+    stackApi: "APIs and backend",
+    stackCi: "CI/CD and infrastructure",
+    stackReports: "Reporting and monitoring",
+    stackData: "Data and visualization",
+    stackProcesses: "Process automation",
+    stackAi: "Artificial intelligence",
+    stackMethods: "Methods and management",
+    exploratoryData: "exploratory data analysis",
+    dataCleaning: "data cleaning and analysis",
+    dataViz: "data visualization",
+    multiagentSystems: "Multiagent systems",
+    generativeAi: "Generative AI",
+    functionalAnalysis: "Functional analysis",
+    testCaseDesign: "Test case design",
+    regressionTesting: "Regression testing",
+    defectTracking: "Defect tracking",
     contactLabel: "05 / Contact",
     contactTitle: "Let’s connect!",
-    contactText:
-      "Based in Buenos Aires, Argentina. Explore my work and reach me on these platforms.",
-    footer: "QA Automation · Data · AI",
+    copyHint: "Copy",
+    closeDetails: "Close details",
+    stackTabsLabel: "Stack categories",
   },
 };
-Object.assign(translations.en, {
-  navAbout: "About me",
-  navEducation: "Education",
-  heroRole: "Automation Engineer · Data & AI",
-  hero: "I work in automation and study Data Science and Artificial Intelligence. My experience began in QA, and over time I have added data analysis, process automation and AI solutions.",
-  profileTitle: "Automation Engineer · Data & AI",
-  profileDesc:
-    "QA Automation · Web · Mobile · APIs · Pipelines · Data · Process automation · Applied AI",
-  aboutTitle: "About me",
-  aboutText:
-    "I started working in QA in 2021, and from day one I knew I wanted to code. I have always enjoyed understanding problems, finding a way to solve them, and learning everything I need to make that happen.",
-  aboutText2:
-    "Over the years, I have discovered new interests, especially data and artificial intelligence. I see myself as curious, persistent, and proactive. In a team, I bring autonomy, a thoughtful eye for what could be improved, and a strong drive to turn ideas into solutions that are genuinely useful.",
-  contactText:
-    "I’m based in Buenos Aires, Argentina. Reach me on LinkedIn or copy my email.",
-  careerAccenture:
-    "This is where my QA career began. I learned the foundations of testing, functional analysis and working within a development team.",
-  careerMarkmonitor:
-    "It was a major change for me: I learned new tools, had to understand a business from scratch and overcome the challenge of working in English.",
-  careerAllianz:
-    "I owned the automation of a business line and built the team’s first flow connecting the UI, APIs and database validations.",
-  careerTulegajo:
-    "Today I continue working in automation while looking for new ways to use execution data and improve the team’s processes.",
-  date4: "Feb 2021 – Jan 2023",
-  date3: "Mar 2023 – Oct 2024",
-  date2: "Oct 2024 – Jul 2025",
-  ubaTitle: "Bachelor's Degree in Data Science",
-  studyDate: "2026–present",
-  iftsTitle: "Higher Technical Degree in Data Science and Artificial Intelligence",
-  iftsStatus: "IFTS No. 24 · In progress",
-  certifications: "Certifications",
-  certSeleniumDate: "Jul 2024 · Completed",
-  completed: "Completed",
-  certAiDate: "May 2026 · Completed",
-  copyHint: "Copy",
-  stackWeb: "Web automation",
-  stackApi: "APIs and backend",
-  stackCi: "CI/CD and infrastructure",
-  stackReports: "Reporting and monitoring",
-  stackData: "Data and visualization",
-  stackProcesses: "Process automation",
-  stackAi: "Artificial intelligence",
-  stackMethods: "Methods and management",
-  exploratoryData: "exploratory data analysis",
-  dataCleaning: "data cleaning and analysis",
-  dataViz: "data visualization",
-  multiagentSystems: "Multiagent systems",
-  generativeAi: "Generative AI",
-  functionalAnalysis: "Functional analysis",
-  testCaseDesign: "Test case design",
-  regressionTesting: "Regression testing",
-  defectTracking: "Defect tracking",
-});
-Object.assign(translations.en, {
-  p1Summary:
-    "I organized execution data to see what was failing, where, and how often.",
-  p1a: "The results were spread across different reports, making it difficult to compare them and understand what was happening over time.",
-  p1b: "To address this, I developed a process that automatically takes the results of each run, selects the relevant information, organizes it, and stores it in a structured database. I also added retry handling so the same case is not recorded more than once and does not distort the results.",
-  p1c: "We can now review each run by module and user type, examine failures, and identify recurring cases. This lets us use the data already generated by our automated tests to track results more clearly and make better decisions.",
-  p2Summary:
-    "I turned each execution result into a summary that reaches the team as soon as the pipeline finishes.",
-  p2a: "Previously, to find out how a run went, we had to open the pipeline, download the report, and review it manually. This took time and made it harder to follow up on failed cases.",
-  p2b: "I proposed automating that follow-up. Now, whenever the pipeline finishes, the team receives a message in Teams with a summary of the run. The results are also saved automatically in a database, where we can review failures and track their follow-up.",
-  p2c: "This lets us quickly see what happened in each run and focus directly on the cases that need attention.",
-  p3Title: "Multiagent system for QA",
-  p3Summary:
-    "I implemented a system that identifies cases failing because of a broken locator and fixes it automatically. We then validate that the new locator works correctly.",
-  p3a: "A common part of maintaining automated tests is fixing cases that fail because an element in the application has changed. Identifying the issue, finding a new locator, and updating it takes time, even though the task is often repetitive.",
-  p3b: "I implemented a system of agents that analyzes failed cases, identifies those caused by a broken locator, and makes the correction automatically.",
-  p3c: "After the change, we validate that the new locator works correctly. This reduces the time spent on maintenance and lets the team focus on failures that genuinely need analysis and judgment.",
-  p4Summary:
-    "This is the area where I have the most experience: I build frameworks from scratch, starting by understanding the business and defining what needs to be automated.",
-  p4a: "Test automation is the area where I have the most experience. I can build a framework from scratch, starting by understanding how the product works, its business rules, and what the team needs to validate.",
-  p4b: "From there, I decide what is worth automating, how to organize the tests, and what needs to be implemented. I apply good programming practices so the framework is clear, easy to maintain, and able to grow with the product.",
-  p4c: "I have worked on web, mobile, and API automation, from preparing data to analyzing results. This experience helps me understand each project's needs and turn them into a solution that is useful to the team.",
-  closeDetails: "Close details",
-  filterAll: "All",
-  stackTabsLabel: "Stack categories",
-});
+
 // Translation dictionaries and locale state
 const es = Object.fromEntries(
   [...document.querySelectorAll("[data-i18n]")].map((node) => [
@@ -175,6 +132,12 @@ function updateMenuLabel() {
 }
 function language(lang) {
   document.documentElement.lang = lang;
+  document
+    .querySelector(".topbar nav")
+    .setAttribute(
+      "aria-label",
+      lang === "es" ? "Navegación principal" : "Main navigation",
+    );
   document.querySelectorAll("[data-i18n]").forEach((node) => {
     const value = (lang === "en" ? translations.en : es)[node.dataset.i18n];
     if (value !== undefined) node.firstChild.textContent = value;
