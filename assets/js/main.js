@@ -200,10 +200,7 @@ function language(lang) {
     else url.searchParams.delete("lang");
     link.href = url;
   });
-  document.title =
-    lang === "es"
-      ? "Paula Carluccio | QA Automation e IA"
-      : "Paula Carluccio | QA Automation & AI";
+  document.title = "Paula Carluccio | Automation Engineer";
   theme(document.documentElement.dataset.theme || "light");
   try {
     localStorage.setItem("pc-language", lang);
