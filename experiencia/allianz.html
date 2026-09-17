@@ -1,9 +1,9 @@
 ﻿<!doctype html>
-<html lang="es">
+<html lang="es" data-theme="dark">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <meta name="theme-color" content="#f2e1dc" />
+    <meta name="theme-color" content="#281f26" />
     <title>Allianz | Experiencia de Paula Carluccio</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -14,9 +14,13 @@
     <link rel="stylesheet" href="../assets/css/experience.css" />
     <script>
       try {
-        if (localStorage.getItem("pc-theme") === "dark")
-          document.documentElement.dataset.theme = "dark";
-      } catch {}
+        document.documentElement.dataset.theme =
+          localStorage.getItem("pc-theme") || "dark";
+      } catch {
+        document.documentElement.dataset.theme = "dark";
+      }
+      document.querySelector('meta[name="theme-color"]').content =
+        document.documentElement.dataset.theme === "light" ? "#f2e1dc" : "#281f26";
     </script>
   </head>
   <body class="detail-page" data-experience="allianz">

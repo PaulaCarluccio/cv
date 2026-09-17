@@ -1,9 +1,9 @@
 ﻿<!doctype html>
-<html lang="es">
+<html lang="es" data-theme="dark">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#f2e1dc" />
+    <meta name="theme-color" content="#281f26" />
     <meta name="description" content="Paula Carluccio: QA Automation" />
     <title>Paula Carluccio | QA Automation & AI</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -166,19 +166,29 @@
                 <span class="meta">Java · Selenium · Appium · APIs</span>
                 <h3 data-i18n="p4Title">Automatización de punta a punta</h3>
                 <p data-i18n="p4Summary">
-                  Trabajé en automatización web, mobile y de APIs, incluyendo preparación
-                  de datos, validaciones y análisis de resultados.
+                  Es el área en la que más experiencia tengo: creo frameworks desde cero,
+                  empezando por entender el negocio y definir qué necesita automatizarse.
                 </p>
                 <span class="project-toggle" data-i18n="more">Ver detalles</span>
               </summary>
               <div class="detail">
                 <p data-i18n="p4a">
-                  Trabajé con Java, Selenium, Cucumber y TestNG para pruebas web; con Rest
-                  Assured para APIs y Appium para mobile.
+                  La automatización de pruebas es el área en la que tengo más experiencia.
+                  Puedo crear un framework desde cero, empezando por entender cómo
+                  funciona el producto, cuáles son sus reglas de negocio y qué necesita
+                  validar el equipo.
                 </p>
                 <p data-i18n="p4b">
-                  También preparé datos, hice validaciones y revisé los resultados de las
-                  ejecuciones.
+                  A partir de eso defino qué conviene automatizar, cómo organizar las
+                  pruebas y qué necesita implementarse. Aplico buenas prácticas de
+                  programación para que el framework sea claro, fácil de mantener y pueda
+                  crecer junto con el producto.
+                </p>
+                <p data-i18n="p4c">
+                  Trabajé en automatización web, mobile y de APIs, desde la preparación
+                  de los datos hasta el análisis de los resultados. Esta experiencia me
+                  permite entender las necesidades de cada proyecto y transformarlas en
+                  una solución que sea útil para el equipo.
                 </p>
               </div>
             </details>
@@ -187,23 +197,27 @@
                 <span class="meta">Power Automate · Teams · Reporting</span>
                 <h3 data-i18n="p2Title">Flujos y reportes automáticos</h3>
                 <p data-i18n="p2Summary">
-                  El equipo necesitaba saber cómo había salido el pipeline sin entrar a
-                  descargar y revisar el reporte cada vez. Armé un resumen para Teams y
-                  centralicé el seguimiento de los casos.
+                  Convertí el resultado de cada ejecución en un resumen que llega al
+                  equipo apenas termina el pipeline.
                 </p>
                 <span class="project-toggle" data-i18n="more">Ver detalles</span>
               </summary>
               <div class="detail">
-                <h4 data-i18n="p2Challenge">
-                  Optimizar el seguimiento de las ejecuciones del pipeline
-                </h4>
                 <p data-i18n="p2a">
-                  Resolví el envío mediante un webhook de Teams con las herramientas que
-                  ya teníamos disponibles.
+                  Antes, para saber cómo había salido una ejecución, teníamos que entrar
+                  al pipeline, descargar el reporte y revisarlo manualmente. Esto llevaba
+                  tiempo y hacía más difícil seguir los casos que habían fallado.
                 </p>
                 <p data-i18n="p2b">
-                  Los registros en Microsoft Lists nos permitieron reunir información de
-                  revisión que antes llevábamos parcialmente en Excel.
+                  Propuse automatizar ese seguimiento. Ahora, cada vez que termina el
+                  pipeline, el equipo recibe en Teams un mensaje con el resumen de la
+                  ejecución. Los resultados también se guardan automáticamente en una
+                  base de datos, donde podemos revisar las fallas y registrar su
+                  seguimiento.
+                </p>
+                <p data-i18n="p2c">
+                  Esto nos permite saber rápidamente qué pasó en cada ejecución y
+                  concentrarnos directamente en los casos que necesitan atención.
                 </p>
               </div>
             </details>
@@ -212,19 +226,29 @@
                 <span class="meta">Python · CI · Microsoft Lists</span>
                 <h3 data-i18n="p1Title">Analítica de ejecuciones QA</h3>
                 <p data-i18n="p1Summary">
-                  Organicé los datos de las ejecuciones para poder revisar fallas,
-                  reintentos y resultados por módulo y tipo de usuario.
+                  Organicé los datos de las ejecuciones para poder ver qué fallaba, dónde
+                  y con qué frecuencia.
                 </p>
                 <span class="project-toggle" data-i18n="more">Ver detalles</span>
               </summary>
               <div class="detail">
                 <p data-i18n="p1a">
-                  Usé scripts de Python para recolectar los resultados y los registré de
-                  forma estructurada en Microsoft Lists.
+                  Los resultados quedaban distribuidos en distintos reportes, lo que
+                  hacía difícil compararlos y entender qué estaba pasando a lo largo del
+                  tiempo.
                 </p>
                 <p data-i18n="p1b">
-                  También traté los reintentos para no contar dos veces una misma
-                  ejecución.
+                  Para resolverlo, desarrollé un proceso que toma automáticamente los
+                  resultados de cada ejecución, selecciona la información relevante, la
+                  organiza y la guarda de manera estructurada en una base de datos.
+                  También incorporé un tratamiento para los reintentos, evitando que un
+                  mismo caso se registre más de una vez y altere los resultados.
+                </p>
+                <p data-i18n="p1c">
+                  Ahora podemos consultar cada ejecución por módulo y tipo de usuario,
+                  revisar las fallas y reconocer casos recurrentes. Esto nos permite
+                  aprovechar los datos que ya generaban las automatizaciones para hacer
+                  un seguimiento más claro y tomar mejores decisiones.
                 </p>
               </div>
             </details>
@@ -233,24 +257,30 @@
                 <span class="meta">Claude Code · Agentes · QA</span>
                 <h3 data-i18n="p3Title">Sistema multiagente para QA</h3>
                 <p data-i18n="p3Summary">
-                  Desarrollé un flujo de agentes conectados al repositorio para ayudar a
-                  crear pruebas a partir de test cases, investigar fallas y mantener casos
-                  existentes.
+                  Implementé un sistema que identifica los casos que fallan por un locator
+                  roto y lo corrige automáticamente. Después, nosotros validamos que el
+                  nuevo locator funcione correctamente.
                 </p>
                 <span class="project-toggle" data-i18n="more">Ver detalles</span>
               </summary>
               <div class="detail">
                 <p data-i18n="p3a">
-                  El flujo analiza el caso y revisa la estructura del repositorio antes de
-                  crear o actualizar pruebas.
+                  Una parte frecuente del mantenimiento de las automatizaciones consiste
+                  en corregir casos que fallan porque cambió algún elemento de la
+                  aplicación. Identificar el problema, encontrar un locator nuevo y
+                  actualizarlo requiere tiempo, aunque muchas veces sea una tarea
+                  repetitiva.
                 </p>
                 <p data-i18n="p3b">
-                  También permite inspeccionar localizadores cuando faltan e investigar
-                  las fallas.
+                  Implementé un sistema de agentes que analiza los casos fallidos,
+                  identifica cuáles fallaron por un locator roto y realiza la corrección
+                  automáticamente.
                 </p>
                 <p data-i18n="p3c">
-                  Los cambios se validan con una ejecución y revisión humana antes de
-                  aceptarse.
+                  Una vez realizado el cambio, nosotros validamos que el locator nuevo
+                  funcione correctamente. Esto reduce el tiempo dedicado al mantenimiento
+                  y permite que el equipo se concentre en las fallas que realmente
+                  necesitan análisis y criterio.
                 </p>
               </div>
             </details>

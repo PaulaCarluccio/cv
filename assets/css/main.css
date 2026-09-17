@@ -1239,7 +1239,7 @@ body {
   margin-bottom: 0;
 }
 #proyectos .grid {
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: minmax(0, 1fr);
   align-items: stretch;
   gap: 20px;
 }
@@ -1366,14 +1366,6 @@ body {
     width: 160px;
     height: 160px;
   }
-  #proyectos .grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-  #proyectos .project-card,
-  #proyectos .project-card:nth-child(1),
-  #proyectos .project-card:nth-child(2) {
-    grid-column: span 1;
-  }
   .timeline {
     grid-template-columns: 1fr;
     gap: 17px;
@@ -1408,14 +1400,6 @@ body {
   }
   .navlinks a:not(.nav-cv)::after {
     bottom: 0;
-  }
-  #proyectos .grid {
-    grid-template-columns: 1fr;
-  }
-  #proyectos .project-card,
-  #proyectos .project-card:nth-child(1),
-  #proyectos .project-card:nth-child(2) {
-    grid-column: 1;
   }
   .certificate-card {
     grid-template-columns: 1fr;
@@ -1556,12 +1540,6 @@ body {
   border-color: var(--accent);
   background: var(--accent);
   color: var(--accent-ink);
-}
-#proyectos .grid.is-filtered {
-  grid-template-columns: minmax(0, 1fr);
-}
-#proyectos .grid.is-filtered .project-card {
-  grid-column: 1;
 }
 #proyectos .project-card[hidden] {
   display: none;
