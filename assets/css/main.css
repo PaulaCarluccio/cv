@@ -125,11 +125,13 @@ button {
   font-weight: 650;
   white-space: nowrap;
 }
-.navlinks .nav-cv {
+.nav-cv {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   min-height: 40px;
+  grid-column: 2;
+  grid-row: 2;
   margin-left: auto;
   border: 1px solid var(--line);
   border-radius: 8px;
@@ -499,7 +501,18 @@ footer {
   }
   .menu-toggle {
     display: block;
+  }
+  .nav-cv {
+    grid-column: auto;
+    grid-row: auto;
+    min-height: 40px;
     margin-left: auto;
+    padding: 7px 12px;
+    border: 1px solid var(--muted);
+    border-radius: 8px;
+    background: var(--header);
+    color: var(--header-ink);
+    text-decoration: none;
   }
   .switches {
     margin: 0;
@@ -533,12 +546,7 @@ footer {
     border-radius: 7px;
     font-size: 0.9rem;
   }
-  .navlinks .nav-cv {
-    margin: 0;
-    justify-content: flex-start;
-    text-align: left;
-  }
-  .navlinks a:not(.nav-cv)::after {
+  .navlinks a::after {
     display: none;
   }
 }
@@ -1098,7 +1106,7 @@ body {
     background-color 0.18s ease,
     border-color 0.18s ease;
 }
-.navlinks a:not(.nav-cv)::after {
+.navlinks a::after {
   content: "";
   position: absolute;
   left: 0;
@@ -1110,7 +1118,7 @@ body {
   transform-origin: left;
   transition: transform 0.18s ease;
 }
-.navlinks a:not(.nav-cv):hover::after,
+.navlinks a:hover::after,
 .navlinks a[aria-current="location"]::after {
   transform: scaleX(1);
 }
@@ -1118,7 +1126,7 @@ body {
   color: var(--accent);
   font-weight: 800;
 }
-.navlinks .nav-cv:hover {
+.nav-cv:hover {
   background: var(--accent);
   color: var(--accent-ink);
   opacity: 1;
@@ -1398,7 +1406,7 @@ body {
     display: inline-flex;
     align-items: center;
   }
-  .navlinks a:not(.nav-cv)::after {
+  .navlinks a::after {
     bottom: 0;
   }
   .certificate-card {
@@ -1410,7 +1418,7 @@ body {
 }
 @media (prefers-reduced-motion: reduce) {
   .navlinks a,
-  .navlinks a:not(.nav-cv)::after,
+  .navlinks a::after,
   .btn,
   .social,
   .switch,
