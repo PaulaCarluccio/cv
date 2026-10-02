@@ -133,6 +133,14 @@ function updateMenuLabel() {
 function language(lang) {
   document.documentElement.lang = lang;
   document
+    .querySelector(".nav-cv")
+    .setAttribute(
+      "aria-label",
+      lang === "es"
+        ? "Abrir CV (PDF) en una nueva pestaña"
+        : "Open CV (PDF) in a new tab",
+    );
+  document
     .querySelector(".topbar nav")
     .setAttribute(
       "aria-label",

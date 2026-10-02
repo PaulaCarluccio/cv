@@ -109,7 +109,7 @@ button {
 }
 .navlinks {
   position: relative;
-  grid-column: 1/-1;
+  grid-column: 1;
   grid-row: 2;
   display: flex;
   align-items: center;
@@ -130,9 +130,6 @@ button {
   align-items: center;
   justify-content: center;
   min-height: 40px;
-  grid-column: 2;
-  grid-row: 2;
-  margin-left: auto;
   border: 1px solid var(--line);
   border-radius: 8px;
   padding: 8px 16px;
@@ -174,6 +171,7 @@ button {
   grid-column: 2;
   grid-row: 1;
   display: flex;
+  align-items: center;
   flex: none;
   gap: 7px;
 }
@@ -501,12 +499,10 @@ footer {
   }
   .menu-toggle {
     display: block;
+    margin-left: auto;
   }
   .nav-cv {
-    grid-column: auto;
-    grid-row: auto;
     min-height: 40px;
-    margin-left: auto;
     padding: 7px 12px;
     border: 1px solid var(--muted);
     border-radius: 8px;
