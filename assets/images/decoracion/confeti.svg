@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" fill="none">
+<defs>
+  <filter id="lapiz" x="-10%" y="-10%" width="120%" height="120%" color-interpolation-filters="sRGB">
+    <feTurbulence type="fractalNoise" baseFrequency="0.05" numOctaves="3" seed="3" result="warp"/>
+    <feDisplacementMap in="SourceGraphic" in2="warp" scale="5" result="rough"/>
+    <feTurbulence type="fractalNoise" baseFrequency="0.55" numOctaves="2" seed="9" result="grain"/>
+    <feColorMatrix in="grain" type="matrix" values="0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 1.1 0 0 0 0.32" result="speckle"/>
+    <feComposite in="rough" in2="speckle" operator="in"/>
+  </filter>
+</defs>
+<g filter="url(#lapiz)"><circle cx="483" cy="306" r="10" fill="#7fb1fb"/><circle cx="540" cy="320" r="6" fill="#ee6fbf"/><circle cx="544" cy="263" r="6" fill="#2f6df6"/><circle cx="477" cy="175" r="6" fill="#2f6df6"/><circle cx="571" cy="375" r="5" fill="#2f6df6"/><circle cx="425" cy="251" r="6" fill="#2f6df6"/><circle cx="35" cy="290" r="5" fill="#2f6df6"/><circle cx="56" cy="117" r="6" fill="#2f6df6"/><circle cx="50" cy="257" r="8" fill="#7fb1fb"/><circle cx="625" cy="120" r="6" fill="#ee6fbf"/><circle cx="321" cy="275" r="5" fill="#ee6fbf"/><circle cx="107" cy="254" r="8" fill="#7fb1fb"/><circle cx="584" cy="62" r="8" fill="#a58bf7"/><circle cx="255" cy="282" r="8" fill="#2f6df6"/><circle cx="91" cy="308" r="5" fill="#7fb1fb"/><circle cx="130" cy="168" r="10" fill="#2f6df6"/><circle cx="37" cy="370" r="5" fill="#ee6fbf"/><circle cx="234" cy="46" r="10" fill="#7fb1fb"/><circle cx="745" cy="223" r="10" fill="#2f6df6"/><circle cx="599" cy="342" r="6" fill="#ee6fbf"/><circle cx="296" cy="192" r="5" fill="#a58bf7"/><circle cx="360" cy="27" r="10" fill="#2f6df6"/><circle cx="157" cy="146" r="5" fill="#2f6df6"/><circle cx="81" cy="258" r="10" fill="#ee6fbf"/><circle cx="718" cy="306" r="6" fill="#7fb1fb"/><circle cx="541" cy="117" r="6" fill="#7fb1fb"/></g>
+</svg>

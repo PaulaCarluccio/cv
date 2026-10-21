@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 300" fill="none">
+<defs>
+  <filter id="lapiz" x="-10%" y="-10%" width="120%" height="120%" color-interpolation-filters="sRGB">
+    <feTurbulence type="fractalNoise" baseFrequency="0.04" numOctaves="3" seed="3" result="warp"/>
+    <feDisplacementMap in="SourceGraphic" in2="warp" scale="4" result="rough"/>
+    <feTurbulence type="fractalNoise" baseFrequency="0.55" numOctaves="2" seed="9" result="grain"/>
+    <feColorMatrix in="grain" type="matrix" values="0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 1.1 0 0 0 0.32" result="speckle"/>
+    <feComposite in="rough" in2="speckle" operator="in"/>
+  </filter>
+</defs>
+<g filter="url(#lapiz)"><path d="M10 280L890 20" stroke="#8a6af5" stroke-width="4" stroke-linecap="round"/><circle cx="180" cy="226" r="9" fill="#2f6df6"/><circle cx="330" cy="182" r="7" fill="#ee6fbf"/><circle cx="470" cy="140" r="10" fill="#a58bf7"/><circle cx="620" cy="96" r="8" fill="#2f6df6"/><circle cx="760" cy="55" r="7" fill="#ee6fbf"/></g>
+</svg>

@@ -1,5 +1,6 @@
 ﻿@import url("main.css");
 @import url("apple.css");
+@import url("pencil.css");
 /* Experience page layout */
 .detail-page .topbar {
   position: static;
@@ -112,4 +113,58 @@
   font-size: clamp(0.98rem, 1.7vw, 1.18rem);
   font-weight: 600;
   letter-spacing: -0.02em;
+}
+
+/* Same drawn look as the home page */
+.experience-copy {
+  border: 0;
+  border-radius: 30px 26px 32px 28px / 28px 32px 26px 30px;
+  background: var(--tint-blue);
+  box-shadow: none;
+}
+.challenges .experience-copy {
+  background: var(--tint-pink);
+}
+.experience-copy p {
+  color: var(--muted);
+}
+.experience-detail h1 {
+  font-family: var(--display);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+}
+.back-link,
+.next-role a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 8px 18px;
+  border: 2px solid var(--ink);
+  border-radius: 32px 27px 34px 26px / 26px 34px 27px 32px;
+  background-color: color-mix(in srgb, var(--accent) 12%, var(--surface));
+  background-image: var(--pencil-fill);
+  background-size: 140px 140px;
+  color: var(--ink);
+  font-weight: 650;
+  text-decoration: none;
+  box-shadow: var(--pencil-shadow);
+  transition:
+    transform 0.2s var(--ease),
+    box-shadow 0.2s var(--ease);
+}
+.back-link:hover,
+.next-role a:hover {
+  transform: translate(-1px, -1px) rotate(-0.6deg);
+  box-shadow: 5px 5px 0 var(--pastel-lilac);
+  opacity: 1;
+}
+.next-role a:active,
+.back-link:active {
+  transform: translate(2px, 2px);
+  box-shadow: none;
+}
+.role-tools .chip {
+  border: 1.5px solid color-mix(in srgb, var(--ink) 50%, transparent);
+  border-radius: 14px 11px 15px 10px / 11px 15px 10px 14px;
+  background: color-mix(in srgb, var(--accent) 9%, var(--surface));
 }

@@ -1,0 +1,718 @@
+/* ==========================================================================
+   Pencil layer: pastel colours and crayon-style drawings, taken from the
+   illustrated banner. Loaded last, so it overrides the earlier layers.
+   ========================================================================== */
+:root {
+  --bg: #f8f5ff;
+  --surface: #ffffff;
+  --soft: #efeafd;
+  --ink: #1d2766;
+  --muted: #474c75;
+  --accent: #2a5bd9;
+  --accent-ink: #ffffff;
+  --line: #ddd5f4;
+  --warm: #2a5bd9;
+  --ok: #1b7a4a;
+  --display: "Poppins", "Inter", system-ui, sans-serif;
+  --pastel-blue: #b9d6fb;
+  --pastel-pink: #f8c9e4;
+  --pastel-lilac: #d7caf6;
+  --btn-grad: #2a5bd9;
+  --grad: #2a5bd9;
+  --ring: 0 0 0 1.5px color-mix(in srgb, var(--ink) 13%, transparent);
+  --lift:
+    0 0 0 1.5px color-mix(in srgb, var(--ink) 11%, transparent),
+    0 14px 30px -16px rgb(60 70 170 / 0.4);
+  --shadow: 0 20px 45px -16px rgb(60 70 170 / 0.42);
+  --sticker: 6px 6px 0 var(--pastel-lilac);
+}
+:root[data-theme="dark"] {
+  --bg: #15122f;
+  --surface: #1f1b44;
+  --soft: #1a1739;
+  --ink: #f1eeff;
+  --muted: #d0ccee;
+  --accent: #9cbcff;
+  --accent-ink: #15122f;
+  --line: #373266;
+  --warm: #9cbcff;
+  --ok: #5fe0a0;
+  --btn-grad: #9cbcff;
+  --grad: #9cbcff;
+  --ring: 0 0 0 1.5px rgb(255 255 255 / 0.12);
+  --lift: 0 0 0 1.5px rgb(255 255 255 / 0.1), 0 14px 30px -16px #000b;
+  --shadow: 0 20px 45px -16px #000c;
+  --sticker: 6px 6px 0 rgb(143 124 230 / 0.35);
+}
+/* ---------- Background drawings ---------- */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  opacity: 0.7;
+  background:
+    url("../images/decoracion/mancha-azul.svg") left top / min(46vw, 460px) auto no-repeat,
+    url("../images/decoracion/mancha-rosa.svg") right bottom / min(34vw, 340px) auto no-repeat;
+}
+:root[data-theme="dark"] body::before {
+  opacity: 0.22;
+}
+.hero {
+  position: relative;
+}
+.hero::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: -70px;
+  left: 50%;
+  width: min(1180px, 112vw);
+  height: 640px;
+  transform: translateX(-50%);
+  pointer-events: none;
+  background:
+    url("../images/decoracion/mancha-lila.svg") right 1% top 2% / 260px auto no-repeat,
+    url("../images/decoracion/confeti.svg") center top / 100% 460px no-repeat;
+  opacity: 0.75;
+}
+:root[data-theme="dark"] .hero::before {
+  opacity: 0.45;
+}
+.hero-intro::before {
+  top: -10px;
+  left: 50%;
+  width: min(760px, 100%);
+  height: 420px;
+  aspect-ratio: auto;
+  transform: translateX(-50%);
+  border-radius: 0;
+  filter: none;
+  background:
+    url("../images/decoracion/destellos.svg") calc(50% + 150px) 6px / 120px auto no-repeat,
+    url("../images/decoracion/destellos-azules.svg") calc(50% - 250px) 150px / 110px auto no-repeat;
+  opacity: 0.9;
+}
+/* ---------- Type ---------- */
+h1,
+h2,
+.pillar h2 {
+  font-family: var(--display);
+  color: var(--ink);
+}
+h1 {
+  font-size: clamp(3rem, 8.4vw, 6rem);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+}
+h2 {
+  font-weight: 700;
+  letter-spacing: -0.035em;
+}
+.pillar h2 {
+  font-weight: 700;
+}
+.brand {
+  font-family: var(--display);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+.hero-intro .profile-heading {
+  color: var(--ink);
+  font-family: var(--display);
+  font-weight: 600;
+}
+.lead {
+  color: var(--muted);
+}
+/* ---------- Photo ---------- */
+.hero-portrait {
+  box-shadow:
+    0 0 0 4px #fff,
+    0 0 0 11px var(--pastel-pink),
+    0 0 0 17px color-mix(in srgb, var(--pastel-blue) 75%, transparent),
+    0 26px 50px -20px rgb(60 70 170 / 0.5);
+}
+:root[data-theme="dark"] .hero-portrait {
+  box-shadow:
+    0 0 0 4px #1f1b44,
+    0 0 0 11px rgb(255 143 208 / 0.5),
+    0 0 0 17px rgb(134 173 255 / 0.4),
+    0 26px 50px -20px #000;
+}
+/* ---------- Buttons ---------- */
+.btn.primary,
+.nav-cv:hover {
+  background: var(--btn-grad);
+  color: var(--accent-ink);
+}
+.btn.primary {
+  box-shadow: 0 10px 24px -10px rgb(47 109 246 / 0.7);
+}
+.btn.secondary,
+.btn.ghost {
+  background: color-mix(in srgb, var(--accent) 12%, transparent);
+  color: var(--accent);
+}
+.project-filters button[aria-pressed="true"],
+#proyectos .project-filters button[aria-pressed="true"] {
+  background: var(--btn-grad);
+  color: var(--accent-ink);
+}
+.demo-tabs button[aria-selected="true"],
+.demo-mode button[aria-pressed="true"] {
+  background: var(--surface);
+  color: var(--accent);
+}
+.flow-step.is-active,
+.stack-toggle,
+.project-filters button:hover {
+  color: var(--accent);
+}
+.flow-step.is-active {
+  background: var(--btn-grad);
+  color: var(--accent-ink);
+}
+/* ---------- Cards: soft pastel, slightly hand-drawn corners ---------- */
+.card,
+.learning-card,
+.stack-card,
+.timeline article,
+.demo-shell,
+.pillar {
+  border-radius: 30px 26px 32px 28px / 28px 32px 26px 30px;
+}
+.pillar:nth-child(1) {
+  background: color-mix(in srgb, var(--pastel-blue) 70%, var(--surface));
+}
+.pillar:nth-child(2) {
+  background: color-mix(in srgb, var(--pastel-pink) 70%, var(--surface));
+}
+:root[data-theme="dark"] .pillar:nth-child(1) {
+  background: color-mix(in srgb, #86adff 30%, var(--surface));
+}
+:root[data-theme="dark"] .pillar:nth-child(2) {
+  background: color-mix(in srgb, #ff8fd0 28%, var(--surface));
+}
+.pillar:hover {
+  box-shadow: var(--sticker);
+  transform: translate(-2px, -2px);
+}
+.project-card:hover,
+.experience-link:hover article {
+  box-shadow:
+    0 0 0 1.5px color-mix(in srgb, var(--ink) 30%, transparent),
+    var(--sticker);
+  transform: translate(-2px, -2px);
+}
+.pillar .pillar-stack {
+  border-top: 2px dotted var(--line);
+}
+.project-card > summary::before {
+  color: var(--accent);
+}
+/* ---------- Sections ---------- */
+#sobre-mi::before,
+#experiencia::before {
+  background: color-mix(in srgb, var(--soft) 70%, transparent);
+}
+.contact {
+  position: relative;
+  overflow: hidden;
+  background: color-mix(in srgb, var(--soft) 70%, transparent);
+}
+.contact .wrap {
+  position: relative;
+  z-index: 1;
+}
+.contact::after {
+  content: "";
+  position: absolute;
+  right: max(2%, calc(50% - 560px));
+  bottom: 0;
+  width: min(300px, 30vw);
+  aspect-ratio: 700 / 855;
+  background: url("../images/ilustracion-paula-con-gato.jpg") center / cover;
+  -webkit-mask-image: radial-gradient(ellipse 58% 60% at 50% 46%, #000 52%, transparent 100%);
+  mask-image: radial-gradient(ellipse 58% 60% at 50% 46%, #000 52%, transparent 100%);
+  pointer-events: none;
+}
+:root[data-theme="dark"] .contact::after {
+  display: none;
+}
+@media (max-width: 900px) {
+  .contact::after {
+    display: none;
+  }
+}
+@media (max-width: 800px) {
+  .hero-intro::before {
+    height: 340px;
+    background:
+      url("../images/decoracion/destellos.svg") calc(50% + 90px) 0 / 90px auto no-repeat;
+  }
+  .hero::before {
+    height: 520px;
+  }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .hero-intro::before {
+    animation: drift 9s ease-in-out infinite alternate;
+  }
+}
+@keyframes drift {
+  from {
+    transform: translateX(-50%) translateY(0);
+  }
+  to {
+    transform: translateX(-50%) translateY(-8px);
+  }
+}
+
+/* Contact: text on the left, illustration on the right, so they never overlap */
+@media (min-width: 901px) {
+  .contact {
+    text-align: left;
+  }
+  .contact .sectionhead {
+    margin-inline: 0;
+  }
+  .contact .actions {
+    justify-content: flex-start;
+  }
+  .contact::after {
+    width: min(290px, 27vw);
+  }
+}
+
+/* ---------- One card style everywhere: pastel tint, no outline, large corners ---------- */
+:root {
+  --tint-blue: color-mix(in srgb, var(--pastel-blue) 70%, var(--surface));
+  --tint-pink: color-mix(in srgb, var(--pastel-pink) 70%, var(--surface));
+  --tint-lilac: color-mix(in srgb, var(--pastel-lilac) 62%, var(--surface));
+}
+:root[data-theme="dark"] {
+  --tint-blue: color-mix(in srgb, #86adff 30%, var(--surface));
+  --tint-pink: color-mix(in srgb, #ff8fd0 28%, var(--surface));
+  --tint-lilac: color-mix(in srgb, #b49bff 28%, var(--surface));
+}
+.project-card,
+.learning-card,
+.timeline article,
+.demo-shell,
+.experience-copy {
+  border: 0;
+  box-shadow: none;
+  border-radius: 30px 26px 32px 28px / 28px 32px 26px 30px;
+}
+.grid > .project-card:nth-child(odd),
+.education-grid > :nth-child(odd),
+.certification-grid > :nth-child(odd),
+.timeline .experience-link:nth-child(odd) article,
+.experience-copy {
+  background: var(--tint-blue);
+}
+.grid > .project-card:nth-child(even),
+.education-grid > :nth-child(even),
+.certification-grid > :nth-child(even),
+.timeline .experience-link:nth-child(even) article {
+  background: var(--tint-pink);
+}
+.demo-shell {
+  background: var(--tint-lilac);
+}
+.project-card:hover,
+.project-card[open],
+.experience-link:hover article {
+  box-shadow: var(--sticker);
+}
+.learning-card .credential,
+.learning-card p {
+  color: var(--muted);
+}
+.certificate-visual {
+  background: var(--surface);
+  box-shadow: 0 0 0 1.5px color-mix(in srgb, var(--ink) 10%, transparent);
+}
+.demo-row,
+.flow-step,
+.demo-detail,
+.cmd,
+.demo-steps li {
+  background: color-mix(in srgb, var(--surface) 70%, transparent);
+}
+.demo-row.is-active,
+.cmd.is-active {
+  background: var(--surface);
+}
+.demo-tabs,
+.demo-mode {
+  background: color-mix(in srgb, var(--surface) 65%, transparent);
+}
+.num,
+.teams-frame {
+  background: color-mix(in srgb, var(--surface) 70%, transparent);
+}
+
+#proyectos .card,
+#herramientas .learning-card,
+#demos .demo-shell {
+  box-shadow: none;
+}
+#proyectos .card:hover {
+  box-shadow: var(--sticker);
+}
+
+/* Solid colours only, no gradients */
+.scroll-progress {
+  background: var(--accent);
+}
+.btn.primary {
+  box-shadow: none;
+}
+
+/* ---------- Buttons drawn in pencil: sketchy outline, pencil-shaded fill, little shadow ---------- */
+:root {
+  --pencil-fill: url("../images/decoracion/textura-lapiz.svg");
+  --pencil-shadow: 3px 3px 0 var(--pastel-lilac);
+}
+:root[data-theme="dark"] {
+  --pencil-shadow: 3px 3px 0 rgb(143 124 230 / 0.45);
+}
+.btn,
+.social,
+.nav-cv,
+.switch,
+.project-filters button,
+.stack-toggle {
+  border: 2px solid var(--ink);
+  border-radius: 32px 27px 34px 26px / 26px 34px 27px 32px;
+  background-color: color-mix(in srgb, var(--accent) 12%, var(--surface));
+  background-image: var(--pencil-fill);
+  background-size: 140px 140px;
+  color: var(--ink);
+  box-shadow: var(--pencil-shadow);
+  transition:
+    transform 0.2s var(--ease),
+    box-shadow 0.2s var(--ease);
+}
+.btn.primary,
+.project-filters button[aria-pressed="true"],
+#proyectos .project-filters button[aria-pressed="true"],
+.nav-cv[aria-expanded="true"] {
+  background-color: var(--accent);
+  background-image: var(--pencil-fill);
+  color: var(--accent-ink);
+}
+.btn:hover,
+.social:hover,
+.nav-cv:hover,
+.switch:hover,
+.project-filters button:hover,
+.stack-toggle:hover {
+  background-color: color-mix(in srgb, var(--accent) 20%, var(--surface));
+  color: var(--ink);
+  transform: translate(-1px, -1px) rotate(-0.6deg);
+  box-shadow: 5px 5px 0 var(--pastel-lilac);
+  opacity: 1;
+}
+.btn.primary:hover,
+.project-filters button[aria-pressed="true"]:hover {
+  background-color: var(--accent);
+  color: var(--accent-ink);
+}
+.btn:active,
+.social:active,
+.nav-cv:active,
+.switch:active,
+.project-filters button:active,
+.stack-toggle:active {
+  transform: translate(2px, 2px);
+  box-shadow: 0 0 0 var(--pastel-lilac);
+}
+:root[data-theme="dark"] .btn:hover,
+:root[data-theme="dark"] .social:hover,
+:root[data-theme="dark"] .switch:hover,
+:root[data-theme="dark"] .project-filters button:hover,
+:root[data-theme="dark"] .stack-toggle:hover {
+  box-shadow: 5px 5px 0 rgb(143 124 230 / 0.45);
+}
+@media (hover: none) {
+  .btn:hover,
+  .social:hover,
+  .switch:hover,
+  .nav-cv:hover,
+  .project-filters button:hover,
+  .stack-toggle:hover {
+    transform: none;
+    box-shadow: var(--pencil-shadow);
+  }
+}
+
+/* Specificity fix: pillars keep their tint in the light theme too */
+:root:root .pillar:nth-child(1) {
+  background: var(--tint-blue);
+}
+:root:root .pillar:nth-child(2) {
+  background: var(--tint-pink);
+}
+.btn.secondary,
+.btn.ghost {
+  background-color: color-mix(in srgb, var(--accent) 12%, var(--surface));
+  background-image: var(--pencil-fill);
+  color: var(--ink);
+}
+.btn.secondary:hover,
+.btn.ghost:hover {
+  background-color: color-mix(in srgb, var(--accent) 20%, var(--surface));
+}
+
+/* ==========================================================================
+   Same drawn look for panels, small controls and chips
+   ========================================================================== */
+:root {
+  --drawn-panel: 28px 24px 30px 22px / 24px 30px 22px 28px;
+  --drawn-small: 14px 11px 15px 10px / 11px 15px 10px 14px;
+  --pencil-line: 2px solid var(--ink);
+  --pencil-line-soft: 1.5px solid color-mix(in srgb, var(--ink) 50%, transparent);
+  --panel-shadow: 6px 6px 0 var(--pastel-lilac);
+}
+:root[data-theme="dark"] {
+  --panel-shadow: 6px 6px 0 rgb(143 124 230 / 0.45);
+}
+/* Panels: CV menu, mobile menu, project sheet, certificate viewer */
+.cv-list,
+.project-modal,
+.certificate-modal {
+  border: var(--pencil-line);
+  border-radius: var(--drawn-panel);
+  background-color: var(--surface);
+  box-shadow: var(--panel-shadow);
+}
+.cv-list {
+  background-color: var(--tint-lilac);
+  background-image: var(--pencil-fill);
+  background-size: 140px 140px;
+  padding: 8px;
+  gap: 4px;
+}
+.cv-list a {
+  border: 2px solid transparent;
+  border-radius: var(--drawn-small);
+}
+.cv-list a:hover,
+.cv-list a:focus-visible {
+  border-color: var(--ink);
+  background: var(--surface);
+}
+.project-modal,
+.certificate-modal {
+  background-image: none;
+}
+.project-modal::backdrop,
+.certificate-modal::backdrop {
+  background: rgb(29 39 102 / 0.4);
+}
+:root[data-theme="dark"] .project-modal::backdrop,
+:root[data-theme="dark"] .certificate-modal::backdrop {
+  background: rgb(8 6 24 / 0.65);
+}
+@media (max-width: 640px) {
+  .project-modal {
+    border-radius: 30px 26px 0 0 / 26px 30px 0 0;
+    border-bottom: 0;
+  }
+}
+@media (max-width: 1020px) {
+  .navlinks {
+    border: var(--pencil-line);
+    border-radius: var(--drawn-panel);
+    background-color: var(--tint-lilac);
+    background-image: var(--pencil-fill);
+    background-size: 140px 140px;
+    box-shadow: var(--panel-shadow);
+  }
+  .navlinks a {
+    border: 2px solid transparent;
+    border-radius: var(--drawn-small);
+  }
+  .navlinks a:hover {
+    border-color: var(--ink);
+    background: var(--surface);
+  }
+}
+/* Small round or square controls */
+.menu-toggle,
+.back-to-top,
+.modal-close,
+.certificate-modal-controls button {
+  border: var(--pencil-line);
+  border-radius: 14px 12px 15px 11px / 12px 15px 11px 14px;
+  background-color: var(--tint-blue);
+  background-image: var(--pencil-fill);
+  background-size: 140px 140px;
+  color: var(--ink);
+  box-shadow: 3px 3px 0 var(--pastel-lilac);
+}
+.back-to-top,
+.modal-close {
+  border-radius: 50% 46% 52% 48% / 48% 52% 46% 50%;
+}
+.back-to-top:hover,
+.menu-toggle:hover,
+.modal-close:hover,
+.certificate-modal-controls button:hover {
+  background-color: var(--tint-pink);
+  color: var(--ink);
+  border-color: var(--ink);
+}
+.project-modal .modal-close {
+  top: 16px;
+  right: 16px;
+  background-color: var(--tint-blue);
+}
+/* Segmented controls and tabs */
+.demo-tabs,
+.demo-mode {
+  border: var(--pencil-line);
+  border-radius: 24px 20px 26px 18px / 20px 26px 18px 24px;
+  background: var(--surface);
+}
+.demo-tabs button,
+.demo-mode button {
+  border-radius: var(--drawn-small);
+  color: var(--ink);
+}
+.demo-tabs button[aria-selected="true"],
+.demo-mode button[aria-pressed="true"] {
+  background-color: var(--accent);
+  background-image: var(--pencil-fill);
+  background-size: 140px 140px;
+  color: var(--accent-ink);
+  box-shadow: none;
+}
+/* Rows, steps, commands and chips */
+.demo-row,
+.flow-step,
+.cmd,
+.teams-module-row,
+.demo-detail {
+  border: var(--pencil-line-soft);
+  border-radius: 22px 18px 24px 17px / 18px 24px 17px 22px;
+}
+.teams-module-row {
+  border-width: 0 0 0 0;
+  border-radius: 0;
+}
+.demo-row.is-active,
+.cmd.is-active {
+  border: var(--pencil-line);
+  box-shadow: 3px 3px 0 var(--pastel-lilac);
+}
+.flow-step.is-active {
+  border: var(--pencil-line);
+  box-shadow: 3px 3px 0 var(--pastel-lilac);
+}
+.demo-steps li {
+  border: var(--pencil-line-soft);
+  border-radius: var(--drawn-small);
+}
+.demo-steps li.is-done {
+  border-color: var(--ink);
+}
+.chip,
+.stack-main li,
+.demo-sources li {
+  border: var(--pencil-line-soft);
+  border-radius: var(--drawn-small);
+  background: color-mix(in srgb, var(--accent) 9%, var(--surface));
+}
+.demo-badge {
+  border-width: 1.5px;
+}
+.demo-code {
+  border: 1.5px dashed color-mix(in srgb, var(--ink) 45%, transparent);
+  border-radius: 14px 11px 15px 10px / 11px 15px 10px 14px;
+}
+.teams-frame,
+.teams-card,
+.num {
+  border: var(--pencil-line-soft);
+}
+.teams-frame {
+  border-radius: 24px 20px 26px 18px / 20px 26px 18px 24px;
+  border-color: var(--ink);
+  border-width: 2px;
+}
+.teams-card {
+  border-radius: 20px 16px 22px 15px / 16px 22px 15px 20px;
+  box-shadow: none;
+}
+.certificate-visual {
+  border: var(--pencil-line-soft);
+  border-radius: var(--drawn-small);
+  box-shadow: none;
+}
+.stack-search,
+.demo-check input {
+  border-radius: var(--drawn-small);
+}
+.certificate-modal {
+  max-height: 94dvh;
+}
+.certificate-modal img {
+  max-height: min(62dvh, 640px);
+}
+.certificate-modal h2 {
+  font-family: var(--display);
+  font-size: 1.15rem;
+}
+
+/* Softer pencil shading on the dark theme */
+:root[data-theme="dark"] {
+  --pencil-fill: url("../images/decoracion/textura-lapiz-oscuro.svg");
+}
+
+/* Demo buttons: room around them so nothing is squeezed against the next block */
+.demo-controls {
+  gap: 14px 16px;
+  margin: 8px 0 22px;
+  padding-bottom: 6px;
+}
+.demo-controls .btn {
+  margin-bottom: 4px;
+}
+.flow-detail .demo-controls {
+  margin: 20px 0 0;
+  padding-bottom: 0;
+}
+.demo-intro {
+  margin-bottom: 20px;
+}
+.demo-code + .demo-controls,
+.demo-lead + .demo-controls {
+  margin-top: 18px;
+}
+
+/* ==========================================================================
+   Everything drawn the same way: one outline weight, and a gentle hand wobble
+   ========================================================================== */
+:root {
+  --pencil-line-soft: 2px solid color-mix(in srgb, var(--ink) 82%, transparent);
+}
+/* Cards get the same pencil outline as buttons and panels */
+.pillar,
+.project-card,
+.learning-card,
+.timeline article,
+.demo-shell,
+.experience-copy {
+  border: var(--pencil-line);
+}
+.demo-shell {
+  border-radius: 34px 29px 36px 28px / 28px 36px 29px 34px;
+}
+.teams-module-row {
+  border: 0;
+}

@@ -174,8 +174,6 @@ const ui = {
     roles: { client: T("Cliente", "Client"), admin: T("Administrador", "Admin") },
     openHint: T("Tocá un módulo con fallas para ver el detalle.", "Tap a module with failures to see the detail."),
     ticket: T("Ticket", "Ticket"),
-    payload: T("Ver lo que se envía", "See what gets sent"),
-    hidePayload: T("Ocultar", "Hide"),
     limit: T(
       "Teams acepta mensajes de unos 28 KB. Si la tarjeta no entra, acorto los textos y corto las listas largas.",
       "Teams accepts messages of about 28 KB. If the card doesn't fit, I shorten the texts and trim long lists.",
@@ -563,7 +561,7 @@ if (demoRoot) {
   const state = {
     tab: "triage",
     triage: { analyzed: false, running: false, stepText: "", mode: "ai", selected: null, json: false },
-    teams: { phase: -1, running: false, ai: true, open: "checkout", payload: false },
+    teams: { phase: -1, running: false, ai: true, open: "checkout" },
     plugin: { cmd: "create", cause: "locator", step: -1, running: false, done: false },
     func: { stage: 0, story: null, case: null, mode: "draft" },
     flow: { step: 0, view: "after" },
@@ -849,26 +847,6 @@ if (demoRoot) {
             }),
         ),
       );
-      const payload = JSON.stringify(
-        {
-          type: "message",
-          attachments: [
-            {
-              contentType: "application/vnd.microsoft.card.adaptive",
-              content: {
-                type: "AdaptiveCard",
-                body: [
-                  { type: "TextBlock", text: tr(u.cardTitle), weight: "Bolder" },
-                  { type: "TextBlock", text: `${passed} ✓  ·  ${failed} ✕` },
-                  { type: "Container", items: ["…"] },
-                ],
-              },
-            },
-          ],
-        },
-        null,
-        2,
-      );
       card = el(
         "div",
         { class: "teams-card" },
@@ -883,7 +861,6 @@ if (demoRoot) {
         ),
         roles,
         el("p", { class: "demo-small" }, tr(u.openHint)),
-        s.payload ? el("pre", { class: "demo-code" }, payload) : null,
       );
     }
     return el(
@@ -914,19 +891,6 @@ if (demoRoot) {
                 }),
                 tr(u.withAi),
               ),
-              el(
-                "button",
-                {
-                  type: "button",
-                  class: "demo-link",
-                  "aria-expanded": String(s.payload),
-                  onclick: () => {
-                    s.payload = !s.payload;
-                    render();
-                  },
-                },
-                s.payload ? tr(u.hidePayload) : tr(u.payload),
-              ),
             ]
           : null,
       ),
@@ -948,7 +912,6 @@ if (demoRoot) {
     s.running = true;
     s.phase = -1;
     s.open = "checkout";
-    s.payload = false;
     const tick = () => {
       s.phase += 1;
       announce(tr(ui.teams.steps[s.phase]));

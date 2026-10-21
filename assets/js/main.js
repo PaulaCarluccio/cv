@@ -93,7 +93,7 @@ const translations = {
     careerTulegajo: "Today I do automation and AI applied to QA: a multi-agent system with Claude Code, a RAG in Java, failure analysis in CI and automatic reports in Teams and Power Apps. I also mentor people on the team.",
     skillsLabel: "05 / Tools and education",
     skillsTitle: "Education",
-    education: "Education",
+    education: "Studies",
     ubaTitle: "Bachelor's Degree in Data Science",
     studyDate: "2026–present",
     iftsTitle: "Higher Technical Degree in Data Science and Artificial Intelligence",
