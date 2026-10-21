@@ -1,5 +1,7 @@
 const translations = {
   en: {
+    aboutText3: "I also give training sessions and support the team when new tools are adopted. I care as much about building a solution as about helping others understand it and make the most of it.",
+    p5c: "It's a single Java file, with no outside libraries. The application code is read-only: the agents look at it, they don't change it.",
     stackMore: "See the full stack",
     stackLang: "Languages and data",
     stackTests: "Test automation",
@@ -17,14 +19,14 @@ const translations = {
     p6Summary: "I set Claude Code to analyze failures inside the pipeline. It groups them, classifies them and says how sure it is.",
     p6Title: "Failure analysis in the CI pipeline",
     p6Meta: "Claude Code · CI · Bitbucket Pipelines",
-    p5b: "The application code is read-only: the agents look at it, they don't change it.",
-    p5a: "To analyze a failure well, an agent has to know the project. The RAG gives it that: the tests that already exist, the scenarios, the execution history and the application code.",
-    p5Summary: "I built a RAG system in Java that gives the agents the project's context: existing tests, scenarios, execution history and app code.",
-    p5Title: "Custom RAG for the agents",
-    p5Meta: "Java · RAG · Context for agents",
+    p5b: "It searches in two ways and merges the results: by words (BM25) and by meaning, with embeddings from a model that runs on my own machine with Ollama. If the model isn't available, it keeps working with words only.",
+    p5a: "To analyze a failure well, an agent has to know the project. This search tool gives it what it needs: the steps and pages that already exist, the scenarios, the execution history and the application code.",
+    p5Summary: "I built a search tool in Java that gives the agents the project's context: tests, scenarios, execution history and app code. It searches by words and by meaning at the same time.",
+    p5Title: "RAG built in Java for the agents",
+    p5Meta: "Java · RAG · Hybrid search",
     certAwsDate: "Apr 2026 · Completed",
     ubaStatus: "University of Buenos Aires · Coursework completed",
-    roleMinder: "AI Automation Engineer (QA Automation)",
+    roleMinder: "AI Automation Engineer",
     demoIntro: "Five short demos: how a report is analyzed, how the notification reaches Teams, how my two plugins work and how everything connects. The data is made up.",
     demoTitle: "See how it works",
     demoLabel: "03 / Interactive demos",
@@ -35,7 +37,7 @@ const translations = {
     navExperience: "Experience",
     navEducation: "Education",
     navContact: "Contact",
-    profileTitle: "QA Automation & AI Automation",
+    profileTitle: "AI Automation Engineer",
     heroKicker: "Professional portfolio",
     ctaContact: "Get in touch",
     ctaProjects: "View projects",
@@ -45,14 +47,14 @@ const translations = {
     pillarAiTitle: "AI Automation",
     pillarAiText:
       "Multi-agent systems and automated workflows that reduce repetitive work for the QA team.",
-    hero: "I'm a QA Automation and AI Automation Engineer with 5+ years in software quality. Today I build agents with Claude Code, a custom RAG and automatic reports, so the team can quickly see what failed and why.",
+    hero: "I build AI agents and automations to simplify processes, cut down manual tasks and speed up the work of teams.",
     profileDesc:
       "QA Automation · Web · Mobile · APIs · Pipelines · Data · Process automation · Applied AI",
     profileLang: "Buenos Aires, Argentina · Native Spanish · English C1",
     aboutLabel: "01 / Profile",
     aboutTitle: "About me",
-    aboutText: "I started in QA in 2021, and from day one I wanted to code. I like to understand the problem, find a way to solve it and learn whatever it takes to do it.",
-    aboutText2: "Over time I got into data and artificial intelligence. I'm curious, persistent, and I like to suggest improvements without being asked. Right now I'm studying the Higher Technical Degree in Data Science and Artificial Intelligence.",
+    aboutText: "I have more than five years of experience in software quality and automation. That path gave me a practical eye for spotting problems, understanding how they affect the team and building solutions that help solve them.",
+    aboutText2: "Today I apply artificial intelligence to work processes, with projects like agents that analyze test failures and automatic reports that make it easier to review results. I want the team to spend less time on operational tasks and have clear information to decide how to move forward.",
     workLabel: "02 / Selected work",
     workTitle: "Projects and systems",
     filterAll: "All",
@@ -65,7 +67,7 @@ const translations = {
     p2Title: "Reporting and tracking on Power Platform",
     p2Summary: "Each run reaches Teams with the AI analysis and Jira links. I also built a Power Apps app to follow the results.",
     p2a: "Before, to find out how a run went, we had to open the pipeline, download the report and read it by hand. It took time and made it harder to follow the cases that had failed.",
-    p2b: "I proposed automating that follow-up with Python and Power Automate. Now, when the pipeline ends, the team gets a summary in Teams with the AI analysis and the Jira links. The results are also saved on their own in a database, where we review the failures and note their follow-up.",
+    p2b: "I suggested to the team that we automate that follow-up with Python and Power Automate. Now, when the pipeline ends, the team gets a summary in Teams with the AI analysis and the Jira links. The results are also saved on their own in a database, where we review the failures and note their follow-up.",
     p2c: "I also built a Power Apps app to see results by build, failures by module and known bugs.",
     p1Title: "QA execution analytics",
     p1Summary: "I organized the execution data to see what fails, where and how often.",
@@ -88,9 +90,9 @@ const translations = {
     date2: "Oct 2024 – Jul 2025",
     careerAllianz: "I automated UI and API tests with Java, Selenium and Cucumber, and set up Docker and Selenium Grid environments to run in parallel. I was also in charge of the automation for one line of business.",
     date1: "Jul 2025 – present",
-    careerTulegajo: "Today I do automation and AI applied to QA: a multi-agent system with Claude Code, a custom RAG, failure analysis in CI and automatic reports in Teams and Power Apps. I also mentor people on the team.",
+    careerTulegajo: "Today I do automation and AI applied to QA: a multi-agent system with Claude Code, a RAG in Java, failure analysis in CI and automatic reports in Teams and Power Apps. I also mentor people on the team.",
     skillsLabel: "05 / Tools and education",
-    skillsTitle: "What I use and study",
+    skillsTitle: "Education",
     education: "Education",
     ubaTitle: "Bachelor's Degree in Data Science",
     studyDate: "2026–present",
@@ -218,7 +220,7 @@ function language(lang) {
     else url.searchParams.delete("lang");
     link.href = url;
   });
-  document.title = "Paula Carluccio | QA Automation & AI Automation";
+  document.title = "Paula Carluccio | AI Automation Engineer";
   theme(document.documentElement.dataset.theme || "light");
   try {
     localStorage.setItem("pc-language", lang);
@@ -381,7 +383,7 @@ certificateButtons.forEach((button, index) => {
   const preview = document.createElement("img");
   preview.src = button.dataset.certificateImage;
   preview.alt = "";
-  preview.loading = "lazy";
+  preview.loading = "eager";
   button.replaceChildren(preview);
   button.addEventListener("click", () => {
     certificateTrigger = button;
@@ -499,3 +501,45 @@ document.addEventListener("keydown", (event) => {
     cvToggle.focus();
   }
 });
+
+// Project details open in a sheet instead of expanding the grid
+const projectModal = document.getElementById("project-modal"),
+  projectBody = document.getElementById("project-modal-body");
+let projectTrigger = null;
+document.querySelectorAll("#proyectos .project-card").forEach((card) => {
+  card.querySelector("summary").addEventListener("click", (event) => {
+    event.preventDefault();
+    projectTrigger = event.currentTarget;
+    const meta = document.createElement("span"),
+      title = document.createElement("h2"),
+      intro = document.createElement("p");
+    meta.className = "meta";
+    meta.textContent = card.querySelector(".meta").textContent;
+    title.id = "project-modal-title";
+    title.textContent = card.querySelector("h3").textContent;
+    intro.className = "project-intro";
+    intro.textContent = card.querySelector("summary > p").textContent;
+    projectBody.replaceChildren(meta, title, intro);
+    card.querySelectorAll(".detail p").forEach((paragraph) => {
+      const copy = document.createElement("p");
+      copy.textContent = paragraph.textContent;
+      projectBody.append(copy);
+    });
+    projectModal
+      .querySelector(".modal-close")
+      .setAttribute("aria-label", document.documentElement.lang === "es" ? "Cerrar" : "Close");
+    projectModal.showModal();
+    projectModal.scrollTop = 0;
+  });
+});
+projectModal
+  .querySelector(".modal-close")
+  .addEventListener("click", () => projectModal.close());
+projectModal.addEventListener("click", (event) => {
+  if (event.target === projectModal) projectModal.close();
+});
+projectModal.addEventListener("close", () => projectTrigger?.focus());
+new MutationObserver(() => projectModal.open && projectModal.close()).observe(
+  document.documentElement,
+  { attributes: true, attributeFilter: ["lang"] },
+);

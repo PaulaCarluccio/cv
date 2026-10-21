@@ -97,3 +97,19 @@
 .role-tools .skills {
   gap: 8px;
 }
+
+/* Technical tools: same look as the technology list on the home page */
+.role-tools .skills {
+  gap: 6px 10px;
+}
+.role-tools .chip {
+  padding: 5px 12px;
+  border: 0;
+  border-radius: 10px;
+  background: var(--soft);
+  color: var(--ink);
+  font-family: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  font-size: clamp(0.98rem, 1.7vw, 1.18rem);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}

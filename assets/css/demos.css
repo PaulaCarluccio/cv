@@ -678,3 +678,218 @@
     grid-template-columns: 1fr;
   }
 }
+
+/* Project details: a calm sheet instead of expanding the grid */
+.project-toggle::after {
+  content: "›";
+  width: auto;
+  height: auto;
+  border: 0;
+  font-size: 1.4rem;
+  line-height: 1;
+  transition: transform 0.3s var(--ease);
+}
+.project-card:hover .project-toggle::after {
+  transform: translateX(4px);
+}
+.project-modal {
+  width: min(720px, calc(100% - 32px));
+  max-height: min(86dvh, 840px);
+  padding: clamp(26px, 4vw, 44px);
+  border: 0;
+  border-radius: 28px;
+  background: var(--surface);
+  color: var(--ink);
+  overflow: auto;
+  box-shadow:
+    0 0 0 1px rgb(128 128 128 / 0.22),
+    0 40px 90px -20px rgb(0 0 0 / 0.55);
+}
+.project-modal::backdrop {
+  background: rgb(0 0 0 / 0.45);
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+}
+.project-modal .meta {
+  display: block;
+  padding-right: 48px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.project-modal h2 {
+  margin: 10px 0 18px;
+  padding-right: 40px;
+  font-size: clamp(1.8rem, 4.5vw, 2.5rem);
+  line-height: 1.08;
+}
+.project-modal p {
+  max-width: 60ch;
+  margin: 0 0 16px;
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: var(--muted);
+}
+.project-modal .project-intro {
+  padding-bottom: 18px;
+  border-bottom: 1px solid var(--line);
+  font-size: 1.2rem;
+  line-height: 1.55;
+  color: var(--ink);
+}
+.project-modal .modal-close {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  display: grid;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: var(--soft);
+  font-size: 1.5rem;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .project-modal[open] {
+    animation: sheet-in 0.4s var(--ease) both;
+  }
+}
+@keyframes sheet-in {
+  from {
+    opacity: 0;
+    transform: translateY(24px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@media (max-width: 640px) {
+  .project-modal {
+    width: 100%;
+    max-width: none;
+    max-height: 90dvh;
+    margin: auto 0 0;
+    border-radius: 28px 28px 0 0;
+  }
+}
+
+/* CV button: quiet pill like the other controls, with a small arrow */
+.nav-cv {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--soft);
+  color: var(--ink);
+}
+.nav-cv::after {
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-right: 2px solid currentColor;
+  border-bottom: 2px solid currentColor;
+  transform: translateY(-2px) rotate(45deg);
+  transition: transform 0.25s var(--ease);
+}
+.nav-cv[aria-expanded="true"]::after {
+  transform: translateY(1px) rotate(225deg);
+}
+.nav-cv:hover,
+.nav-cv[aria-expanded="true"] {
+  background: color-mix(in srgb, var(--ink) 11%, transparent);
+  color: var(--ink);
+}
+
+/* Certificates: side by side, full image visible, tap to enlarge */
+.certification-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+  align-items: start;
+}
+.certificate-card {
+  gap: 14px;
+  padding: 12px 12px 18px;
+}
+.certificate-visual {
+  min-height: 0;
+  padding: 0;
+  cursor: zoom-in;
+  background: var(--soft);
+  transition: transform 0.3s var(--ease);
+}
+.certificate-visual:hover {
+  transform: scale(1.02);
+}
+.certificate-visual img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+.certificate-card h4 {
+  font-size: 0.98rem;
+}
+@media (max-width: 1000px) {
+  .certification-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (max-width: 640px) {
+  .certification-grid {
+    display: flex;
+    gap: 12px;
+    margin-inline: -16px;
+    padding: 4px 16px 12px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+  }
+  .certification-grid::-webkit-scrollbar {
+    display: none;
+  }
+  .certification-grid .certificate-card {
+    flex: 0 0 78%;
+    scroll-snap-align: center;
+  }
+}
+.certification-grid {
+  align-items: stretch;
+}
+.certificate-visual {
+  aspect-ratio: 1.41 / 1;
+}
+.certificate-visual img {
+  height: 100%;
+  object-fit: contain;
+}
+
+/* Hero: all actions in one row, and the details line uses the width available */
+.hero-actions {
+  max-width: 760px;
+  gap: 10px;
+}
+.hero-actions .social {
+  min-height: 48px;
+}
+.profile-focus {
+  max-width: 62em;
+}
+@media (min-width: 900px) {
+  .profile-focus {
+    white-space: nowrap;
+  }
+}
+@media (max-width: 640px) {
+  .hero-actions .btn {
+    flex: 1 1 100%;
+  }
+  .hero-actions .social {
+    flex: 1 1 calc(50% - 5px);
+    justify-content: center;
+  }
+}
+
+.lead {
+  max-width: 46em;
+}

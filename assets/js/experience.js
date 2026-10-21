@@ -35,12 +35,12 @@
     next: "Next: Minder S.A. →",
     paragraphs: [
       `At Allianz, I worked on the team's automation framework and built its first flow combining UI tests, APIs, and database checks. I used APIs to prepare test data before signing in as the user, then checked the results directly in the database. This gave us more complete coverage of both the frontend and backend.`,
-      `I was also responsible for automating one business line on my own. I organized the work, set priorities, created and maintained test cases, and analyzed execution results. That experience gave me a lot of autonomy and taught me to take ownership of a complete scope, from the technical work to the planning.`,
+      `I was also responsible for automating one business line. I organized the work, set priorities, created and maintained test cases, and analyzed execution results. That experience gave me a lot of autonomy and taught me to take ownership of a complete scope, from the technical work to the planning.`,
     ],
   },
   tulegajo: {
     company: "04 · Current role",
-    role: "AI Automation Engineer (QA Automation)",
+    role: "AI Automation Engineer",
     period: "Jul 2025 – present",
     tools: "Technical tools",
     back: "← Back to experience",

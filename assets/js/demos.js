@@ -302,8 +302,8 @@ const ui = {
       {
         title: T("Una persona decide", "A person decides"),
         text: T(
-          "Las fallas ambiguas y los posibles bugs los revisa alguien del equipo. Lo que es de automation se arregla con el plugin, con un RAG propio que le da al agente el contexto del proyecto.",
-          "Ambiguous failures and possible bugs are reviewed by someone on the team. What's an automation issue gets fixed with the plugin, using a custom RAG that gives the agent the project context.",
+          "Las fallas ambiguas y los posibles bugs los revisa alguien del equipo. Lo que es de automation se arregla con el plugin, con un RAG hecho en Java que le da al agente el contexto del proyecto.",
+          "Ambiguous failures and possible bugs are reviewed by someone on the team. What's an automation issue gets fixed with the plugin, using a RAG built in Java that gives the agent the project context.",
         ),
         chips: ["R2-D2", "RAG", "Java"],
       },
