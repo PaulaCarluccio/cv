@@ -53,9 +53,10 @@
       `Over time, I also became more involved in what happens around the tests. I want the team to understand the results without having to search in several places. Alongside automation, I propose improvements to reporting and to how we record and review failures. It feels like a natural progression for me: QA remains my foundation, while I increasingly work with data, processes, and ways to apply AI.`,
     ],
     challengeParagraphs: [
-      `We realized that checking a run meant opening the pipeline, downloading the report, and reviewing it manually. The team needed a quick view everyone could use. We had considered an integrated model, but did not have access to an API key, so I looked for a solution using the tools we already had.`,
-      `I built a summary of each run that reaches Teams through a webhook. Then I put the same data to further use by recording it in a structured way in Microsoft Lists, using our existing Microsoft 365 tools. We had previously tracked part of the error review in Excel; now we can keep the results and follow-up for each case together.`,
-      `I am proud of this project because it began with a simple need—seeing how the pipeline run went—and ended up helping us organize our reviews. It reflects how I like to work: listen to what is slowing the team down, find a practical solution, and keep improving it as we see what else it can do.`,
+      `We realized that, to see how a run went, everyone had to open the pipeline, download the report and go through it. We needed a quick view the whole team could check. We had thought about bringing AI into the analysis, but at that point we had no access to an API key, so I looked for a way to solve it with the tools we had available.`,
+      `I built a summary of each run that reaches Teams through a webhook. Then I wanted to make more of that same data: record it in a structured way in Microsoft Lists, using the Microsoft 365 tools we already had. Until then, part of the error review was kept in Excel; now we can gather the results and add the follow-up for each case in one place.`,
+      `Later on I added failure analysis with Claude Code inside the pipeline. So, besides receiving the results, the team gets a first analysis that helps tell automation problems apart from possible product bugs and decide what to review first.`,
+      `I'm proud of this work because it started from a fairly simple need, being able to see how the pipeline went, and it grew as we identified other needs of the team. I also gave training sessions and supported the adoption of these tools in the daily work. I think it represents well how I like to work: listen to what the team needs, find a workable solution and improve it as we see what else it can do.`,
     ],
   },
 };
