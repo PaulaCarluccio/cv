@@ -78,7 +78,7 @@ const translations = {
     p3Title: "Multi-agent system with Claude Code",
     p3Summary: "I built a system of agents with Claude Code, packaged as a plugin for the team. It reads manual cases, automates them, investigates failures and proposes fixes. Anything ambiguous, and possible bugs, goes to a person.",
     p3a: "Maintaining test automation takes a lot of time. When something changes on screen, the test fails and someone has to find out what happened. A lot of the time it's repetitive work.",
-    p3b: "With the plugin, the agents do that work first. With /qa-create they automate a manual case: they look for what already exists to reuse, write what's missing, compile and validate it with several runs. With /qa-repair and /qa-locators they diagnose failures and fix only the ones caused by the automation. If it's a product bug, they leave the test alone.",
+    p3b: "With the plugin, the agents do that work first. They can automate a manual case: they look for what already exists to reuse, write what's missing, compile and validate it with several runs. They also diagnose failures and fix only the ones caused by the automation. If it's a product bug, they leave the test alone.",
     p3c: "Before, analyzing the regression for each release could take several days. Now we have it as soon as the run ends. The AI separates failures caused by locator changes from possible bugs, and the team looks at what matters first.",
     careerLabel: "04 / Career",
     careerTitle: "Experience",

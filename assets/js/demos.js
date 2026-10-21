@@ -181,8 +181,8 @@ const ui = {
   },
   plugin: {
     intro: T(
-      "Armé un plugin de Claude Code con comandos para crear y arreglar automatizaciones. Elegí un comando y mirá qué hace paso a paso.",
-      "I built a Claude Code plugin with commands to create and fix test automation. Pick a command and see what it does, step by step.",
+      "Armé un plugin de Claude Code para crear y arreglar automatizaciones. Elegí qué le pedís y mirá qué hace paso a paso.",
+      "I built a Claude Code plugin to create and fix test automation. Pick what you ask for and see what it does, step by step.",
     ),
     run: T("Ejecutar", "Run"),
     again: T("Repetir", "Replay"),
@@ -318,11 +318,10 @@ const teamsModules = [
 const ticketFor = { login: "QA-101", cart: "QA-102", total: "QA-117", copy: "QA-118", contact: "QA-124" };
 const pluginCommands = {
   create: {
-    name: "/qa-create",
     label: T("Crear un test", "Create a test"),
     sample: T(
-      "/qa-create @QA-130 Cliente. Pasos: 1. Entrar a “Mis pedidos” 2. Filtrar por estado. Esperado: se ven solo los pedidos con ese estado.",
-      "/qa-create @QA-130 Client. Steps: 1. Open “My orders” 2. Filter by status. Expected: only orders with that status are shown.",
+      "Automatizá este caso manual: entrar a “Mis pedidos”, filtrar por estado y verificar que se vean solo los pedidos con ese estado.",
+      "Automate this manual case: open “My orders”, filter by status and check that only orders with that status are shown.",
     ),
     summary: T(
       "Se usa para automatizar un caso manual. Si no le pasás el número del ticket, te lo pide antes de escribir.",
@@ -342,18 +341,16 @@ const pluginCommands = {
     ),
   },
   repair: {
-    name: "/qa-repair",
     label: T("Arreglar un test", "Fix a test"),
-    sample: T("/qa-repair @QA-130 falla solo en el pipeline", "/qa-repair @QA-130 fails only in the pipeline"),
+    sample: T("Este test falla solo en el pipeline. Fijate por qué y arreglalo si el problema es de la automatización.", "This test only fails in the pipeline. Find out why and fix it if the problem is in the automation."),
     summary: T(
       "Reproduce la falla, la diagnostica y la clasifica. Solo arregla el test si el problema es de automation.",
       "It reproduces the failure, diagnoses and classifies it. It only fixes the test if the problem is in the automation.",
     ),
   },
   locators: {
-    name: "/qa-locators",
     label: T("Arreglar locators de un módulo", "Fix a module's locators"),
-    sample: T("/qa-locators carrito cliente", "/qa-locators cart client"),
+    sample: T("Corré el módulo de carrito y arreglá solo las fallas que sean de locators.", "Run the cart module and fix only the failures caused by locators."),
     summary: T(
       "Corre un módulo entero y compara con una copia de la pantalla tal como estaba al fallar, para ver cuáles se rompieron por un locator. Arregla solo esos.",
       "It runs a whole module and compares against a copy of the screen as it was when it failed, to see which tests broke because of a locator. It fixes only those.",
@@ -372,9 +369,8 @@ const pluginCommands = {
     ),
   },
   close: {
-    name: "/qa-cerrar",
     label: T("Cerrar un caso", "Close a case"),
-    sample: T("/qa-cerrar @QA-130", "/qa-cerrar @QA-130"),
+    sample: T("Cerrá este caso y guardá cuánto costó hacerlo.", "Close this case and record what it took to get there."),
     summary: T(
       "Cuando confirmás que el caso quedó terminado, lo cierra y guarda cuánto costó hacerlo.",
       "When you confirm the case is done, it closes it and records what it took to get there.",
@@ -965,7 +961,7 @@ if (demoRoot) {
       el("p", { class: "demo-intro" }, tr(u.intro)),
       el(
         "div",
-        { class: "cmd-list", role: "group", "aria-label": "Comandos" },
+        { class: "cmd-list", role: "group", "aria-label": tr(T("Qué le pedís", "What you ask for")) },
         Object.entries(pluginCommands).map(([key, value]) =>
           el(
             "button",
@@ -976,8 +972,7 @@ if (demoRoot) {
               disabled: p.running,
               onclick: () => reset({ cmd: key }),
             },
-            el("code", {}, value.name),
-            el("span", {}, tr(value.label)),
+            el("span", { class: "cmd-title" }, tr(value.label)),
           ),
         ),
       ),
