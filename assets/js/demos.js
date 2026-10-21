@@ -337,6 +337,15 @@ const pluginCommands = {
       "Creó 1 feature y 1 page nueva. Reutilizó 7 steps que ya existían. Las 3 corridas pasaron. El revisor lo aprobó.",
       "Created 1 feature and 1 new page. Reused 7 steps that already existed. All 3 runs passed. The reviewer approved it.",
     ),
+    gherkinTitle: T("Así queda el caso que se crea, escrito en Gherkin", "This is the case it creates, written in Gherkin"),
+    gherkin: T(
+      'Característica: Mis pedidos\n\n  Escenario: Filtrar los pedidos por estado\n    Dado que ingreso a "Mis pedidos"\n    Cuando filtro por el estado "Enviado"\n    Entonces veo solo los pedidos con estado "Enviado"',
+      'Feature: My orders\n\n  Scenario: Filter orders by status\n    Given I open "My orders"\n    When I filter by the status "Shipped"\n    Then I only see orders with the status "Shipped"',
+    ),
+    gherkinNote: T(
+      "Gherkin es un formato casi en lenguaje común: cualquier persona del equipo puede leer qué se prueba. Detrás, la IA escribe también los steps, las pages y los locators que lo ejecutan.",
+      "Gherkin is a format close to plain language: anyone on the team can read what is being tested. Behind it, the AI also writes the steps, pages and locators that run it.",
+    ),
   },
   repair: {
     label: T("Arreglar un test", "Fix a test"),
@@ -1027,6 +1036,15 @@ if (demoRoot) {
         ),
       ),
       p.done ? el("div", { class: "demo-result" }, el("strong", {}, tr(T("Resultado", "Result")) + ": "), tr(pluginResult())) : null,
+      p.done && cmd.gherkin
+        ? el(
+            "div",
+            { class: "demo-gherkin" },
+            el("span", { class: "demo-module" }, tr(cmd.gherkinTitle)),
+            el("pre", { class: "demo-code" }, tr(cmd.gherkin)),
+            el("p", { class: "demo-small" }, tr(cmd.gherkinNote)),
+          )
+        : null,
       el(
         "div",
         { class: "demo-agents" },

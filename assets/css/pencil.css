@@ -954,3 +954,7 @@ html {
     touch-action: pan-y;
   }
 }
+
+.demo-gherkin {
+  margin-top: 16px;
+}
