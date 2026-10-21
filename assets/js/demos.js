@@ -106,8 +106,8 @@ const ui = {
   ),
   triage: {
     intro: T(
-      "Cuando termina una ejecución, una IA mira las fallas y las ordena por tipo. Probalo: tocá “Analizar” y después elegí una falla.",
-      "When a test run ends, an AI looks at the failures and sorts them by type. Try it: press “Analyze”, then pick a failure.",
+      "Cuando termina una ejecución, una IA mira las fallas y las ordena por tipo, para que el equipo sepa por dónde empezar.",
+      "When a test run ends, an AI looks at the failures and sorts them by type, so the team knows where to start.",
     ),
     run: T("Ejecución de ejemplo · 5 fallas", "Sample run · 5 failures"),
     analyze: T("Analizar con IA", "Analyze with AI"),
@@ -125,7 +125,7 @@ const ui = {
       "Done. What needs a look comes first.",
     ),
     pending: T("Sin analizar", "Not analyzed"),
-    pick: T("Elegí una falla para ver qué encontró.", "Pick a failure to see what it found."),
+    pick: T("Cada falla abre su detalle: causa probable, confianza y evidencia.", "Each failure opens its detail: probable cause, confidence and evidence."),
     rulesNote: T(
       "Sin IA el reporte sale igual: unas reglas simples clasifican lo que reconocen y el resto queda para una persona.",
       "Without the AI the report still goes out: a few simple rules classify what they recognize and the rest is left for a person.",
@@ -134,8 +134,6 @@ const ui = {
     noConf: T("Las reglas no informan confianza", "Rules don't report a confidence level"),
     evidence: T("Qué miró", "What it looked at"),
     reasonLabel: T("Por qué", "Why"),
-    json: T("Ver como JSON", "View as JSON"),
-    hideJson: T("Ocultar JSON", "Hide JSON"),
     readOnly: T(
       "Solo puede leer. No ejecuta nada ni modifica archivos.",
       "It can only read. It doesn't run anything or change any file.",
@@ -147,8 +145,8 @@ const ui = {
   },
   teams: {
     intro: T(
-      "El resultado de cada ejecución le llega al equipo por Teams, sin que nadie tenga que abrir el pipeline. Tocá “Terminar la ejecución”.",
-      "Each run's result reaches the team in Teams, with nobody opening the pipeline. Press “Finish the run”.",
+      "El resultado de cada ejecución le llega al equipo por Teams, sin que nadie tenga que abrir el pipeline.",
+      "Each run's result reaches the team in Teams, with nobody opening the pipeline.",
     ),
     start: T("Terminar la ejecución", "Finish the run"),
     again: T("Repetir", "Replay"),
@@ -172,7 +170,7 @@ const ui = {
     rate: T("Éxito", "Pass rate"),
     withAi: T("Mostrar análisis de IA", "Show AI analysis"),
     roles: { client: T("Cliente", "Client"), admin: T("Administrador", "Admin") },
-    openHint: T("Tocá un módulo con fallas para ver el detalle.", "Tap a module with failures to see the detail."),
+    openHint: T("Los módulos con fallas se despliegan con el detalle de cada caso.", "Modules with failures expand with the detail of each case."),
     ticket: T("Ticket", "Ticket"),
     limit: T(
       "Teams acepta mensajes de unos 28 KB. Si la tarjeta no entra, acorto los textos y corto las listas largas.",
@@ -181,8 +179,8 @@ const ui = {
   },
   plugin: {
     intro: T(
-      "Armé un plugin de Claude Code para crear y arreglar automatizaciones. Elegí qué le pedís y mirá qué hace paso a paso.",
-      "I built a Claude Code plugin to create and fix test automation. Pick what you ask for and see what it does, step by step.",
+      "Un plugin de Claude Code que crea y arregla automatizaciones, y que muestra lo que hace paso a paso.",
+      "A Claude Code plugin that creates and fixes test automation, and shows what it does step by step.",
     ),
     run: T("Ejecutar", "Run"),
     again: T("Repetir", "Replay"),
@@ -195,8 +193,8 @@ const ui = {
   },
   func: {
     intro: T(
-      "Cuando una épica queda lista para QA, otro plugin lee Jira y Figma y deja preparados el análisis y los casos de prueba. Recorré las etapas y tocá una historia.",
-      "When an epic is ready for QA, another plugin reads Jira and Figma and prepares the analysis and test cases. Walk through the stages and tap a story.",
+      "Cuando una épica queda lista para QA, otro plugin lee Jira y Figma y deja preparados el análisis y los casos de prueba.",
+      "When an epic is ready for QA, another plugin reads Jira and Figma and prepares the analysis and test cases.",
     ),
     mode: T("Modo", "Mode"),
     draft: T("Borrador", "Draft"),
@@ -213,8 +211,8 @@ const ui = {
       "No cambia ni comenta los tickets originales: solo los lee.",
       "It never edits or comments on the original tickets: it only reads them.",
     ),
-    pickStory: T("Tocá una historia para ver sus casos.", "Tap a story to see its cases."),
-    pickCase: T("Tocá un caso para ver cómo queda en Gherkin.", "Tap a case to see how it looks in Gherkin."),
+    pickStory: T("Cada historia tiene sus propios casos de prueba.", "Each story has its own test cases."),
+    pickCase: T("Cada caso se escribe en Gherkin, con una sola validación.", "Each case is written in Gherkin, with a single check."),
     stories: T("Historias", "Stories"),
     criteria: T("Criterios", "Criteria"),
     manual: T("Manual", "Manual"),
@@ -239,8 +237,8 @@ const ui = {
   },
   flow: {
     intro: T(
-      "Así se conectan las piezas, de punta a punta. Tocá cada paso.",
-      "This is how the pieces connect, end to end. Tap each step.",
+      "Así se conectan las piezas, de punta a punta.",
+      "This is how the pieces connect, end to end.",
     ),
     step: T("Paso", "Step"),
     of: T("de", "of"),
@@ -551,29 +549,29 @@ const epic = {
 };
 const demoGuide = {
   triage: [
-    T("Tocá “Analizar con IA”", "Press “Analyze with AI”"),
-    T("Elegí una falla de la lista", "Pick a failure from the list"),
-    T("Mirá qué encontró y por qué. Probá “Ver como JSON”", "See what it found and why. Try “View as JSON”"),
+    T("La IA lee el reporte de la ejecución y agrupa las fallas parecidas", "The AI reads the run report and groups similar failures"),
+    T("Cada grupo queda clasificado: locator, posible bug o ambiente, con su nivel de confianza", "Each group is classified: locator, possible bug or environment, with a confidence level"),
+    T("De cada falla explica por qué y qué miró: captura, página y registro", "For each failure it explains why and what it looked at: screenshot, page and log"),
   ],
   teams: [
-    T("Tocá “Terminar la ejecución”", "Press “Finish the run”"),
-    T("Mirá cómo se arma la tarjeta y llega al canal", "Watch the card being built and reaching the channel"),
-    T("Abrí un módulo con fallas para ver el detalle", "Open a module with failures to see the detail"),
+    T("Al terminar la ejecución, el pipeline arma un resumen de los resultados", "When the run ends, the pipeline builds a summary of the results"),
+    T("La tarjeta llega sola al canal del equipo, con el análisis de la IA", "The card reaches the team channel on its own, with the AI analysis"),
+    T("Cada módulo con fallas se despliega con sus casos y el motivo de cada uno", "Each module with failures expands with its cases and the reason for each"),
   ],
   plugin: [
-    T("Elegí qué le pedís al plugin", "Pick what you ask the plugin for"),
-    T("Tocá “Ejecutar” y mirá los pasos", "Press “Run” and watch the steps"),
-    T("Leé el resultado", "Read the result"),
+    T("El plugin sabe crear, arreglar y cerrar casos de automatización", "The plugin can create, fix and close automation cases"),
+    T("Cada pedido se divide en pasos que se pueden seguir uno por uno", "Each request is split into steps that can be followed one by one"),
+    T("Al final entrega un resultado para que una persona lo revise", "At the end it hands over a result for a person to review"),
   ],
   func: [
-    T("Recorré las etapas, de Jira hasta Xray (tocá 1, 2, 3 y 4)", "Walk through the stages, from Jira to Xray (tap 1, 2, 3 and 4)"),
-    T("En “Análisis funcional” tocá una historia", "In “Functional analysis” tap a story"),
-    T("Pasá a “Casos en Xray”, elegí una historia y tocá un caso", "Go to “Cases in Xray”, pick a story and tap a case"),
+    T("El plugin lee la épica en Jira y las pantallas en Figma", "The plugin reads the epic in Jira and the screens in Figma"),
+    T("Con eso arma el análisis funcional: historias, criterios y puntos a aclarar", "With that it builds the functional analysis: stories, criteria and points to clear up"),
+    T("Y escribe los casos en Gherkin, uno por funcionalidad, listos para Xray", "And it writes the cases in Gherkin, one per feature, ready for Xray"),
   ],
   flow: [
-    T("Tocá un paso para leer qué pasa ahí", "Tap a step to read what happens there"),
-    T("Seguí con “Siguiente” hasta el último paso", "Keep going with “Next” to the last step"),
-    T("Compará “Antes” y “Ahora”", "Compare “Before” and “Now”"),
+    T("Cada paso del recorrido muestra qué herramienta interviene", "Each step of the path shows which tool takes part"),
+    T("El análisis se completa solo, desde que termina la ejecución hasta el aviso", "The analysis completes on its own, from the end of the run to the notification"),
+    T("Antes se revisaba a mano; ahora el equipo recibe el análisis ya hecho", "It used to be reviewed by hand; now the team receives the analysis already done"),
   ],
 };
 const demoNav = {
@@ -581,12 +579,12 @@ const demoNav = {
   of: T("de", "of"),
   prev: T("Demo anterior", "Previous demo"),
   next: T("Demo siguiente", "Next demo"),
-  swipe: T("Deslizá hacia un costado para cambiar de demo", "Swipe sideways to change demo"),
+  swipe: T("Deslizando hacia un costado se pasa a otra demo", "Swiping sideways moves to another demo"),
   now: T("Ahora", "Now"),
   later: T("Después", "Next"),
   done: T("Hecho", "Done"),
-  finished: T("¡Listo! Pasá a la siguiente demo.", "Done! Move on to the next demo."),
-  steps: T("Qué hacer en esta demo", "What to do in this demo"),
+  finished: T("Eso es todo en esta demo. La flecha lleva a la siguiente.", "That covers this demo. The arrow leads to the next one."),
+  steps: T("Qué hace la tecnología en esta demo", "What the technology does in this demo"),
 };
 const demoRoot = document.getElementById("demo-root");
 if (demoRoot) {
@@ -595,7 +593,7 @@ if (demoRoot) {
   const tr = (value) => (typeof value === "string" ? value : value[lang()]);
   const state = {
     tab: "triage",
-    triage: { analyzed: false, running: false, stepText: "", mode: "ai", selected: null, json: false },
+    triage: { analyzed: false, running: false, stepText: "", mode: "ai", selected: null },
     teams: { phase: -1, running: false, ai: true, open: null },
     plugin: { cmd: "create", cause: "locator", step: -1, running: false, done: false },
     func: { stage: 0, story: null, case: null, mode: "draft" },
@@ -690,17 +688,6 @@ if (demoRoot) {
     let detail;
     if (s.analyzed && selected) {
       const info = resultOf(selected, s.mode);
-      const json = JSON.stringify(
-        {
-          grupo: selected.id,
-          clasificacion: { locator: "LOCATOR_CHANGED", bug: "PRODUCT_BUG", env: "ENVIRONMENT", unknown: "INDETERMINADO", none: "SIN_CLASIFICAR" }[info.kind],
-          confianza: info.conf ? { high: "alta", medium: "media", low: "baja" }[info.conf] : null,
-          titulo: tr(selected.title),
-          motivo: tr(selected.reason),
-        },
-        null,
-        2,
-      );
       detail = el(
         "div",
         { class: "demo-detail" },
@@ -727,20 +714,6 @@ if (demoRoot) {
               ]
             : null,
         ),
-        el(
-          "button",
-          {
-            type: "button",
-            class: "demo-link",
-            "aria-expanded": String(s.json),
-            onclick: () => {
-              s.json = !s.json;
-              render();
-            },
-          },
-          s.json ? tr(u.hideJson) : tr(u.json),
-        ),
-        s.json ? el("pre", { class: "demo-code" }, json) : null,
       );
     } else {
       detail = el(
@@ -768,7 +741,7 @@ if (demoRoot) {
                 type: "button",
                 class: "btn secondary",
                 onclick: () => {
-                  Object.assign(s, { analyzed: false, selected: null, stepText: "", json: false });
+                  Object.assign(s, { analyzed: false, selected: null, stepText: "" });
                   render();
                 },
               },
@@ -1291,7 +1264,7 @@ if (demoRoot) {
   /* Which step of the guide the visitor is on, from what they have done so far */
   function guideStep(tab) {
     const s = state[tab];
-    if (tab === "triage") return !s.analyzed ? 0 : s.selected ? (s.json ? 3 : 2) : 1;
+    if (tab === "triage") return !s.analyzed ? 0 : s.selected ? 3 : 1;
     if (tab === "teams") return s.running ? 1 : s.phase < 0 ? 0 : s.open ? 3 : 2;
     if (tab === "plugin") return s.running ? 1 : s.done ? 2 : 0;
     if (tab === "func") return s.stage < 2 ? 0 : s.stage === 2 ? (s.story ? 2 : 1) : s.case ? 3 : 2;
@@ -1314,8 +1287,6 @@ if (demoRoot) {
             el(
               "span",
               { class: "guide-text" },
-              index === current ? el("strong", { class: "guide-label" }, tr(demoNav.now) + ": ") : null,
-              index === current + 1 ? el("span", { class: "guide-label" }, tr(demoNav.later) + ": ") : null,
               tr(text),
             ),
           ),
