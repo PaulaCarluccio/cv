@@ -90,7 +90,7 @@ const translations = {
     date2: "Oct 2024 – Jul 2025",
     careerAllianz: "I automated UI and API tests with Java, Selenium and Cucumber, and set up Docker and Selenium Grid environments to run in parallel. I was also in charge of the automation for one line of business.",
     date1: "Jul 2025 – present",
-    careerTulegajo: "Today I do automation and AI applied to QA: a multi-agent system with Claude Code, a RAG in Java, failure analysis in CI and automatic reports in Teams and Power Apps. I also mentor people on the team.",
+    careerMinder: "Today I do automation and AI applied to QA: a multi-agent system with Claude Code, a RAG in Java, failure analysis in CI and automatic reports in Teams and Power Apps. I also mentor people on the team.",
     skillsLabel: "05 / Tools and education",
     skillsTitle: "Education",
     education: "Studies",

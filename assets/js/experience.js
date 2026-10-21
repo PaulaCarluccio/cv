@@ -38,7 +38,7 @@
       `I was also responsible for automating one business line. I organized the work, set priorities, created and maintained test cases, and analyzed execution results. That experience gave me a lot of autonomy and taught me to take ownership of a complete scope, from the technical work to the planning.`,
     ],
   },
-  tulegajo: {
+  minder: {
     company: "04 · Current role",
     role: "AI Automation Engineer",
     period: "Jul 2025 – present",
