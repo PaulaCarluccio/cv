@@ -8,7 +8,7 @@
     all: "← View full career",
     next: "Next: Markmonitor →",
     paragraphs: [
-      `Accenture was my first job in QA. I began with manual testing on an internal application, contributing to functional analysis, writing test cases, and running regression tests. There I learned the basics of the development cycle, how an agile team works, and how to explain an issue clearly enough for someone else to understand and resolve it.`,
+      `Accenture was my first job in QA. I began with manual testing on an internal application, contributing to functional analysis, writing test cases, and running regression tests. There I learned the basics of the development cycle, how an agile team works, and how to explain an issue clearly enough for someone else to understand and resolve it. I also trained new team members and improved the testing documentation and processes.`,
       `Starting with functional testing taught me to think about what users need and what we are actually checking. At the same time, I knew I wanted to code and develop a more technical profile, so I looked for opportunities to move into automation.`,
     ],
   },
@@ -21,7 +21,7 @@
     previous: "← Previous: Accenture",
     next: "Next: Allianz →",
     paragraphs: [
-      `At Markmonitor, I took a significant step forward technically. I deepened my automation experience, learned to use tools such as Postman and JMeter, and worked on tests run through Jenkins. I also had to learn an unfamiliar business from scratch, and working in English was a major challenge at first.`,
+      `At Markmonitor, I took a significant step forward technically. I deepened my automation experience, learned to use tools such as Postman and JMeter, and worked on tests run through Jenkins. I also used SQL to look into data that did not add up and analyzed metrics in Datadog. I also had to learn an unfamiliar business from scratch, and working in English was a major challenge at first.`,
       `That combination helped me grow. Learning the tools was only part of the job: I also needed to understand the product, ask questions, investigate, and communicate with the team in another language. Over time, I became much more confident and independent.`,
     ],
   },
@@ -40,7 +40,7 @@
   },
   tulegajo: {
     company: "04 · Current role",
-    role: "QA Automation Engineer",
+    role: "AI Automation Engineer (QA Automation)",
     period: "Jul 2025 – present",
     tools: "Technical tools",
     back: "← Back to experience",

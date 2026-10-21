@@ -1,67 +1,95 @@
 const translations = {
   en: {
+    stackMore: "See the full stack",
+    stackLang: "Languages and data",
+    stackTests: "Test automation",
+    stackSearchLabel: "Search a technology",
+    p7c: "The decisions stay with the team: approving, running or automating is up to a person.",
+    p7b: "It also writes the cases in Xray, in Gherkin: one per feature, each with a single check. They go in a “To review” folder. It changes nothing in the original tickets, it only reads them.",
+    p7a: "When an epic is ready for QA, the plugin reads everything in Jira and looks at the screens in Figma. With that it creates a functional analysis ticket: what the epic is about, the stories with their criteria, and the points to clear up with the PO.",
+    p7Summary: "I built another plugin that takes an epic that's ready for QA, reads Jira and Figma, and leaves the analysis and the test cases ready in Xray.",
+    p7Title: "Functional analysis and test cases with AI",
+    p7Meta: "Claude Code · Jira · Xray · Figma",
+    p4d: "I also built CI/CD pipelines in Bitbucket Pipelines, with parallel execution, retries and quality gates, and I mentor people on the QA team.",
+    p2Meta: "Python · Power Automate · Power Apps · Teams",
+    p6b: "It works with read-only permissions and has a rule-based fallback, so the report goes out even if the AI doesn't respond.",
+    p6a: "When a run ends, the analysis runs by itself inside the pipeline. It groups similar failures, looks at the screenshot, how the page is built and the run log, and classifies them: locator changed, possible product bug or environment issue. It also says how confident it is.",
+    p6Summary: "I set Claude Code to analyze failures inside the pipeline. It groups them, classifies them and says how sure it is.",
+    p6Title: "Failure analysis in the CI pipeline",
+    p6Meta: "Claude Code · CI · Bitbucket Pipelines",
+    p5b: "The application code is read-only: the agents look at it, they don't change it.",
+    p5a: "To analyze a failure well, an agent has to know the project. The RAG gives it that: the tests that already exist, the scenarios, the execution history and the application code.",
+    p5Summary: "I built a RAG system in Java that gives the agents the project's context: existing tests, scenarios, execution history and app code.",
+    p5Title: "Custom RAG for the agents",
+    p5Meta: "Java · RAG · Context for agents",
+    certAwsDate: "Apr 2026 · Completed",
+    ubaStatus: "University of Buenos Aires · Coursework completed",
+    roleMinder: "AI Automation Engineer (QA Automation)",
+    demoIntro: "Five short demos: how a report is analyzed, how the notification reaches Teams, how my two plugins work and how everything connects. The data is made up.",
+    demoTitle: "See how it works",
+    demoLabel: "03 / Interactive demos",
+    navDemos: "Demos",
     skip: "Skip to content",
     navAbout: "About me",
     navWork: "Projects",
     navExperience: "Experience",
     navEducation: "Education",
     navContact: "Contact",
-    profileTitle: "Automation Engineer · Data & AI",
-    hero: "I work in automation and study Data Science and Artificial Intelligence. My experience began in QA, and over time I have added data analysis, process automation and AI solutions.",
+    profileTitle: "QA Automation & AI Automation",
+    heroKicker: "Professional portfolio",
+    ctaContact: "Get in touch",
+    ctaProjects: "View projects",
+    pillarQaTitle: "QA Automation",
+    pillarQaText:
+      "Web, mobile and API test frameworks, from test data preparation to results analysis.",
+    pillarAiTitle: "AI Automation",
+    pillarAiText:
+      "Multi-agent systems and automated workflows that reduce repetitive work for the QA team.",
+    hero: "I'm a QA Automation and AI Automation Engineer with 5+ years in software quality. Today I build agents with Claude Code, a custom RAG and automatic reports, so the team can quickly see what failed and why.",
     profileDesc:
       "QA Automation · Web · Mobile · APIs · Pipelines · Data · Process automation · Applied AI",
-    profileLang: "Native Spanish · English C1",
+    profileLang: "Buenos Aires, Argentina · Native Spanish · English C1",
     aboutLabel: "01 / Profile",
     aboutTitle: "About me",
-    aboutText:
-      "I started working in QA in 2021, and from day one I knew I wanted to code. I have always enjoyed understanding problems, finding a way to solve them, and learning everything I need to make that happen.",
-    aboutText2:
-      "Over the years, I have discovered new interests, especially data and artificial intelligence. I see myself as curious, persistent, and proactive. In a team, I bring autonomy, a thoughtful eye for what could be improved, and a strong drive to turn ideas into solutions that are genuinely useful.",
+    aboutText: "I started in QA in 2021, and from day one I wanted to code. I like to understand the problem, find a way to solve it and learn whatever it takes to do it.",
+    aboutText2: "Over time I got into data and artificial intelligence. I'm curious, persistent, and I like to suggest improvements without being asked. Right now I'm studying the Higher Technical Degree in Data Science and Artificial Intelligence.",
     workLabel: "02 / Selected work",
     workTitle: "Projects and systems",
     filterAll: "All",
     p4Title: "End-to-end test automation",
-    p4Summary:
-      "This is the area where I have the most experience: I build frameworks from scratch, starting by understanding the business and defining what needs to be automated.",
+    p4Summary: "It's what I've done the most: building automation frameworks from scratch, starting by understanding the business and deciding what's worth automating.",
     more: "View details",
-    p4a: "Test automation is the area where I have the most experience. I can build a framework from scratch, starting by understanding how the product works, its business rules, and what the team needs to validate.",
-    p4b: "From there, I decide what is worth automating, how to organize the tests, and what needs to be implemented. I apply good programming practices so the framework is clear, easy to maintain, and able to grow with the product.",
-    p4c: "I have worked on web, mobile, and API automation, from preparing test data to analyzing the results. This experience helps me understand what each project needs and turn that into a solution the team can use.",
-    p2Title: "Automated execution tracking",
-    p2Summary:
-      "I turned each execution result into a summary that reaches the team as soon as the pipeline finishes.",
-    p2a: "Previously, to find out how a run went, we had to open the pipeline, download the report, and review it manually. This took time and made it harder to follow up on failed cases.",
-    p2b: "I proposed automating that follow-up. Now, whenever the pipeline finishes, the team receives a summary of the run in Teams. The results are also saved automatically in a database, where we can review failures and record the follow-up on each case.",
-    p2c: "This lets us quickly see what happened in each run and focus directly on the cases that need attention.",
+    p4a: "Test automation is where I have the most experience. I can build a framework from scratch: first I understand how the product works, its business rules and what the team needs to validate.",
+    p4b: "Then I decide what's worth automating and how to organize the tests. I write the code so it's clear, easy to maintain and can grow with the product.",
+    p4c: "I've worked on web, mobile and API automation, from preparing the data to analyzing the results.",
+    p2Title: "Reporting and tracking on Power Platform",
+    p2Summary: "Each run reaches Teams with the AI analysis and Jira links. I also built a Power Apps app to follow the results.",
+    p2a: "Before, to find out how a run went, we had to open the pipeline, download the report and read it by hand. It took time and made it harder to follow the cases that had failed.",
+    p2b: "I proposed automating that follow-up with Python and Power Automate. Now, when the pipeline ends, the team gets a summary in Teams with the AI analysis and the Jira links. The results are also saved on their own in a database, where we review the failures and note their follow-up.",
+    p2c: "I also built a Power Apps app to see results by build, failures by module and known bugs.",
     p1Title: "QA execution analytics",
-    p1Summary:
-      "I organized execution data to see what was failing, where, and how often.",
-    p1a: "The results were spread across different reports, making it difficult to compare them and understand what was happening over time.",
-    p1b: "To address this, I developed a process that automatically takes the results of each run, selects the relevant information, organizes it, and stores it in a structured database. I also added retry handling so the same case is not recorded more than once and does not distort the results.",
-    p1c: "We can now view each run by module and user type, review failures, and identify recurring issues. This helps us use the data our automated tests already generate to track results more clearly and make better decisions.",
-    p3Meta: "Claude Code · Agents · QA",
-    p3Title: "QA agent system",
-    p3Summary:
-      "I built a system that identifies tests failing because of a broken locator and updates it automatically. We then check that the new locator works correctly.",
-    p3a: "A common part of maintaining automated tests is fixing cases that fail because an element in the application has changed. Identifying the issue, finding a new locator, and updating it takes time, even though the task is often repetitive.",
-    p3b: "I built an agent system that analyzes failed tests, identifies those caused by a broken locator, and updates the locator automatically.",
-    p3c: "Once the change is made, we check that the new locator works correctly. This reduces the time spent on maintenance and lets the team focus on failures that need closer investigation and judgment.",
-    careerLabel: "03 / Career",
+    p1Summary: "I organized the execution data to see what fails, where and how often.",
+    p1a: "The results were spread across several reports. It was hard to compare them and see what was happening over time.",
+    p1b: "I built a process that takes the results of each run, keeps what's useful, organizes it and saves it in a database. I also handled retries: the same case isn't recorded twice or changes the numbers.",
+    p1c: "Now I can see each run by module and user type, review the failures and spot the ones that keep coming back. We make better use of data the automation was already producing.",
+    p3Meta: "Claude Code · Agents · Plugin",
+    p3Title: "Multi-agent system with Claude Code",
+    p3Summary: "I built a system of agents with Claude Code, packaged as a plugin for the team. It reads manual cases, automates them, investigates failures and proposes fixes. Anything ambiguous, and possible bugs, goes to a person.",
+    p3a: "Maintaining test automation takes a lot of time. When something changes on screen, the test fails and someone has to find out what happened. A lot of the time it's repetitive work.",
+    p3b: "With the plugin, the agents do that work first. With /qa-create they automate a manual case: they look for what already exists to reuse, write what's missing, compile and validate it with several runs. With /qa-repair and /qa-locators they diagnose failures and fix only the ones caused by the automation. If it's a product bug, they leave the test alone.",
+    p3c: "Before, analyzing the regression for each release could take several days. Now we have it as soon as the run ends. The AI separates failures caused by locator changes from possible bugs, and the team looks at what matters first.",
+    careerLabel: "04 / Career",
     careerTitle: "Experience",
     date4: "Feb 2021 – Jan 2023",
-    careerAccenture:
-      "This is where my QA career began. I learned the foundations of testing, functional analysis and working within a development team.",
+    careerAccenture: "My first QA job. In every sprint I designed and ran functional, integration and regression tests, reported defects and helped new people on the team.",
     readExperience: "Learn about my experience →",
     date3: "Mar 2023 – Oct 2024",
-    careerMarkmonitor:
-      "It was a big step for me: I learned new tools, got to know an unfamiliar business, and learned to work confidently in English.",
+    careerMarkmonitor: "This is where I moved into automation. I wrote regression and end-to-end tests with Java and Playwright, in international teams and in English. I also validated APIs with Postman and took part in performance tests with JMeter.",
     date2: "Oct 2024 – Jul 2025",
-    careerAllianz:
-      "I owned the automation of a business line and built the team’s first flow connecting the UI, APIs and database validations.",
+    careerAllianz: "I automated UI and API tests with Java, Selenium and Cucumber, and set up Docker and Selenium Grid environments to run in parallel. I was also in charge of the automation for one line of business.",
     date1: "Jul 2025 – present",
-    careerTulegajo:
-      "I still work in automation, while looking for new ways to use test results and improve how the team works.",
-    skillsLabel: "04 / Tools and education",
+    careerTulegajo: "Today I do automation and AI applied to QA: a multi-agent system with Claude Code, a custom RAG, failure analysis in CI and automatic reports in Teams and Power Apps. I also mentor people on the team.",
+    skillsLabel: "05 / Tools and education",
     skillsTitle: "What I use and study",
     education: "Education",
     ubaTitle: "Bachelor's Degree in Data Science",
@@ -75,12 +103,12 @@ const translations = {
     stack: "Toolkit",
     stackWeb: "Web automation",
     stackApi: "APIs and backend",
-    stackCi: "CI/CD and infrastructure",
+    stackCi: "CI/CD and cloud",
     stackReports: "Reporting and monitoring",
     stackData: "Data and visualization",
     stackProcesses: "Process automation",
-    stackAi: "Artificial intelligence",
-    stackMethods: "Methods and management",
+    stackAi: "Artificial intelligence and agents",
+    stackMethods: "Methods",
     exploratoryData: "exploratory data analysis",
     dataCleaning: "data cleaning and analysis",
     dataViz: "data visualization",
@@ -90,7 +118,7 @@ const translations = {
     testCaseDesign: "Test case design",
     regressionTesting: "Regression testing",
     defectTracking: "Defect tracking",
-    contactLabel: "05 / Contact",
+    contactLabel: "06 / Contact",
     contactTitle: "Let’s connect!",
     copyHint: "Copy",
     closeDetails: "Close details",
@@ -133,13 +161,8 @@ function updateMenuLabel() {
 function language(lang) {
   document.documentElement.lang = lang;
   document
-    .querySelector(".nav-cv")
-    .setAttribute(
-      "aria-label",
-      lang === "es"
-        ? "Abrir CV (PDF) en una nueva pestaña"
-        : "Open CV (PDF) in a new tab",
-    );
+    .getElementById("cv-toggle")
+    .setAttribute("aria-label", lang === "es" ? "Elegir idioma del CV" : "Choose CV language");
   document
     .querySelector(".topbar nav")
     .setAttribute(
@@ -150,13 +173,6 @@ function language(lang) {
     const value = (lang === "en" ? translations.en : es)[node.dataset.i18n];
     if (value !== undefined) node.firstChild.textContent = value;
   });
-  const selectedStackOption = document.querySelector(
-    '.stack-menu [role="option"][aria-selected="true"]',
-  );
-  if (selectedStackOption) {
-    document.querySelector(".stack-menu-trigger span").textContent =
-      selectedStackOption.textContent;
-  }
   updateProjectToggles(lang);
   languageButton.textContent = lang === "es" ? "EN" : "ES";
   languageButton.lang = lang === "es" ? "en" : "es";
@@ -185,12 +201,6 @@ function language(lang) {
     .querySelector(".project-filters")
     .setAttribute("aria-label", lang === "es" ? "Filtrar proyectos" : "Filter projects");
   document
-    .querySelector(".stack-tablist")
-    .setAttribute(
-      "aria-label",
-      lang === "es" ? "Categorías del stack" : translations.en.stackTabsLabel,
-    );
-  document
     .querySelectorAll("[data-certificate-image]")
     .forEach((button) =>
       button.setAttribute(
@@ -208,7 +218,7 @@ function language(lang) {
     else url.searchParams.delete("lang");
     link.href = url;
   });
-  document.title = "Paula Carluccio | Automation Engineer";
+  document.title = "Paula Carluccio | QA Automation & AI Automation";
   theme(document.documentElement.dataset.theme || "light");
   try {
     localStorage.setItem("pc-language", lang);
@@ -233,8 +243,8 @@ function theme(value) {
         : "Switch to dark mode",
   );
   document.querySelector('meta[name="theme-color"]').content = dark
-    ? "#281f26"
-    : "#f2e1dc";
+    ? "#14101a"
+    : "#f6efe9";
   try {
     localStorage.setItem("pc-theme", value);
   } catch {}
@@ -302,91 +312,36 @@ projectFilters.forEach((button) =>
   }),
 );
 
-// Stack category tabs
-const stackTabs = [...document.querySelectorAll('[role="tab"]')];
-const stackMenuTrigger = document.getElementById("stack-menu-trigger");
-const stackMenu = document.getElementById("stack-menu");
-const stackMenuOptions = [...stackMenu.querySelectorAll('[role="option"]')];
-function setStackMenu(open) {
-  stackMenu.hidden = !open;
-  stackMenuTrigger.setAttribute("aria-expanded", String(open));
+// Technology list: main items first, the rest on demand
+const stackList = document.getElementById("stack-list"),
+  stackToggle = document.getElementById("stack-toggle");
+function updateStackToggle() {
+  const open = stackToggle.getAttribute("aria-expanded") === "true",
+    es = document.documentElement.lang === "es";
+  stackToggle.firstElementChild.textContent = open
+    ? es
+      ? "Ver solo lo principal"
+      : "Show only the main ones"
+    : es
+      ? "Ver todo el stack"
+      : "See the full stack";
 }
-function selectStackTab(selectedTab, moveFocus = false) {
-  stackTabs.forEach((tab) => {
-    const isSelected = tab === selectedTab;
-    tab.setAttribute("aria-selected", String(isSelected));
-    tab.tabIndex = isSelected ? 0 : -1;
-    document.getElementById(tab.getAttribute("aria-controls")).hidden = !isSelected;
-  });
-  stackMenuOptions.forEach((option) => {
-    const isSelected = option.dataset.panel === selectedTab.getAttribute("aria-controls");
-    option.setAttribute("aria-selected", String(isSelected));
-    if (isSelected) stackMenuTrigger.firstElementChild.textContent = option.textContent;
-  });
-  if (moveFocus) selectedTab.focus();
-}
-stackTabs.forEach((tab, index) => {
-  tab.addEventListener("click", () => selectStackTab(tab));
-  tab.addEventListener("keydown", (event) => {
-    const keyTargets = {
-      ArrowRight: (index + 1) % stackTabs.length,
-      ArrowDown: (index + 1) % stackTabs.length,
-      ArrowLeft: (index - 1 + stackTabs.length) % stackTabs.length,
-      ArrowUp: (index - 1 + stackTabs.length) % stackTabs.length,
-      Home: 0,
-      End: stackTabs.length - 1,
-    };
-    if (keyTargets[event.key] === undefined) return;
-    event.preventDefault();
-    selectStackTab(stackTabs[keyTargets[event.key]], true);
-  });
+stackToggle.addEventListener("click", () => {
+  const open = stackToggle.getAttribute("aria-expanded") !== "true";
+  stackToggle.setAttribute("aria-expanded", String(open));
+  stackList.classList.toggle("show-all", open);
+  updateStackToggle();
 });
-stackMenuTrigger.addEventListener("click", () => {
-  const open = stackMenuTrigger.getAttribute("aria-expanded") !== "true";
-  setStackMenu(open);
-  if (open)
-    stackMenuOptions
-      .find((option) => option.getAttribute("aria-selected") === "true")
-      ?.focus();
-});
-stackMenuOptions.forEach((option, index) => {
-  option.addEventListener("click", () => {
-    const selectedTab = stackTabs.find(
-      (tab) => tab.getAttribute("aria-controls") === option.dataset.panel,
-    );
-    if (selectedTab) selectStackTab(selectedTab);
-    setStackMenu(false);
-    stackMenuTrigger.focus();
-  });
-  option.addEventListener("keydown", (event) => {
-    if (!["ArrowDown", "ArrowUp", "Home", "End"].includes(event.key)) return;
-    event.preventDefault();
-    const nextIndex =
-      event.key === "Home"
-        ? 0
-        : event.key === "End"
-          ? stackMenuOptions.length - 1
-          : event.key === "ArrowDown"
-            ? (index + 1) % stackMenuOptions.length
-            : (index - 1 + stackMenuOptions.length) % stackMenuOptions.length;
-    stackMenuOptions[nextIndex].focus();
-  });
-});
-document.addEventListener("click", (event) => {
-  if (!event.target.closest(".stack-mobile-control")) setStackMenu(false);
-});
-document.addEventListener("keydown", (event) => {
-  if (event.key === "Escape" && !stackMenu.hidden) {
-    setStackMenu(false);
-    stackMenuTrigger.focus();
-  }
+new MutationObserver(updateStackToggle).observe(document.documentElement, {
+  attributes: true,
+  attributeFilter: ["lang"],
 });
 
 // Reveal sections as they enter the viewport
 if ("IntersectionObserver" in window) {
   const revealTargets = [
     ...document.querySelectorAll(
-      "main section .sectionhead,#proyectos .project-filters,#proyectos .grid,.timeline,.learning-block,.contact .actions",
+      "main section .sectionhead,.demo-shell,#proyectos .project-filters,#proyectos .grid,.timeline,.learning-block,.contact .actions",
     ),
   ];
   const revealObserver = new IntersectionObserver(
@@ -520,3 +475,27 @@ if ("IntersectionObserver" in window) {
   );
   observedSections.forEach((section) => sectionObserver.observe(section));
 }
+// CV menu: pick Spanish or English after pressing CV
+const cvToggle = document.getElementById("cv-toggle"),
+  cvList = document.getElementById("cv-list");
+function setCvMenu(open) {
+  cvList.hidden = !open;
+  cvToggle.setAttribute("aria-expanded", String(open));
+}
+cvToggle.addEventListener("click", () => {
+  const open = cvList.hidden;
+  setCvMenu(open);
+  if (open) cvList.querySelector("a").focus();
+});
+cvList.addEventListener("click", (event) => {
+  if (event.target.closest("a")) setCvMenu(false);
+});
+document.addEventListener("click", (event) => {
+  if (!event.target.closest(".cv-menu")) setCvMenu(false);
+});
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape" && !cvList.hidden) {
+    setCvMenu(false);
+    cvToggle.focus();
+  }
+});

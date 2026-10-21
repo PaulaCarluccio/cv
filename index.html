@@ -1,12 +1,12 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="es" data-theme="dark">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#281f26" />
+    <meta name="theme-color" content="#14101a" />
     <meta
       name="description"
-      content="Soy Paula Carluccio. Creo soluciones de automatización y exploro nuevas formas de trabajar con datos e IA."
+      content="Paula Carluccio, QA Automation y AI Automation. Frameworks de pruebas, sistemas multiagente y automatización de procesos."
     />
 
     <!-- Social sharing -->
@@ -15,7 +15,7 @@
     <meta property="og:site_name" content="Paula Carluccio" />
     <meta
       property="og:title"
-      content="Paula Carluccio | Automation Engineer"
+      content="Paula Carluccio | QA Automation &amp; AI Automation"
     />
     <meta
       property="og:description"
@@ -35,18 +35,20 @@
     <meta property="og:image:height" content="630" />
     <meta
       property="og:image:alt"
-      content="Paula Carluccio | Automation Engineer · Data & AI"
+      content="Paula Carluccio | QA Automation &amp; AI Automation"
     />
-    <title>Paula Carluccio | Automation Engineer</title>
+    <title>Paula Carluccio | QA Automation &amp; AI Automation</title>
     <link rel="canonical" href="https://paulacarluccio.com.ar/" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600;700&display=swap"
       rel="stylesheet"
     />
     <link rel="icon" type="image/svg+xml" href="assets/images/favicon-paula.svg" />
     <link rel="stylesheet" href="assets/css/main.css" />
+    <link rel="stylesheet" href="assets/css/apple.css" />
+    <link rel="stylesheet" href="assets/css/demos.css" />
   </head>
   <body>
     <a class="skip" href="#main" data-i18n="skip">Ir al contenido</a>
@@ -69,6 +71,7 @@
         <div class="navlinks" id="navlinks">
           <a href="#sobre-mi" data-i18n="navAbout">Sobre mí</a
           ><a href="#proyectos" data-i18n="navWork">Proyectos</a
+          ><a href="#demos" data-i18n="navDemos">Demos</a
           ><a href="#experiencia" data-i18n="navExperience">Experiencia</a
           ><a href="#herramientas" data-i18n="navEducation">Formación</a
           ><a href="#contacto" data-i18n="navContact">Contacto</a>
@@ -84,14 +87,34 @@
           <span></span><span></span><span></span>
         </button>
         <div class="switches">
-          <a
-            class="nav-cv"
-            href="assets/documents/CV%20-%20Paula%20Carluccio.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Abrir CV (PDF) en una nueva pestaña"
-            >CV</a
-          >
+          <div class="cv-menu">
+            <button
+              class="nav-cv"
+              id="cv-toggle"
+              type="button"
+              aria-haspopup="true"
+              aria-expanded="false"
+              aria-controls="cv-list"
+              aria-label="Elegir idioma del CV"
+            >
+              CV
+            </button>
+            <div class="cv-list" id="cv-list" hidden>
+              <a
+                href="assets/documents/Paula%20Carluccio%20-%20AI%20Automation%20Engineer%20(Espa%C3%B1ol).pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                lang="es"
+                >Español <span aria-hidden="true">PDF ↗</span></a
+              ><a
+                href="assets/documents/Paula%20Carluccio%20-%20AI%20Automation%20Engineer.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                lang="en"
+                >English <span aria-hidden="true">PDF ↗</span></a
+              >
+            </div>
+          </div>
           <button
             class="switch"
             id="language"
@@ -125,15 +148,22 @@
               alt="Retrato de Paula Carluccio"
             />
             <div class="hero-copy">
+              <p class="hero-kicker">
+                <span class="dot" aria-hidden="true"></span
+                ><span data-i18n="heroKicker">Portfolio profesional</span>
+              </p>
               <h1>Paula<br /><span>Carluccio</span></h1>
               <strong class="profile-heading" data-i18n="profileTitle"
-                >Automation Engineer · Data & AI</strong
+                >QA Automation &amp; AI Automation</strong
               >
-              <p class="lead" data-i18n="hero">
-                Trabajo en automatización y estudio Ciencia de Datos e Inteligencia
-                Artificial. Mi experiencia empezó en QA y con el tiempo fui sumando
-                análisis de datos, automatización de procesos y soluciones con IA.
-              </p>
+              <p class="lead" data-i18n="hero">Soy QA Automation y AI Automation Engineer, con más de 5 años en calidad de software. Hoy armo agentes con Claude Code, un RAG propio y reportes automáticos para que el equipo vea rápido qué falló y por qué.</p>
+              <div class="hero-actions">
+                <a class="btn primary" href="#contacto"
+                  ><span data-i18n="ctaContact">Contactame</span></a
+                ><a class="btn ghost" href="#proyectos"
+                  ><span data-i18n="ctaProjects">Ver proyectos</span></a
+                >
+              </div>
               <div class="socials">
                 <a
                   class="social"
@@ -155,9 +185,33 @@
                 de procesos · IA aplicada
               </p>
               <strong class="profile-languages" data-i18n="profileLang"
-                >Español nativo · Inglés C1</strong
+                >Buenos Aires, Argentina · Español nativo · Inglés C1</strong
               >
             </div>
+          <div class="pillars">
+            <article class="pillar">
+              <span class="pillar-tag">01</span>
+              <h2 data-i18n="pillarQaTitle">QA Automation</h2>
+              <p data-i18n="pillarQaText">
+                Frameworks de pruebas web, mobile y de APIs, desde la preparación de los
+                datos hasta el análisis de resultados.
+              </p>
+              <p class="pillar-stack">
+                Java · Selenium · Playwright · Appium · Rest Assured
+              </p>
+            </article>
+            <article class="pillar">
+              <span class="pillar-tag">02</span>
+              <h2 data-i18n="pillarAiTitle">AI Automation</h2>
+              <p data-i18n="pillarAiText">
+                Sistemas multiagente y flujos automáticos que reducen tareas repetitivas
+                del equipo de QA.
+              </p>
+              <p class="pillar-stack">
+                Claude Code · Amazon Bedrock · n8n · Power Automate
+              </p>
+            </article>
+          </div>
           </div>
         </div>
         <!-- Perfil -->
@@ -165,18 +219,8 @@
           <div class="sectionhead">
             <span class="label" data-i18n="aboutLabel">01 / Perfil</span>
             <h2 data-i18n="aboutTitle">Sobre mí</h2>
-            <p data-i18n="aboutText">
-              Empecé a trabajar en QA en 2021 y desde el primer día supe que quería
-              programar. Siempre me interesó entender los problemas, buscar una forma de
-              resolverlos y aprender todo lo necesario para poder hacerlo.
-            </p>
-            <p data-i18n="aboutText2">
-              Con los años fui descubriendo nuevos intereses, especialmente los datos y la
-              inteligencia artificial. Me considero una persona curiosa, perseverante y
-              con iniciativa. En un equipo puedo aportar autonomía, una mirada atenta
-              sobre lo que se puede mejorar y muchas ganas de transformar ideas en
-              soluciones que realmente sirvan.
-            </p>
+            <p data-i18n="aboutText">Empecé en QA en 2021 y desde el primer día quise programar. Me gusta entender el problema, buscar cómo resolverlo y aprender lo que haga falta para hacerlo.</p>
+            <p data-i18n="aboutText2">Con el tiempo me fui metiendo en datos e inteligencia artificial. Soy curiosa, constante y me gusta proponer mejoras sin que me las pidan. Hoy estudio la Tecnicatura en Ciencias de Datos e Inteligencia Artificial.</p>
           </div>
         </section>
         <!-- Proyectos y filtros -->
@@ -199,133 +243,28 @@
             ><button type="button" data-filter="ai">Agentic AI</button>
           </div>
           <div class="grid">
-            <details class="card project-card" data-tags="java">
-              <summary>
-                <span class="meta">Java · Selenium · Appium · APIs</span>
-                <h3 data-i18n="p4Title">Automatización de punta a punta</h3>
-                <p data-i18n="p4Summary">
-                  Es el área en la que más experiencia tengo: creo frameworks desde cero,
-                  empezando por entender el negocio y definir qué necesita automatizarse.
-                </p>
-                <span class="project-toggle" data-i18n="more">Ver detalles</span>
-              </summary>
-              <div class="detail">
-                <p data-i18n="p4a">
-                  La automatización de pruebas es el área en la que tengo más experiencia.
-                  Puedo crear un framework desde cero, empezando por entender cómo
-                  funciona el producto, cuáles son sus reglas de negocio y qué necesita
-                  validar el equipo.
-                </p>
-                <p data-i18n="p4b">
-                  A partir de eso defino qué conviene automatizar, cómo organizar las
-                  pruebas y qué necesita implementarse. Aplico buenas prácticas de
-                  programación para que el framework sea claro, fácil de mantener y pueda
-                  crecer junto con el producto.
-                </p>
-                <p data-i18n="p4c">
-                  Trabajé en automatización web, mobile y de APIs, desde la preparación de
-                  los datos hasta el análisis de los resultados. Esta experiencia me
-                  permite entender las necesidades de cada proyecto y transformarlas en
-                  una solución que sea útil para el equipo.
-                </p>
-              </div>
-            </details>
-            <details class="card project-card" data-tags="processes">
-              <summary>
-                <span class="meta">Power Automate · Teams · Reporting</span>
-                <h3 data-i18n="p2Title">Flujos y reportes automáticos</h3>
-                <p data-i18n="p2Summary">
-                  Convertí el resultado de cada ejecución en un resumen que llega al
-                  equipo apenas termina el pipeline.
-                </p>
-                <span class="project-toggle" data-i18n="more">Ver detalles</span>
-              </summary>
-              <div class="detail">
-                <p data-i18n="p2a">
-                  Antes, para saber cómo había salido una ejecución, teníamos que entrar
-                  al pipeline, descargar el reporte y revisarlo manualmente. Esto llevaba
-                  tiempo y hacía más difícil seguir los casos que habían fallado.
-                </p>
-                <p data-i18n="p2b">
-                  Propuse automatizar ese seguimiento. Ahora, cada vez que termina el
-                  pipeline, el equipo recibe en Teams un mensaje con el resumen de la
-                  ejecución. Los resultados también se guardan automáticamente en una base
-                  de datos, donde podemos revisar las fallas y registrar su seguimiento.
-                </p>
-                <p data-i18n="p2c">
-                  Esto nos permite saber rápidamente qué pasó en cada ejecución y
-                  concentrarnos directamente en los casos que necesitan atención.
-                </p>
-              </div>
-            </details>
-            <details class="card project-card" data-tags="python">
-              <summary>
-                <span class="meta">Python · CI · Microsoft Lists</span>
-                <h3 data-i18n="p1Title">Analítica de ejecuciones QA</h3>
-                <p data-i18n="p1Summary">
-                  Organicé los datos de las ejecuciones para poder ver qué fallaba, dónde
-                  y con qué frecuencia.
-                </p>
-                <span class="project-toggle" data-i18n="more">Ver detalles</span>
-              </summary>
-              <div class="detail">
-                <p data-i18n="p1a">
-                  Los resultados quedaban distribuidos en distintos reportes, lo que hacía
-                  difícil compararlos y entender qué estaba pasando a lo largo del tiempo.
-                </p>
-                <p data-i18n="p1b">
-                  Para resolverlo, desarrollé un proceso que toma automáticamente los
-                  resultados de cada ejecución, selecciona la información relevante, la
-                  organiza y la guarda de manera estructurada en una base de datos.
-                  También incorporé un tratamiento para los reintentos, evitando que un
-                  mismo caso se registre más de una vez y altere los resultados.
-                </p>
-                <p data-i18n="p1c">
-                  Ahora podemos consultar cada ejecución por módulo y tipo de usuario,
-                  revisar las fallas y reconocer casos recurrentes. Esto nos permite
-                  aprovechar los datos que ya generaban las automatizaciones para hacer un
-                  seguimiento más claro y tomar mejores decisiones.
-                </p>
-              </div>
-            </details>
-            <details class="card project-card" data-tags="ai">
-              <summary>
-                <span class="meta" data-i18n="p3Meta">Claude Code · Agentes · QA</span>
-                <h3 data-i18n="p3Title">Sistema multiagente para QA</h3>
-                <p data-i18n="p3Summary">
-                  Implementé un sistema que identifica los casos que fallan por un locator
-                  roto y lo corrige automáticamente. Después, nosotros validamos que el
-                  nuevo locator funcione correctamente.
-                </p>
-                <span class="project-toggle" data-i18n="more">Ver detalles</span>
-              </summary>
-              <div class="detail">
-                <p data-i18n="p3a">
-                  Una parte frecuente del mantenimiento de las automatizaciones consiste
-                  en corregir casos que fallan porque cambió algún elemento de la
-                  aplicación. Identificar el problema, encontrar un locator nuevo y
-                  actualizarlo requiere tiempo, aunque muchas veces sea una tarea
-                  repetitiva.
-                </p>
-                <p data-i18n="p3b">
-                  Implementé un sistema de agentes que analiza los casos fallidos,
-                  identifica cuáles fallaron por un locator roto y realiza la corrección
-                  automáticamente.
-                </p>
-                <p data-i18n="p3c">
-                  Una vez realizado el cambio, nosotros validamos que el locator nuevo
-                  funcione correctamente. Esto reduce el tiempo dedicado al mantenimiento
-                  y permite que el equipo se concentre en las fallas que realmente
-                  necesitan análisis y criterio.
-                </p>
-              </div>
-            </details>
+<details class="card project-card featured" data-tags="ai"><summary><span class="meta" data-i18n="p3Meta">Claude Code · Agentes · Plugin</span><h3 data-i18n="p3Title">Sistema multiagente con Claude Code</h3><p data-i18n="p3Summary">Armé un sistema de agentes con Claude Code, empaquetado como plugin para el equipo. Lee casos manuales, los automatiza, investiga las fallas y propone cómo arreglarlas. Lo ambiguo y los posibles bugs los revisa una persona.</p><span class="project-toggle" data-i18n="more">Ver detalles</span></summary><div class="detail"><p data-i18n="p3a">Mantener las automatizaciones lleva mucho tiempo. Cuando cambia algo en la pantalla, el test falla y alguien tiene que investigar qué pasó. Muchas veces es una tarea repetitiva.</p><p data-i18n="p3b">Con el plugin, los agentes hacen ese trabajo primero. Con /qa-create automatizan un caso manual: buscan qué ya existe para reutilizar, escriben lo que falta, compilan y lo validan con varias corridas. Con /qa-repair y /qa-locators diagnostican las fallas y arreglan solo las que son de automation. Si es un bug del producto, no tocan el test.</p><p data-i18n="p3c">Antes, el análisis de la regresión de cada release podía llevar varios días. Ahora lo tenemos apenas termina la ejecución. La IA separa las fallas por cambios de locators de los posibles bugs, y el equipo mira primero lo que importa.</p></div></details>
+<details class="card project-card" data-tags="ai"><summary><span class="meta" data-i18n="p7Meta">Claude Code · Jira · Xray · Figma</span><h3 data-i18n="p7Title">Análisis funcional y casos de prueba con IA</h3><p data-i18n="p7Summary">Armé otro plugin que toma una épica lista para QA, lee Jira y Figma, y deja el análisis y los casos de prueba preparados en Xray.</p><span class="project-toggle" data-i18n="more">Ver detalles</span></summary><div class="detail"><p data-i18n="p7a">Cuando una épica queda lista para QA, el plugin lee todo lo que tiene en Jira y mira las pantallas en Figma. Con eso crea un ticket de análisis funcional: de qué se trata, las historias con sus criterios y los puntos que hay que aclarar con la PO.</p><p data-i18n="p7b">También escribe los casos en Xray, en Gherkin: uno por funcionalidad y con una sola validación cada uno. Quedan en una carpeta “Por revisar”. No cambia nada de los tickets originales, solo los lee.</p><p data-i18n="p7c">Las decisiones siguen siendo del equipo: aprobar, ejecutar o automatizar lo decide una persona.</p></div></details>
+<details class="card project-card" data-tags="ai"><summary><span class="meta" data-i18n="p5Meta">Java · RAG · Contexto para agentes</span><h3 data-i18n="p5Title">RAG propio para los agentes</h3><p data-i18n="p5Summary">Hice en Java un sistema RAG que le da a los agentes el contexto del proyecto: tests existentes, escenarios, historial de ejecuciones y código de la app.</p><span class="project-toggle" data-i18n="more">Ver detalles</span></summary><div class="detail"><p data-i18n="p5a">Para analizar bien una falla, un agente tiene que conocer el proyecto. El RAG le acerca eso: los tests que ya existen, los escenarios, el historial de ejecuciones y el código de la aplicación.</p><p data-i18n="p5b">El código de la aplicación es de solo lectura: los agentes lo consultan, no lo modifican.</p></div></details>
+<details class="card project-card" data-tags="ai"><summary><span class="meta" data-i18n="p6Meta">Claude Code · CI · Bitbucket Pipelines</span><h3 data-i18n="p6Title">Análisis de fallas en el pipeline de CI</h3><p data-i18n="p6Summary">Puse a Claude Code a analizar las fallas dentro del pipeline. Las agrupa, las clasifica y dice qué tan seguro está.</p><span class="project-toggle" data-i18n="more">Ver detalles</span></summary><div class="detail"><p data-i18n="p6a">Cuando termina una ejecución, el análisis corre solo dentro del pipeline. Agrupa las fallas parecidas, mira la captura de pantalla, cómo está armada la página y el registro de la ejecución, y las clasifica: locator que cambió, posible bug del producto o problema de ambiente. También dice qué tan seguro está.</p><p data-i18n="p6b">Trabaja con permisos de solo lectura y tiene un respaldo con reglas, así que el reporte sale aunque la IA no responda.</p></div></details>
+<details class="card project-card" data-tags="processes"><summary><span class="meta" data-i18n="p2Meta">Python · Power Automate · Power Apps · Teams</span><h3 data-i18n="p2Title">Reportes y seguimiento en Power Platform</h3><p data-i18n="p2Summary">Cada ejecución llega a Teams con el análisis de la IA y links a Jira. Además hice una app en Power Apps para seguir los resultados.</p><span class="project-toggle" data-i18n="more">Ver detalles</span></summary><div class="detail"><p data-i18n="p2a">Antes, para saber cómo había salido una ejecución, teníamos que entrar al pipeline, bajar el reporte y revisarlo a mano. Llevaba tiempo y era más difícil seguir los casos que habían fallado.</p><p data-i18n="p2b">Propuse automatizar ese seguimiento con Python y Power Automate. Ahora, cuando termina el pipeline, el equipo recibe en Teams un resumen con el análisis de la IA y los links a Jira. Los resultados también se guardan solos en una base de datos, donde revisamos las fallas y anotamos su seguimiento.</p><p data-i18n="p2c">Además hice una app en Power Apps para ver los resultados por build, las fallas por módulo y los bugs conocidos.</p></div></details>
+<details class="card project-card" data-tags="python"><summary><span class="meta">Python · CI · Microsoft Lists</span><h3 data-i18n="p1Title">Analítica de ejecuciones QA</h3><p data-i18n="p1Summary">Ordené los datos de las ejecuciones para ver qué falla, dónde y con qué frecuencia.</p><span class="project-toggle" data-i18n="more">Ver detalles</span></summary><div class="detail"><p data-i18n="p1a">Los resultados estaban repartidos en varios reportes. Era difícil compararlos y ver qué pasaba con el tiempo.</p><p data-i18n="p1b">Armé un proceso que toma los resultados de cada ejecución, se queda con lo que sirve, lo ordena y lo guarda en una base de datos. También resolví los reintentos: un mismo caso no se registra dos veces ni cambia los números.</p><p data-i18n="p1c">Ahora puedo ver cada ejecución por módulo y tipo de usuario, revisar las fallas y detectar las que se repiten. Aprovechamos datos que las automatizaciones ya generaban para decidir mejor.</p></div></details>
+<details class="card project-card" data-tags="java"><summary><span class="meta">Java · Selenium · Appium · APIs</span><h3 data-i18n="p4Title">Automatización de punta a punta</h3><p data-i18n="p4Summary">Es lo que más hice: armar frameworks de automatización desde cero, empezando por entender el negocio y decidir qué conviene automatizar.</p><span class="project-toggle" data-i18n="more">Ver detalles</span></summary><div class="detail"><p data-i18n="p4a">La automatización de pruebas es donde más experiencia tengo. Puedo armar un framework desde cero: primero entiendo cómo funciona el producto, sus reglas de negocio y qué necesita validar el equipo.</p><p data-i18n="p4b">Después decido qué conviene automatizar y cómo ordenar las pruebas. Escribo el código para que sea claro, fácil de mantener y pueda crecer con el producto.</p><p data-i18n="p4c">Trabajé en automatización web, mobile y de APIs, desde preparar los datos hasta analizar los resultados.</p><p data-i18n="p4d">También armé pipelines de CI/CD en Bitbucket Pipelines, con ejecución en paralelo, reintentos y controles de calidad, y mentoreo a gente del equipo de QA.</p></div></details>
           </div>
+        </section>
+        <!-- Demos interactivas -->
+        <section id="demos">
+          <div class="sectionhead">
+            <span class="label" data-i18n="demoLabel">03 / Demos interactivas</span>
+            <h2 data-i18n="demoTitle">Mirá cómo funciona</h2>
+            <p data-i18n="demoIntro">Cinco demos cortas: cómo se analiza un reporte, cómo llega el aviso a Teams, cómo funcionan mis dos plugins y cómo se conecta todo. Los datos son inventados.</p>
+          </div>
+          <div class="demo-shell" id="demo-root"></div>
         </section>
         <!-- Trayectoria profesional -->
         <section id="experiencia">
           <div class="sectionhead">
-            <span class="label" data-i18n="careerLabel">03 / Trayectoria</span>
+            <span class="label" data-i18n="careerLabel">04 / Trayectoria</span>
             <h2 data-i18n="careerTitle">Experiencia</h2>
           </div>
           <div class="timeline">
@@ -337,10 +276,7 @@
                 </div>
                 <h3>QA Analyst</h3>
                 <h4>Accenture</h4>
-                <p data-i18n="careerAccenture">
-                  Acá empezó mi carrera en QA. Aprendí las bases del testing, el análisis
-                  funcional y el trabajo dentro de un equipo de desarrollo.
-                </p>
+                <p data-i18n="careerAccenture">Mi primer trabajo en QA. En cada sprint diseñaba y ejecutaba pruebas funcionales, de integración y de regresión, reportaba defectos y ayudaba a la gente nueva del equipo.</p>
                 <span class="read-more" data-i18n="readExperience"
                   >Conocer mi experiencia →</span
                 >
@@ -354,11 +290,7 @@
                 </div>
                 <h3>QA Automation Engineer</h3>
                 <h4>Markmonitor</h4>
-                <p data-i18n="careerMarkmonitor">
-                  Fue un cambio muy grande para mí: aprendí nuevas herramientas, tuve que
-                  entender un negocio desde cero y superar la barrera de trabajar en
-                  inglés.
-                </p>
+                <p data-i18n="careerMarkmonitor">Acá pasé a automatizar. Hice pruebas de regresión y end-to-end con Java y Playwright, en equipos internacionales y en inglés. También validé APIs con Postman y participé en pruebas de performance con JMeter.</p>
                 <span class="read-more" data-i18n="readExperience"
                   >Conocer mi experiencia →</span
                 >
@@ -372,11 +304,7 @@
                 </div>
                 <h3>QA Automation Engineer</h3>
                 <h4>Allianz</h4>
-                <p data-i18n="careerAllianz">
-                  Estuve a cargo de la automatización de una línea de negocio y desarrollé
-                  el primer flujo del equipo que conectaba interfaz, APIs y validaciones
-                  en la base de datos.
-                </p>
+                <p data-i18n="careerAllianz">Automaticé pruebas de interfaz y de APIs con Java, Selenium y Cucumber, y armé entornos con Docker y Selenium Grid para correr en paralelo. También estuve a cargo de la automatización de una línea de negocio.</p>
                 <span class="read-more" data-i18n="readExperience"
                   >Conocer mi experiencia →</span
                 >
@@ -388,13 +316,9 @@
                   <span class="step">04</span><span aria-hidden="true">·</span
                   ><span class="date" data-i18n="date1">Jul 2025 – actualidad</span>
                 </div>
-                <h3>QA Automation Engineer</h3>
+                <h3 data-i18n="roleMinder">AI Automation Engineer (QA Automation)</h3>
                 <h4>Minder S.A.</h4>
-                <p data-i18n="careerTulegajo">
-                  Hoy sigo trabajando en automatización, pero también busco nuevas formas
-                  de aprovechar los datos de las ejecuciones y mejorar los procesos del
-                  equipo.
-                </p>
+                <p data-i18n="careerTulegajo">Hoy hago automatización e IA aplicada a QA: un sistema multiagente con Claude Code, un RAG propio, análisis de fallas en CI y reportes automáticos en Teams y Power Apps. Además mentoreo a gente del equipo.</p>
                 <span class="read-more" data-i18n="readExperience"
                   >Conocer mi experiencia →</span
                 >
@@ -406,7 +330,7 @@
         <section id="herramientas">
           <div class="sectionhead">
             <span class="label" data-i18n="skillsLabel"
-              >04 / Herramientas y formación</span
+              >05 / Herramientas y formación</span
             >
             <h2 data-i18n="skillsTitle">Lo que uso y estudio</h2>
           </div>
@@ -415,8 +339,8 @@
             <div class="education-grid">
               <article class="learning-card">
                 <span class="learning-date">2021–2025</span>
-                <h4 data-i18n="ubaTitle">Licenciatura en Ciencia de Datos</h4>
-                <p>Universidad de Buenos Aires</p>
+                <h4 data-i18n="ubaTitle">Licenciatura en Ciencias de Datos</h4>
+                <p data-i18n="ubaStatus">Universidad de Buenos Aires · Estudios cursados</p>
               </article>
               <article class="learning-card">
                 <span class="learning-date" data-i18n="studyDate">2026–actualidad</span>
@@ -469,6 +393,21 @@
                 <button
                   class="certificate-visual"
                   type="button"
+                  data-certificate-image="assets/images/Certificado AWS Agentic AI.png"
+                  data-certificate-title="Agentic AI on AWS"
+                >
+                  <span>Imagen pendiente</span>
+                </button>
+                <div>
+                  <span class="learning-date" data-i18n="certAwsDate">Abr 2026 · Finalizado</span>
+                  <h4>Become a Solutions Architect: Agentic AI on AWS</h4>
+                  <p>BeSA Cloud Academy</p>
+                </div>
+              </article>
+              <article class="learning-card certificate-card">
+                <button
+                  class="certificate-visual"
+                  type="button"
                   data-certificate-image="assets/images/Certificado AI Automation.jpg"
                   data-certificate-title="AI Automation"
                 >
@@ -486,382 +425,72 @@
           </div>
           <div class="learning-block">
             <h3 data-i18n="stack">Stack</h3>
-            <div class="stack-tabs">
-              <div class="stack-mobile-control">
-                <button
-                  class="stack-menu-trigger"
-                  id="stack-menu-trigger"
-                  type="button"
-                  aria-haspopup="listbox"
-                  aria-controls="stack-menu"
-                  aria-expanded="false"
-                >
-                  <span data-i18n="stackWeb">Automatización web</span
-                  ><span class="stack-menu-arrow" aria-hidden="true"></span>
-                </button>
-                <div
-                  class="stack-menu"
-                  id="stack-menu"
-                  role="listbox"
-                  aria-label="Stack"
-                  hidden
-                >
-                  <button
-                    type="button"
-                    role="option"
-                    data-panel="panel-stack-web"
-                    aria-selected="true"
-                    data-i18n="stackWeb"
-                  >
-                    Automatización web
-                  </button>
-                  <button
-                    type="button"
-                    role="option"
-                    data-panel="panel-stack-mobile"
-                    aria-selected="false"
-                  >
-                    Mobile
-                  </button>
-                  <button
-                    type="button"
-                    role="option"
-                    data-panel="panel-stack-api"
-                    aria-selected="false"
-                    data-i18n="stackApi"
-                  >
-                    APIs y backend
-                  </button>
-                  <button
-                    type="button"
-                    role="option"
-                    data-panel="panel-stack-performance"
-                    aria-selected="false"
-                  >
-                    Performance testing
-                  </button>
-                  <button
-                    type="button"
-                    role="option"
-                    data-panel="panel-stack-ci"
-                    aria-selected="false"
-                    data-i18n="stackCi"
-                  >
-                    CI/CD e infraestructura
-                  </button>
-                  <button
-                    type="button"
-                    role="option"
-                    data-panel="panel-stack-reports"
-                    aria-selected="false"
-                    data-i18n="stackReports"
-                  >
-                    Reportes y monitoreo
-                  </button>
-                  <button
-                    type="button"
-                    role="option"
-                    data-panel="panel-stack-data"
-                    aria-selected="false"
-                    data-i18n="stackData"
-                  >
-                    Datos y visualización
-                  </button>
-                  <button
-                    type="button"
-                    role="option"
-                    data-panel="panel-stack-processes"
-                    aria-selected="false"
-                    data-i18n="stackProcesses"
-                  >
-                    Automatización de procesos
-                  </button>
-                  <button
-                    type="button"
-                    role="option"
-                    data-panel="panel-stack-ai"
-                    aria-selected="false"
-                    data-i18n="stackAi"
-                  >
-                    Inteligencia artificial
-                  </button>
-                  <button
-                    type="button"
-                    role="option"
-                    data-panel="panel-stack-methods"
-                    aria-selected="false"
-                    data-i18n="stackMethods"
-                  >
-                    Metodologías y gestión
-                  </button>
-                </div>
+            <div class="stack-list" id="stack-list">
+              <div class="stack-row">
+                <h4 data-i18n="stackAi">Inteligencia artificial y agentes</h4>
+                <ul class="stack-main">
+                  <li>Claude Code</li><li>RAG</li><li>Bedrock Agents</li><li>n8n</li>
+                </ul>
+                <ul class="stack-more">
+                  <li>Amazon Bedrock</li><li data-i18n="multiagentSystems">Sistemas multiagente</li><li data-i18n="generativeAi">IA generativa</li>
+                </ul>
               </div>
-              <div class="stack-tablist" role="tablist" aria-label="Categorías del stack">
-                <button
-                  type="button"
-                  role="tab"
-                  id="tab-stack-web"
-                  aria-controls="panel-stack-web"
-                  aria-selected="true"
-                  tabindex="0"
-                >
-                  <span data-i18n="stackWeb">Automatización web</span>
-                </button>
-                <button
-                  type="button"
-                  role="tab"
-                  id="tab-stack-mobile"
-                  aria-controls="panel-stack-mobile"
-                  aria-selected="false"
-                  tabindex="-1"
-                >
-                  Mobile
-                </button>
-                <button
-                  type="button"
-                  role="tab"
-                  id="tab-stack-api"
-                  aria-controls="panel-stack-api"
-                  aria-selected="false"
-                  tabindex="-1"
-                >
-                  <span data-i18n="stackApi">APIs y backend</span>
-                </button>
-                <button
-                  type="button"
-                  role="tab"
-                  id="tab-stack-performance"
-                  aria-controls="panel-stack-performance"
-                  aria-selected="false"
-                  tabindex="-1"
-                >
-                  Performance testing
-                </button>
-                <button
-                  type="button"
-                  role="tab"
-                  id="tab-stack-ci"
-                  aria-controls="panel-stack-ci"
-                  aria-selected="false"
-                  tabindex="-1"
-                >
-                  <span data-i18n="stackCi">CI/CD e infraestructura</span>
-                </button>
-                <button
-                  type="button"
-                  role="tab"
-                  id="tab-stack-reports"
-                  aria-controls="panel-stack-reports"
-                  aria-selected="false"
-                  tabindex="-1"
-                >
-                  <span data-i18n="stackReports">Reportes y monitoreo</span>
-                </button>
-                <button
-                  type="button"
-                  role="tab"
-                  id="tab-stack-data"
-                  aria-controls="panel-stack-data"
-                  aria-selected="false"
-                  tabindex="-1"
-                >
-                  <span data-i18n="stackData">Datos y visualización</span>
-                </button>
-                <button
-                  type="button"
-                  role="tab"
-                  id="tab-stack-processes"
-                  aria-controls="panel-stack-processes"
-                  aria-selected="false"
-                  tabindex="-1"
-                >
-                  <span data-i18n="stackProcesses">Automatización de procesos</span>
-                </button>
-                <button
-                  type="button"
-                  role="tab"
-                  id="tab-stack-ai"
-                  aria-controls="panel-stack-ai"
-                  aria-selected="false"
-                  tabindex="-1"
-                >
-                  <span data-i18n="stackAi">Inteligencia artificial</span>
-                </button>
-                <button
-                  type="button"
-                  role="tab"
-                  id="tab-stack-methods"
-                  aria-controls="panel-stack-methods"
-                  aria-selected="false"
-                  tabindex="-1"
-                >
-                  <span data-i18n="stackMethods">Metodologías y gestión</span>
-                </button>
+              <div class="stack-row">
+                <h4 data-i18n="stackTests">Automatización de pruebas</h4>
+                <ul class="stack-main">
+                  <li>Selenium</li><li>Playwright</li><li>Appium</li><li>Cucumber</li><li>Rest Assured</li><li>Postman</li>
+                </ul>
+                <ul class="stack-more">
+                  <li>TestNG</li><li>JMeter</li><li>Selenium Grid</li><li>Browserstack</li><li>Android Studio</li>
+                </ul>
               </div>
-              <div class="stack-panels">
-                <section
-                  class="stack-panel"
-                  role="tabpanel"
-                  id="panel-stack-web"
-                  aria-labelledby="tab-stack-web"
-                >
-                  <h4 data-i18n="stackWeb">Automatización web</h4>
-                  <div class="skills">
-                    <span class="chip">Java</span><span class="chip">Selenium</span
-                    ><span class="chip">Playwright</span><span class="chip">Cucumber</span
-                    ><span class="chip">TestNG</span>
-                  </div>
-                </section>
-                <section
-                  class="stack-panel"
-                  role="tabpanel"
-                  id="panel-stack-mobile"
-                  aria-labelledby="tab-stack-mobile"
-                  hidden
-                >
-                  <h4>Mobile</h4>
-                  <div class="skills">
-                    <span class="chip">Appium</span
-                    ><span class="chip">Android Studio</span
-                    ><span class="chip">Browserstack</span
-                    ><span class="chip">Android</span><span class="chip">iOS</span>
-                  </div>
-                </section>
-                <section
-                  class="stack-panel"
-                  role="tabpanel"
-                  id="panel-stack-api"
-                  aria-labelledby="tab-stack-api"
-                  hidden
-                >
-                  <h4 data-i18n="stackApi">APIs y backend</h4>
-                  <div class="skills">
-                    <span class="chip">Rest Assured</span><span class="chip">Postman</span
-                    ><span class="chip">API REST</span><span class="chip">JSON</span
-                    ><span class="chip">SQL</span><span class="chip">SQL Server</span>
-                  </div>
-                </section>
-                <section
-                  class="stack-panel"
-                  role="tabpanel"
-                  id="panel-stack-performance"
-                  aria-labelledby="tab-stack-performance"
-                  hidden
-                >
-                  <h4>Performance testing</h4>
-                  <div class="skills"><span class="chip">JMeter</span></div>
-                </section>
-                <section
-                  class="stack-panel"
-                  role="tabpanel"
-                  id="panel-stack-ci"
-                  aria-labelledby="tab-stack-ci"
-                  hidden
-                >
-                  <h4 data-i18n="stackCi">CI/CD e infraestructura</h4>
-                  <div class="skills">
-                    <span class="chip">Jenkins</span
-                    ><span class="chip">Bitbucket pipelines</span
-                    ><span class="chip">Docker</span
-                    ><span class="chip">Selenium Grid</span><span class="chip">Git</span
-                    ><span class="chip">GitHub</span><span class="chip">bitbucket</span>
-                  </div>
-                </section>
-                <section
-                  class="stack-panel"
-                  role="tabpanel"
-                  id="panel-stack-reports"
-                  aria-labelledby="tab-stack-reports"
-                  hidden
-                >
-                  <h4 data-i18n="stackReports">Reportes y monitoreo</h4>
-                  <div class="skills">
-                    <span class="chip">ExtentReports</span
-                    ><span class="chip">Allure Report</span
-                    ><span class="chip">Datadog</span>
-                  </div>
-                </section>
-                <section
-                  class="stack-panel"
-                  role="tabpanel"
-                  id="panel-stack-data"
-                  aria-labelledby="tab-stack-data"
-                  hidden
-                >
-                  <h4 data-i18n="stackData">Datos y visualización</h4>
-                  <div class="skills">
-                    <span class="chip">Python</span><span class="chip">Pandas</span
-                    ><span class="chip">Power BI</span
-                    ><span class="chip">Microsoft Lists</span
-                    ><span class="chip">Excel</span
-                    ><span class="chip" data-i18n="exploratoryData"
-                      >análisis exploratorio de datos</span
-                    ><span class="chip">DataFrames</span
-                    ><span class="chip" data-i18n="dataCleaning"
-                      >limpieza y análisis de datos</span
-                    ><span class="chip" data-i18n="dataViz">visualización de datos</span>
-                  </div>
-                </section>
-                <section
-                  class="stack-panel"
-                  role="tabpanel"
-                  id="panel-stack-processes"
-                  aria-labelledby="tab-stack-processes"
-                  hidden
-                >
-                  <h4 data-i18n="stackProcesses">Automatización de procesos</h4>
-                  <div class="skills">
-                    <span class="chip">Power Automate</span><span class="chip">n8n</span>
-                  </div>
-                </section>
-                <section
-                  class="stack-panel"
-                  role="tabpanel"
-                  id="panel-stack-ai"
-                  aria-labelledby="tab-stack-ai"
-                  hidden
-                >
-                  <h4 data-i18n="stackAi">Inteligencia artificial</h4>
-                  <div class="skills">
-                    <span class="chip">Claude Code</span
-                    ><span class="chip">Amazon Bedrock</span
-                    ><span class="chip">Bedrock Agents</span
-                    ><span class="chip" data-i18n="multiagentSystems"
-                      >Sistemas multiagente</span
-                    ><span class="chip" data-i18n="generativeAi">IA generativa</span>
-                  </div>
-                </section>
-                <section
-                  class="stack-panel"
-                  role="tabpanel"
-                  id="panel-stack-methods"
-                  aria-labelledby="tab-stack-methods"
-                  hidden
-                >
-                  <h4 data-i18n="stackMethods">Metodologías y gestión</h4>
-                  <div class="skills">
-                    <span class="chip">Jira</span><span class="chip">Agile</span
-                    ><span class="chip">Scrum</span
-                    ><span class="chip" data-i18n="functionalAnalysis"
-                      >Análisis funcional</span
-                    ><span class="chip" data-i18n="testCaseDesign"
-                      >Diseño de casos de prueba</span
-                    ><span class="chip" data-i18n="regressionTesting"
-                      >Pruebas de regresión</span
-                    ><span class="chip" data-i18n="defectTracking"
-                      >Seguimiento de defectos</span
-                    >
-                  </div>
-                </section>
+              <div class="stack-row">
+                <h4 data-i18n="stackLang">Lenguajes y datos</h4>
+                <ul class="stack-main">
+                  <li>Java</li><li>Python</li><li>SQL</li><li>Pandas</li><li>Power BI</li>
+                </ul>
+                <ul class="stack-more">
+                  <li>SQL Server</li><li>Excel</li><li>DataFrames</li><li data-i18n="exploratoryData">análisis exploratorio de datos</li><li data-i18n="dataCleaning">limpieza y análisis de datos</li><li data-i18n="dataViz">visualización de datos</li>
+                </ul>
+              </div>
+              <div class="stack-row">
+                <h4>Microsoft Power Platform</h4>
+                <ul class="stack-main">
+                  <li>Power Automate</li><li>Power Apps</li><li>Microsoft Teams</li>
+                </ul>
+                <ul class="stack-more">
+                  <li>SharePoint</li><li>Microsoft Lists</li>
+                </ul>
+              </div>
+              <div class="stack-row">
+                <h4 data-i18n="stackCi">CI/CD y cloud</h4>
+                <ul class="stack-main">
+                  <li>Bitbucket Pipelines</li><li>Jenkins</li><li>Docker</li><li>Git</li><li>AWS</li>
+                </ul>
+                <ul class="stack-more">
+                  <li>Maven</li><li>GitHub</li><li>GitLab</li><li>Azure DevOps</li><li>Jira</li><li>Datadog</li><li>ExtentReports</li><li>Allure Report</li>
+                </ul>
+              </div>
+              <div class="stack-row">
+                <h4 data-i18n="stackMethods">Metodologías</h4>
+                <ul class="stack-main">
+                  <li>Agile</li><li>Scrum</li><li data-i18n="functionalAnalysis">Análisis funcional</li><li data-i18n="regressionTesting">Pruebas de regresión</li>
+                </ul>
+                <ul class="stack-more">
+                  <li data-i18n="testCaseDesign">Diseño de casos de prueba</li><li data-i18n="defectTracking">Seguimiento de defectos</li>
+                </ul>
               </div>
             </div>
+            <button class="stack-toggle" id="stack-toggle" type="button" aria-expanded="false" aria-controls="stack-list">
+              <span data-i18n="stackMore">Ver todo el stack</span>
+            </button>
           </div>
         </section>
       </div>
       <section class="contact" id="contacto">
         <div class="wrap">
           <div class="sectionhead">
-            <span class="label" data-i18n="contactLabel">05 / Contacto</span>
+            <span class="label" data-i18n="contactLabel">06 / Contacto</span>
             <h2 data-i18n="contactTitle">¡Conectemos!</h2>
           </div>
           <div class="actions">
@@ -928,5 +557,6 @@
       </div>
     </dialog>
     <script src="assets/js/main.js" defer></script>
+    <script src="assets/js/demos.js" defer></script>
   </body>
 </html>
