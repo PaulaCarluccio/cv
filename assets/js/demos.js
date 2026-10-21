@@ -549,6 +549,45 @@ const epic = {
     },
   ],
 };
+const demoGuide = {
+  triage: [
+    T("Tocá “Analizar con IA”", "Press “Analyze with AI”"),
+    T("Elegí una falla de la lista", "Pick a failure from the list"),
+    T("Mirá qué encontró y por qué. Probá “Ver como JSON”", "See what it found and why. Try “View as JSON”"),
+  ],
+  teams: [
+    T("Tocá “Terminar la ejecución”", "Press “Finish the run”"),
+    T("Mirá cómo se arma la tarjeta y llega al canal", "Watch the card being built and reaching the channel"),
+    T("Abrí un módulo con fallas para ver el detalle", "Open a module with failures to see the detail"),
+  ],
+  plugin: [
+    T("Elegí qué le pedís al plugin", "Pick what you ask the plugin for"),
+    T("Tocá “Ejecutar” y mirá los pasos", "Press “Run” and watch the steps"),
+    T("Leé el resultado", "Read the result"),
+  ],
+  func: [
+    T("Recorré las etapas, de Jira hasta Xray (tocá 1, 2, 3 y 4)", "Walk through the stages, from Jira to Xray (tap 1, 2, 3 and 4)"),
+    T("En “Análisis funcional” tocá una historia", "In “Functional analysis” tap a story"),
+    T("Pasá a “Casos en Xray”, elegí una historia y tocá un caso", "Go to “Cases in Xray”, pick a story and tap a case"),
+  ],
+  flow: [
+    T("Tocá un paso para leer qué pasa ahí", "Tap a step to read what happens there"),
+    T("Seguí con “Siguiente” hasta el último paso", "Keep going with “Next” to the last step"),
+    T("Compará “Antes” y “Ahora”", "Compare “Before” and “Now”"),
+  ],
+};
+const demoNav = {
+  demo: T("Demo", "Demo"),
+  of: T("de", "of"),
+  prev: T("Demo anterior", "Previous demo"),
+  next: T("Demo siguiente", "Next demo"),
+  swipe: T("Deslizá hacia un costado para cambiar de demo", "Swipe sideways to change demo"),
+  now: T("Ahora", "Now"),
+  later: T("Después", "Next"),
+  done: T("Hecho", "Done"),
+  finished: T("¡Listo! Pasá a la siguiente demo.", "Done! Move on to the next demo."),
+  steps: T("Qué hacer en esta demo", "What to do in this demo"),
+};
 const demoRoot = document.getElementById("demo-root");
 if (demoRoot) {
   const reduceMotion = matchMedia("(prefers-reduced-motion: reduce)");
@@ -557,10 +596,11 @@ if (demoRoot) {
   const state = {
     tab: "triage",
     triage: { analyzed: false, running: false, stepText: "", mode: "ai", selected: null, json: false },
-    teams: { phase: -1, running: false, ai: true, open: "checkout" },
+    teams: { phase: -1, running: false, ai: true, open: null },
     plugin: { cmd: "create", cause: "locator", step: -1, running: false, done: false },
     func: { stage: 0, story: null, case: null, mode: "draft" },
-    flow: { step: 0, view: "after" },
+    flow: { step: 0, view: "after", visited: new Set([0]), compared: false },
+    dir: null,
   };
   const el = (tag, attrs = {}, ...kids) => {
     const node = document.createElement(tag);
@@ -907,7 +947,7 @@ if (demoRoot) {
     const s = state.teams;
     s.running = true;
     s.phase = -1;
-    s.open = "checkout";
+    s.open = null;
     const tick = () => {
       s.phase += 1;
       announce(tr(ui.teams.steps[s.phase]));
@@ -1182,6 +1222,7 @@ if (demoRoot) {
     const step = steps[f.step];
     const go = (index) => {
       f.step = (index + steps.length) % steps.length;
+      f.visited.add(f.step);
       announce(tr(steps[f.step].title));
       render();
       demoRoot.querySelector(".flow-step.is-active")?.focus();
@@ -1237,6 +1278,7 @@ if (demoRoot) {
           f.view,
           (view) => {
             f.view = view;
+            f.compared = true;
             render();
           },
         ),
@@ -1246,8 +1288,83 @@ if (demoRoot) {
   }
   const tabs = ["triage", "teams", "plugin", "func", "flow"];
   const renderers = { triage: renderTriage, teams: renderTeams, plugin: renderPlugin, func: renderFunc, flow: renderFlow };
+  /* Which step of the guide the visitor is on, from what they have done so far */
+  function guideStep(tab) {
+    const s = state[tab];
+    if (tab === "triage") return !s.analyzed ? 0 : s.selected ? (s.json ? 3 : 2) : 1;
+    if (tab === "teams") return s.running ? 1 : s.phase < 0 ? 0 : s.open ? 3 : 2;
+    if (tab === "plugin") return s.running ? 1 : s.done ? 2 : 0;
+    if (tab === "func") return s.stage < 2 ? 0 : s.stage === 2 ? (s.story ? 2 : 1) : s.case ? 3 : 2;
+    return s.compared ? 3 : s.visited.size < 3 ? 0 : s.visited.size < 6 ? 1 : 2;
+  }
+  function renderGuide(tab) {
+    const steps = demoGuide[tab];
+    const current = guideStep(tab);
+    return el(
+      "div",
+      { class: "demo-guide", role: "group", "aria-label": tr(demoNav.steps) },
+      el(
+        "ol",
+        {},
+        steps.map((text, index) =>
+          el(
+            "li",
+            { class: index < current ? "is-done" : index === current ? "is-now" : "is-later" },
+            el("span", { class: "guide-num", "aria-hidden": "true" }, index < current ? "✓" : String(index + 1)),
+            el(
+              "span",
+              { class: "guide-text" },
+              index === current ? el("strong", { class: "guide-label" }, tr(demoNav.now) + ": ") : null,
+              index === current + 1 ? el("span", { class: "guide-label" }, tr(demoNav.later) + ": ") : null,
+              tr(text),
+            ),
+          ),
+        ),
+      ),
+      current >= steps.length ? el("p", { class: "guide-finished" }, tr(demoNav.finished)) : null,
+    );
+  }
+  /* Highlight the thing to touch next */
+  function markTarget(tab) {
+    const step = guideStep(tab);
+    const pick = (selector) =>
+      demoRoot.querySelectorAll(selector).forEach((node) => node.classList.add("guide-pulse"));
+    if (tab === "triage") {
+      if (step === 0) pick(".demo-pane .demo-controls .btn.primary");
+      if (step === 1) pick(".demo-row:not(:disabled)");
+      if (step === 2) pick(".demo-link");
+    } else if (tab === "teams") {
+      if (step === 0) pick(".demo-pane .demo-controls .btn.primary");
+      if (step === 2) pick('.teams-module-row:not(:disabled)');
+    } else if (tab === "plugin") {
+      if (step === 0) pick(".cmd:not(.is-active)");
+      if (step === 1) pick(".demo-pane .demo-controls .btn.primary");
+    } else if (tab === "func") {
+      const next = demoRoot.querySelectorAll(".flow-steps li")[state.func.stage + 1];
+      if (step === 0) next?.querySelector(".flow-step")?.classList.add("guide-pulse");
+      if (step === 1) pick(".demo-list .demo-row");
+      if (step === 2 && state.func.stage < 3) demoRoot.querySelectorAll(".flow-steps li")[3]?.querySelector(".flow-step")?.classList.add("guide-pulse");
+      if (step === 2 && state.func.stage === 3) pick(".demo-row");
+    } else {
+      const next = demoRoot.querySelectorAll(".flow-steps li")[state.flow.step + 1];
+      if (step === 0) next?.querySelector(".flow-step")?.classList.add("guide-pulse");
+      if (step === 1) pick(".demo-controls .btn.primary");
+      if (step === 2) pick(".demo-mode button[aria-pressed='false']");
+    }
+  }
+  function goTab(delta, focusArrow) {
+    const index = (tabs.indexOf(state.tab) + delta + tabs.length) % tabs.length;
+    state.tab = tabs[index];
+    state.dir = delta > 0 ? "next" : "prev";
+    announce(`${tr(demoNav.demo)} ${index + 1} ${tr(demoNav.of)} ${tabs.length}: ${tr(ui.tabs[state.tab])}`);
+    render();
+    if (focusArrow) demoRoot.querySelector(focusArrow)?.focus();
+  }
   function render() {
     const focusedTab = document.activeElement?.closest?.("[data-demo-tab]")?.dataset.demoTab;
+    const index = tabs.indexOf(state.tab);
+    const direction = state.dir;
+    state.dir = null;
     demoRoot.replaceChildren(
       el(
         "div",
@@ -1264,6 +1381,7 @@ if (demoRoot) {
               "aria-controls": "demo-panel",
               tabindex: state.tab === tab ? "0" : "-1",
               onclick: () => {
+                state.dir = tabs.indexOf(tab) > index ? "next" : "prev";
                 state.tab = tab;
                 render();
               },
@@ -1271,8 +1389,7 @@ if (demoRoot) {
                 const move = { ArrowRight: 1, ArrowLeft: -1 }[event.key];
                 if (!move) return;
                 event.preventDefault();
-                state.tab = tabs[(tabs.indexOf(tab) + move + tabs.length) % tabs.length];
-                render();
+                goTab(move);
                 demoRoot.querySelector('[role="tab"][aria-selected="true"]').focus();
               },
             },
@@ -1282,13 +1399,70 @@ if (demoRoot) {
       ),
       el(
         "div",
-        { id: "demo-panel", role: "tabpanel", "aria-labelledby": "demo-tab-" + state.tab },
+        { class: "demo-nav" },
+        el(
+          "button",
+          { type: "button", class: "demo-arrow demo-arrow-prev", "aria-label": tr(demoNav.prev), onclick: () => goTab(-1, ".demo-arrow-prev") },
+          "‹",
+        ),
+        el(
+          "div",
+          { class: "demo-nav-title" },
+          el("span", { class: "demo-nav-count" }, `${tr(demoNav.demo)} ${index + 1} ${tr(demoNav.of)} ${tabs.length}`),
+          el("strong", {}, tr(ui.tabs[state.tab]).replace(/^\d+\.\s*/, "")),
+        ),
+        el(
+          "div",
+          { class: "demo-dots", "aria-hidden": "true" },
+          tabs.map((tab) => el("span", { class: tab === state.tab ? "is-on" : "" })),
+        ),
+        el(
+          "button",
+          { type: "button", class: "demo-arrow demo-arrow-next", "aria-label": tr(demoNav.next), onclick: () => goTab(1, ".demo-arrow-next") },
+          "›",
+        ),
+      ),
+      el("p", { class: "demo-swipe-hint", "aria-hidden": "true" }, "‹  " + tr(demoNav.swipe) + "  ›"),
+      renderGuide(state.tab),
+      el(
+        "div",
+        {
+          id: "demo-panel",
+          role: "tabpanel",
+          "aria-labelledby": "demo-tab-" + state.tab,
+          class: direction ? "slide-" + direction : "",
+        },
         renderers[state.tab](),
       ),
       el("p", { class: "demo-note" }, tr(ui.note)),
     );
+    markTarget(state.tab);
     if (focusedTab) demoRoot.querySelector(`[data-demo-tab="${focusedTab}"]`)?.focus();
   }
+  /* Swipe sideways on a phone to change demo */
+  let touchStart = null;
+  demoRoot.addEventListener(
+    "touchstart",
+    (event) => {
+      const target = event.target;
+      if (target.closest(".demo-tabs, pre, input, .demo-code")) return (touchStart = null);
+      const t = event.touches[0];
+      touchStart = { x: t.clientX, y: t.clientY, time: Date.now() };
+    },
+    { passive: true },
+  );
+  demoRoot.addEventListener(
+    "touchend",
+    (event) => {
+      if (!touchStart) return;
+      const t = event.changedTouches[0];
+      const dx = t.clientX - touchStart.x;
+      const dy = t.clientY - touchStart.y;
+      touchStart = null;
+      if (Math.abs(dx) > 60 && Math.abs(dx) > Math.abs(dy) * 1.6) goTab(dx < 0 ? 1 : -1);
+    },
+    { passive: true },
+  );
   new MutationObserver(render).observe(document.documentElement, {
     attributes: true,
     attributeFilter: ["lang"],

@@ -747,3 +747,210 @@ h2 {
 html {
   overflow-x: clip;
 }
+
+/* ==========================================================================
+   Guided demos: arrows on desktop, swipe on phones, a "what to do" strip
+   ========================================================================== */
+.demo-nav {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin: 0 0 14px;
+}
+.demo-nav-title {
+  flex: 1;
+  display: grid;
+  gap: 2px;
+  min-width: 0;
+}
+.demo-nav-count {
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.demo-nav-title strong {
+  font-family: var(--display);
+  font-size: clamp(1.1rem, 2.4vw, 1.4rem);
+  letter-spacing: -0.02em;
+  color: var(--ink);
+}
+.demo-arrow {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  padding: 0 0 4px;
+  border: var(--pencil-line);
+  border-radius: 50% 46% 52% 48% / 48% 52% 46% 50%;
+  background-color: var(--tint-blue);
+  background-image: var(--pencil-fill);
+  background-size: 140px 140px;
+  color: var(--ink);
+  font-size: 2rem;
+  line-height: 1;
+  box-shadow: 3px 3px 0 var(--pastel-lilac);
+  transition:
+    transform 0.2s var(--ease),
+    box-shadow 0.2s var(--ease);
+}
+.demo-arrow:hover {
+  background-color: var(--tint-pink);
+  transform: translate(-1px, -1px);
+  box-shadow: 5px 5px 0 var(--pastel-lilac);
+}
+.demo-arrow:active {
+  transform: translate(2px, 2px);
+  box-shadow: none;
+}
+.demo-dots {
+  display: none;
+  gap: 8px;
+}
+.demo-dots span {
+  width: 10px;
+  height: 10px;
+  border: 2px solid var(--ink);
+  border-radius: 50%;
+}
+.demo-dots span.is-on {
+  background: var(--accent);
+}
+.demo-swipe-hint {
+  display: none;
+  margin: -4px 0 14px;
+  text-align: center;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--muted);
+}
+/* What to do, and what comes next */
+.demo-guide {
+  margin: 0 0 20px;
+  padding: 14px 18px;
+  border: var(--pencil-line-soft);
+  border-radius: 22px 18px 24px 17px / 18px 24px 17px 22px;
+  background: color-mix(in srgb, var(--surface) 70%, transparent);
+}
+.demo-guide ol {
+  display: grid;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.demo-guide li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 0.95rem;
+  line-height: 1.45;
+  color: var(--muted);
+}
+.guide-num {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 26px;
+  height: 26px;
+  border: 2px solid currentColor;
+  border-radius: 50%;
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+.demo-guide li.is-now {
+  color: var(--ink);
+  font-size: 1.02rem;
+}
+.demo-guide li.is-now .guide-num {
+  border-color: var(--accent);
+  background: var(--accent);
+  color: var(--accent-ink);
+}
+.demo-guide li.is-done {
+  color: var(--muted);
+}
+.demo-guide li.is-done .guide-num {
+  border-color: var(--c-ok);
+  background: var(--c-ok);
+  color: #fff;
+}
+.demo-guide li.is-done .guide-text {
+  text-decoration: line-through;
+  text-decoration-thickness: 1.5px;
+}
+.guide-label {
+  color: var(--accent);
+}
+.guide-finished {
+  margin: 12px 0 0;
+  font-weight: 650;
+  color: var(--ink);
+}
+/* The thing to touch next */
+.guide-pulse {
+  outline: 3px solid color-mix(in srgb, var(--accent) 70%, transparent);
+  outline-offset: 4px;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .guide-pulse {
+    animation: guide-pulse 1.4s ease-in-out infinite alternate;
+  }
+  #demo-panel.slide-next {
+    animation: slide-from-right 0.4s var(--ease);
+  }
+  #demo-panel.slide-prev {
+    animation: slide-from-left 0.4s var(--ease);
+  }
+}
+@keyframes guide-pulse {
+  from {
+    outline-offset: 3px;
+    outline-color: color-mix(in srgb, var(--accent) 80%, transparent);
+  }
+  to {
+    outline-offset: 7px;
+    outline-color: color-mix(in srgb, var(--accent) 25%, transparent);
+  }
+}
+@keyframes slide-from-right {
+  from {
+    opacity: 0;
+    transform: translateX(36px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@keyframes slide-from-left {
+  from {
+    opacity: 0;
+    transform: translateX(-36px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+/* Phones: swipe between demos, dots instead of tabs and arrows */
+@media (max-width: 760px) {
+  .demo-tabs,
+  .demo-arrow {
+    display: none;
+  }
+  .demo-dots {
+    display: flex;
+  }
+  .demo-swipe-hint {
+    display: block;
+  }
+  .demo-nav {
+    justify-content: space-between;
+  }
+  #demo-panel {
+    touch-action: pan-y;
+  }
+}
